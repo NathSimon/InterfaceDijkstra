@@ -1,6 +1,6 @@
-package Maze;
-
 import java.io.IOException;
+
+import Maze.Maze;
 
 public class Main {
 

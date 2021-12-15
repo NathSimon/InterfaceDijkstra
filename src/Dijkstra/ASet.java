@@ -1,11 +1,20 @@
 package Dijkstra;
 
-import java.util.ArrayList;
+import java.util.HashSet;
 
-public class ASet implements ASetInterface {
+public class ASet extends HashSet<VertexInterface> implements ASetInterface {
+
+	private static final long serialVersionUID = 1L; //jsp pas trop ce que ca fait
+	
 	public ASet() {
-		ArrayList<Vertex> aSetList = new ArrayList<Vertex>();
+		super();
 	}
 	
+	public void addVertex(VertexInterface vertex) {
+		add(vertex);
+	}
+	public boolean containsVertex(VertexInterface vertex) {
+		return contains(vertex);
+	}
 	
 }

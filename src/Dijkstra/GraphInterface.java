@@ -1,11 +1,9 @@
 package Dijkstra;
 
+import java.util.ArrayList;
+
 public interface GraphInterface {
-//	void addEdge(int s1, int s2, int value);
-//	void addSommet();
-//	int size();
-//	void setValue(int value);
-//	int getValue(int i);
-//	GraphInterface get(int source);
-//	void removeSommet(int s1);
+	public ArrayList<VertexInterface> getAllVertices();
+	public ArrayList<VertexInterface> getSuccessors(VertexInterface vertex);
+	public int getWeight(VertexInterface src,VertexInterface dst);
 }

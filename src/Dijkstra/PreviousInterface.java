@@ -1,5 +1,9 @@
 package Dijkstra;
 
+import java.util.ArrayList;
+
 public interface PreviousInterface {
-	Boolean isPrevious(Object s1, Object s2);
+	public void setValue (VertexInterface vertex, VertexInterface value);
+	public VertexInterface getValue(VertexInterface vertex);
+	public ArrayList<VertexInterface> getShortestPathTo (VertexInterface vertex);
 }
