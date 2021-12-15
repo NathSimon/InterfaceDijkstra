@@ -12,18 +12,20 @@ public final class Previous extends Hashtable<VertexInterface, VertexInterface> 
 	}
 
 	public void setValue(VertexInterface vertex, VertexInterface value) {
-		// TODO Auto-generated method stub
-		
+		this.put(vertex, value);
 	}
 
 	public VertexInterface getValue(VertexInterface vertex) {
-		// TODO Auto-generated method stub
-		return null;
+		return this.get(vertex);
 	}
 
-	public ArrayList<VertexInterface> getShortestPathTo(VertexInterface vertex) {
-		// TODO Auto-generated method stub
-		return null;
+	public ArrayList<VertexInterface> getPathTo(VertexInterface vertex) {
+		ArrayList<VertexInterface> path = new ArrayList<VertexInterface>();
+		while (vertex != null) {
+			path.add(vertex);
+			vertex = getValue(vertex);
+		}
+		return path;
 	}
 	
 }

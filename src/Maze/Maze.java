@@ -54,6 +54,28 @@ public class Maze implements GraphInterface {
 	    br.close();
 	}
 	
+	public MBox findDeparture() {
+		for(int i = 0; i < rowLen; i++) {
+			for(int j = 0; j < colLen; j++) {
+				if(this.boxes[i][j] == 'D') {
+					return this.maze[i][j];
+				}
+			}
+		}
+		return null;
+	}
+	
+	public MBox findArrival() {
+		for(int i = 0; i < rowLen; i++) {
+			for(int j = 0; j < colLen; j++) {
+				if(this.boxes[i][j] == 'A') {
+					return this.maze[i][j];
+				}
+			}
+		}
+		return null;
+	}
+	
 	// RAJOUTER LES MESSAGES DERREURS
 	public final void initFromTextFile(String fileName) throws IOException { //cest quoi ca 
 		int i = 0;
@@ -74,6 +96,13 @@ public class Maze implements GraphInterface {
 			i++;
 			System.out.println(line);
 	    }
+		for(int i = 0; i < rowLen; i++) {
+			for(int j = 0; j < colLen; j++) {
+				if(this.boxes[i][j] == 'A') {
+					this.maze[i][j] = new ;
+				}
+			}
+		}
 	    br.close();
 	}
 	
