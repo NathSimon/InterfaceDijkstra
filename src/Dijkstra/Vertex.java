@@ -15,5 +15,10 @@ public class Vertex implements VertexInterface {
 	public int getVertexNumber() {
 		return vertexNumber;
 	}
+
+	public String getLabel() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }

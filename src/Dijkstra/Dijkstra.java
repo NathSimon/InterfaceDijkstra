@@ -47,7 +47,6 @@ public class Dijkstra {
 		}	
 		return previous;
 	}
-	
 }
 
 //test 1 qui na pas marche

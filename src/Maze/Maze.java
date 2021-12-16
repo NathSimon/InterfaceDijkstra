@@ -11,8 +11,7 @@ import Dijkstra.GraphInterface;
 import Dijkstra.VertexInterface;
 
 public class Maze implements GraphInterface {
-	
-	private char[][] boxes;
+
 	private MBox[][] maze;
 	private int rowLen;
 	private int colLen;
@@ -21,25 +20,10 @@ public class Maze implements GraphInterface {
 		this.colLen = colLen;
 		this.rowLen = rowLen;
 		MBox[][] maze = new MBox[rowLen][colLen]; 
-		this.boxes = new char[rowLen][colLen];
 	}
-	
-//	public ArrayList<VertexInterface> getAllVertices() {
-//		
-//	}
-//	
-//	public ArrayList<VertexInterface> getSuccessors(VertexInterface vertex) {
-//		
-//	}
-//	
-//	public int getWeight(VertexInterface src,VertexInterface dst) {
-//		
-//	}
-	
 	
 	public final void readFile(String fileName) throws IOException {
 		Reader reader = new FileReader(fileName);
-		int i = 0;
 	    // Create a BufferedReader with buffer array size of 16384 (32786 bytes = 32 KB).
 	    BufferedReader br = new BufferedReader(reader, 16384);
 
@@ -47,7 +31,6 @@ public class Maze implements GraphInterface {
 		
 		while((line = br.readLine())!= null) {
 			System.out.println(line);
-			i++;
 	    }
 		System.out.println();
 		
@@ -57,7 +40,7 @@ public class Maze implements GraphInterface {
 	public MBox findDeparture() {
 		for(int i = 0; i < rowLen; i++) {
 			for(int j = 0; j < colLen; j++) {
-				if(this.boxes[i][j] == 'D') {
+				if(this.maze[i][j].getLabel() == "Departure") {
 					return this.maze[i][j];
 				}
 			}
@@ -68,7 +51,7 @@ public class Maze implements GraphInterface {
 	public MBox findArrival() {
 		for(int i = 0; i < rowLen; i++) {
 			for(int j = 0; j < colLen; j++) {
-				if(this.boxes[i][j] == 'A') {
+				if(this.maze[i][j].getLabel() == "Arrival") {
 					return this.maze[i][j];
 				}
 			}
@@ -90,7 +73,18 @@ public class Maze implements GraphInterface {
 		while((line = br.readLine())!= null) {
 	        j = 0;
 			while (j < line.length()) {
-				this.boxes[i][j] = line.charAt(j);
+				char c = line.charAt(j);
+				switch (c) {
+				case('W') : this.maze[i][j] = new WBox(i,j, this.maze);
+					break;
+				case('E') : this.maze[i][j] = new EBox(i,j, this.maze);
+					break;
+				case('D') : this.maze[i][j] = new DBox(i,j, this.maze);
+					break;
+				case('A') : this.maze[i][j] = new ABox(i,j, this.maze);
+					break;
+				default : break;
+				}
 				j++;
 			}
 			i++;
@@ -103,11 +97,26 @@ public class Maze implements GraphInterface {
         PrintWriter printWriter = new PrintWriter(fileName);
         int i = 0;
         int j = 0;
+        String str;
         
         while(i < this.colLen) {
         	j = 0;
         	while(j < this.rowLen) {
-        		printWriter.printf("%c", boxes[i][j]);
+        		str = maze[i][j].getLabel();
+        		switch(str) {
+        		case "Arrival" : printWriter.printf("A");
+        			break;
+        		case "Departure" :  printWriter.printf("D");
+        			break;
+        		case "Wall" :  printWriter.printf("W");
+        			break;
+        		case "Path" :  printWriter.printf("E");
+        			break;
+        		case "Point" :  printWriter.printf(".");
+        			break;
+        		default : 
+        			break;
+        		}
         		j++;
         	}
         	System.out.printf("%d", i);
@@ -116,4 +125,51 @@ public class Maze implements GraphInterface {
         }
         printWriter.close();
     }
+
+	public ArrayList<VertexInterface> getAllVertices() {
+		ArrayList<VertexInterface> allVertices = new ArrayList<VertexInterface>();
+		for(int i = 0; i < rowLen; i++) {
+			for(int j = 0; j < colLen; j++) {
+				allVertices.add(maze[i][j]);
+			}
+		}
+		return allVertices;
+	}
+
+	public ArrayList<VertexInterface> getSuccessors(VertexInterface vertex) {
+		ArrayList<VertexInterface> successors = new ArrayList<VertexInterface>();
+		MBox box = (MBox)vertex;
+		int i = box.getX();
+		int j = box.getY();
+		
+		try {
+			MBox voisinBas = maze[i+1][j];
+			if(voisinBas.getLabel() == "Path"){
+				successors.add(voisinBas);
+			}}catch( Exception expection) {};
+		try {
+			MBox voisinHaut = maze[i-1][j];
+			if(voisinHaut.getLabel() == "Path"){
+				successors.add(voisinHaut);
+			}}catch( Exception exception) {};
+		try {
+			MBox voisinGauche = maze[i][j-1];
+			if(voisinGauche.getLabel() == "Path"){
+				successors.add(voisinGauche);
+			}}catch( Exception exception) {};
+		try {
+			MBox voisinDroite = maze[i][j+1];
+			if(voisinDroite.getLabel() == "Path"){
+				successors.add(voisinDroite);
+			}}catch( Exception exception) {};
+			
+	return successors;
+
+	}
+
+	public int getWeight(VertexInterface src, VertexInterface dst) {
+		ArrayList<VertexInterface> successors = getSuccessors(src);
+		if(successors.contains(dst)) return 1;
+		return 0;
+	}
 }

@@ -6,14 +6,21 @@ public abstract class MBox implements VertexInterface {
 	int x;
 	int y;
 	int type; // 0 = wall, 1 = path, 2 = Depart, 3 = Arrive
-	Maze maze;
+	MBox[][] maze;
 	String label;
 	
-	public MBox(int x, int y, Maze maze, String label) {
+	public MBox(int x, int y, MBox[][] maze2, String label) {
 		this.x = x;
 		this.y = y;
-		this.maze = maze;
+		this.maze = maze2;
 		this.label = label;
+	}
+	
+	public int getX() {
+		return x;
+	}
+	public int getY() {
+		return y;
 	}
 	
 	public int print() { //BESOIN DE REDIFINIR?????
@@ -21,6 +28,9 @@ public abstract class MBox implements VertexInterface {
 	}
 	public final String getLabel() {
 		return label;
+	}
+	public void  setLabel(String newLabel) {
+		label = newLabel;
 	}
 	
 }

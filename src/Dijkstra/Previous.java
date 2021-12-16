@@ -19,6 +19,10 @@ public final class Previous extends Hashtable<VertexInterface, VertexInterface> 
 		return this.get(vertex);
 	}
 
+	public boolean containsVertex(VertexInterface vertex) {
+		return contains(vertex);
+	}
+	
 	public ArrayList<VertexInterface> getPathTo(VertexInterface vertex) {
 		ArrayList<VertexInterface> path = new ArrayList<VertexInterface>();
 		while (vertex != null) {

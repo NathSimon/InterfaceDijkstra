@@ -2,8 +2,8 @@ package Maze;
 
 public class DBox extends MBox {
 
-	public DBox(int x, int y, Maze maze, String label) {
-		super(x,y,maze, label);
+	public DBox(int x, int y, MBox[][] maze) {
+		super(x,y,maze, "Departure");
 	}
 	
 	public int print() {
