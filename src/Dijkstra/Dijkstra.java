@@ -10,7 +10,7 @@ public class Dijkstra {
 		PreviousInterface previous = new Previous();
 		int value = 0;
 		int minValue = 0;
-		
+	
 		VertexInterface pivot = root;
 		
 		ArrayList<VertexInterface> completeGraph = graph.getAllVertices();
@@ -23,8 +23,7 @@ public class Dijkstra {
 				pi.setValue(vertex, Integer.MAX_VALUE);	
 			}
 		}
-		
-		for(int j = 0; j < completeGraph.size() - 2; j++) { 
+		for(int j = 0; j < completeGraph.size() - 1; j++) {
 			for(VertexInterface y : completeGraph) {
 				if(!set.containsVertex(y) && graph.getSuccessors(pivot).contains(y)) {
 					value = pi.getValue(pivot) + graph.getWeight(pivot, y);  
@@ -42,7 +41,8 @@ public class Dijkstra {
 					y = vertex;
 				}
 			}
-			pivot = y;
+			if(y != null)
+				pivot = y;
 			set.addVertex(pivot);
 		}	
 		return previous;

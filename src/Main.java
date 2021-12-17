@@ -29,6 +29,7 @@ public class Main {
 		path = previous.getPathTo(arrival);
 		
 		for(VertexInterface vertex : path) {
+			if(vertex != arrival && vertex != departure)
 			((MBox) vertex).setLabel("Point");
 		}
 				

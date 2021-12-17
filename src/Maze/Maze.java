@@ -19,7 +19,7 @@ public class Maze implements GraphInterface {
 	public Maze(int rowLen, int colLen) {
 		this.colLen = colLen;
 		this.rowLen = rowLen;
-		MBox[][] maze = new MBox[rowLen][colLen]; 
+		this.maze = new MBox[rowLen][colLen]; 
 	}
 	
 	public final void readFile(String fileName) throws IOException {
@@ -28,7 +28,9 @@ public class Maze implements GraphInterface {
 	    BufferedReader br = new BufferedReader(reader, 16384);
 
 	    String line = null;
-		
+	    
+	    System.out.println("=== LABYRINTHE RESOLU ===");
+	    
 		while((line = br.readLine())!= null) {
 			System.out.println(line);
 	    }
@@ -40,7 +42,7 @@ public class Maze implements GraphInterface {
 	public MBox findDeparture() {
 		for(int i = 0; i < rowLen; i++) {
 			for(int j = 0; j < colLen; j++) {
-				if(this.maze[i][j].getLabel() == "Departure") {
+				if(this.maze[i][j].getLabel().equals("Departure")) {
 					return this.maze[i][j];
 				}
 			}
@@ -51,7 +53,7 @@ public class Maze implements GraphInterface {
 	public MBox findArrival() {
 		for(int i = 0; i < rowLen; i++) {
 			for(int j = 0; j < colLen; j++) {
-				if(this.maze[i][j].getLabel() == "Arrival") {
+				if(this.maze[i][j].getLabel().equals("Arrival")) {
 					return this.maze[i][j];
 				}
 			}
@@ -88,7 +90,6 @@ public class Maze implements GraphInterface {
 				j++;
 			}
 			i++;
-			System.out.println(line);
 	    }
 	    br.close();
 	}
@@ -119,10 +120,10 @@ public class Maze implements GraphInterface {
         		}
         		j++;
         	}
-        	System.out.printf("%d", i);
         	printWriter.println();
         	i++;
         }
+        printWriter.println();
         printWriter.close();
     }
 
@@ -141,25 +142,25 @@ public class Maze implements GraphInterface {
 		MBox box = (MBox)vertex;
 		int i = box.getX();
 		int j = box.getY();
-		
+
 		try {
 			MBox voisinBas = maze[i+1][j];
-			if(voisinBas.getLabel() == "Path"){
+			if(voisinBas.getLabel().equals("Path") || voisinBas.getLabel().equals("Arrival")){
 				successors.add(voisinBas);
 			}}catch( Exception expection) {};
 		try {
 			MBox voisinHaut = maze[i-1][j];
-			if(voisinHaut.getLabel() == "Path"){
+			if(voisinHaut.getLabel().equals("Path") || voisinHaut.getLabel().equals("Arrival")){
 				successors.add(voisinHaut);
 			}}catch( Exception exception) {};
 		try {
 			MBox voisinGauche = maze[i][j-1];
-			if(voisinGauche.getLabel() == "Path"){
+			if(voisinGauche.getLabel().equals("Path") || voisinGauche.getLabel().equals("Arrival")){
 				successors.add(voisinGauche);
 			}}catch( Exception exception) {};
 		try {
 			MBox voisinDroite = maze[i][j+1];
-			if(voisinDroite.getLabel() == "Path"){
+			if(voisinDroite.getLabel().equals("Path") || voisinDroite.getLabel().equals("Arrival")){
 				successors.add(voisinDroite);
 			}}catch( Exception exception) {};
 			

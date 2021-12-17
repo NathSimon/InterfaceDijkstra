@@ -12,11 +12,11 @@ public final class Previous extends Hashtable<VertexInterface, VertexInterface> 
 	}
 
 	public void setValue(VertexInterface vertex, VertexInterface value) {
-		this.put(vertex, value);
+		super.put(vertex, value);
 	}
 
-	public VertexInterface getValue(VertexInterface vertex) {
-		return this.get(vertex);
+	public VertexInterface getVertex(VertexInterface vertex) {
+		return super.get(vertex);
 	}
 
 	public boolean containsVertex(VertexInterface vertex) {
@@ -27,9 +27,8 @@ public final class Previous extends Hashtable<VertexInterface, VertexInterface> 
 		ArrayList<VertexInterface> path = new ArrayList<VertexInterface>();
 		while (vertex != null) {
 			path.add(vertex);
-			vertex = getValue(vertex);
+			vertex = getVertex(vertex);
 		}
 		return path;
 	}
-	
 }
