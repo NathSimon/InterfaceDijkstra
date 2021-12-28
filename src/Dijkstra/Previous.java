@@ -25,9 +25,14 @@ public final class Previous extends Hashtable<VertexInterface, VertexInterface> 
 	
 	public ArrayList<VertexInterface> getPathTo(VertexInterface vertex) {
 		ArrayList<VertexInterface> path = new ArrayList<VertexInterface>();
-		while (vertex != null) {
-			path.add(vertex);
-			vertex = getVertex(vertex);
+		if(getVertex(vertex) == null) { //Pas de solution = arrivee non exploree donc non implementee dans la hashtable
+			System.out.println("Le labyrinthe n'a pas de solutions");
+		}
+		else {
+			while (vertex != null) {
+				path.add(vertex);
+				vertex = getVertex(vertex);
+			}
 		}
 		return path;
 	}

@@ -7,11 +7,12 @@ import Dijkstra.VertexInterface;
 import Dijkstra.Dijkstra;
 import Maze.MBox;
 import Maze.Maze;
+import Maze.MazeReadingException;
 
 public class Main {
 
 	
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException, MazeReadingException {
 		
 		int rowLen = 10;
 		int colLen = 10;
@@ -29,7 +30,7 @@ public class Main {
 		path = previous.getPathTo(arrival);
 		
 		for(VertexInterface vertex : path) {
-			if(vertex != arrival && vertex != departure)
+			if(vertex != arrival && vertex != departure) //continuer a afficher les departs arrives
 			((MBox) vertex).setLabel("Point");
 		}
 				

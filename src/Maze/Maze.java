@@ -62,36 +62,56 @@ public class Maze implements GraphInterface {
 	}
 	
 	// RAJOUTER LES MESSAGES DERREURS
-	public final void initFromTextFile(String fileName) throws IOException { //cest quoi ca 
+	public final void initFromTextFile(String fileName) throws IOException, MazeReadingException { //cest quoi ca 
 		int i = 0;
 		int j = 0;
+		int arrivalCount = 0;
+		int departureCount = 0;
 		 
 		Reader reader = new FileReader(fileName);
 	    // Create a BufferedReader with buffer array size of 16384 (32786 bytes = 32 KB).
-	    BufferedReader br = new BufferedReader(reader, 16384);
+	    try(BufferedReader br = new BufferedReader(reader, 16384)) {
 
-	    String line = null;
-		
-		while((line = br.readLine())!= null) {
-	        j = 0;
-			while (j < line.length()) {
-				char c = line.charAt(j);
-				switch (c) {
-				case('W') : this.maze[i][j] = new WBox(i,j, this.maze);
-					break;
-				case('E') : this.maze[i][j] = new EBox(i,j, this.maze);
-					break;
-				case('D') : this.maze[i][j] = new DBox(i,j, this.maze);
-					break;
-				case('A') : this.maze[i][j] = new ABox(i,j, this.maze);
-					break;
-				default : break;
+		    String line = null;
+			
+			
+		    while((line = br.readLine())!= null) {
+		        j = 0;
+				while (j < line.length()) {
+					char c = line.charAt(j);
+					switch (c) {
+					case('W') : this.maze[i][j] = new WBox(i,j, this.maze);
+						break;
+					case('E') : this.maze[i][j] = new EBox(i,j, this.maze);
+						break;
+					case('D') : this.maze[i][j] = new DBox(i,j, this.maze);
+								departureCount++;
+						break;
+					case('A') : this.maze[i][j] = new ABox(i,j, this.maze);
+								arrivalCount++;
+						break;
+					default : throw new MazeReadingException(fileName, i, "Invalid charactere in file at line : " + i);
+					}
+					if(j > colLen) {
+						new MazeReadingException(fileName, i, "Invalid size of column at column : " + j);
+					}
+					j++;
 				}
-				j++;
-			}
-			i++;
+				if(i > rowLen) {
+					new MazeReadingException(fileName, i, "Invalid size of column at row : " + i);
+				}
+				i++;
+		    }
+		    br.close();
+	    } catch(FileNotFoundException error) {
+	    	error.getStackTrace();
 	    }
-	    br.close();
+	    if(arrivalCount != 1) {
+	    	throw new MazeReadingException(fileName, i, "Invalid number of arrival in maze : " + arrivalCount + ". There should be only one");
+	    }
+	    if(departureCount != 1) {
+	    	throw new MazeReadingException(fileName, i, "Invalid number of arrival in maze : " + departureCount + ". There should be only one");
+	    }
 	}
 	
 	public final void saveToTextFile(String fileName) throws FileNotFoundException {
