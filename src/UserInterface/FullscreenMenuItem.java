@@ -1,0 +1,18 @@
+package UserInterface;
+import javax.swing.* ;
+
+public class FullscreenMenuItem extends JMenuItem
+{
+
+	private static final long serialVersionUID = 1L;
+
+	private final DrawingApp drawingApp ;
+
+	public FullscreenMenuItem(DrawingApp drawingApp)
+	{
+		super("Fullscreen") ; // Text of menu item
+
+		this.drawingApp = drawingApp ;
+	}
+
+}
