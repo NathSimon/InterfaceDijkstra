@@ -1,5 +1,6 @@
 package Maze;
 import java.io.BufferedReader;
+
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -9,17 +10,20 @@ import java.util.ArrayList;
 
 import Dijkstra.GraphInterface;
 import Dijkstra.VertexInterface;
+import UserInterface.GridMazePanel;
 
 public class Maze implements GraphInterface {
 
 	private MBox[][] maze;
 	private int rowLen;
 	private int colLen;
+	private GridMazePanel gridMazePanel;
 
-	public Maze(int rowLen, int colLen) {
+	public Maze(int rowLen, int colLen, GridMazePanel gridMazePanel) {
 		this.colLen = colLen;
 		this.rowLen = rowLen;
 		this.maze = new MBox[rowLen][colLen]; 
+		this.gridMazePanel = gridMazePanel;
 	}
 	
 	public final void readFile(String fileName) throws IOException {
@@ -118,6 +122,7 @@ public class Maze implements GraphInterface {
         PrintWriter printWriter = new PrintWriter(fileName);
         int i = 0;
         int j = 0;
+        int total = 0;
         String str;
         
         while(i < this.colLen) {
@@ -134,11 +139,13 @@ public class Maze implements GraphInterface {
         		case "Path" :  printWriter.printf("E");
         			break;
         		case "Point" :  printWriter.printf(".");
+        						gridMazePanel.getMazeButton(total).setLabel("P");
         			break;
         		default : 
         			break;
         		}
         		j++;
+        		total++;
         	}
         	printWriter.println();
         	i++;

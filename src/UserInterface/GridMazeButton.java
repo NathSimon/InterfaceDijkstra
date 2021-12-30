@@ -50,6 +50,10 @@ public class GridMazeButton extends JButton {
 		this.label = value;
 	}
 	
+	public String getLabel() {
+		return label;
+	}
+ 	
 	public void setIcon(Icon b) {
 		//pour modifier licone du boutton
 	}

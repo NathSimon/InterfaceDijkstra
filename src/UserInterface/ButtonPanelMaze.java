@@ -19,7 +19,7 @@ public class ButtonPanelMaze extends JPanel
 		add(sizeButtons = new SizeButtons(drawingApp));
 		add(Box.createRigidArea(new Dimension(0, 80)));
 		add(Box.createVerticalGlue());
-		add(solveButton   = new SolveButton(drawingApp)) ;
+		add(solveButton   = new SolveButton(drawingApp, windowPanel.getGridMazePanel())) ;
 		add(resetButton = new ResetButton(drawingApp));
 		
 	}

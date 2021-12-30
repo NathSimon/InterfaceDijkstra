@@ -12,12 +12,17 @@ public class WindowPanel extends JPanel
 	{
 		setLayout(new BorderLayout()) ;
 		
+		gridMazePanel = new GridMazePanel(drawingApp, this, 10,10);
 		add(buttonPanelMaze = new ButtonPanelMaze (drawingApp, this), BorderLayout.EAST);	
-		add(gridMazePanel = new GridMazePanel(drawingApp, this, 10,10), BorderLayout.CENTER);
+		add(gridMazePanel, BorderLayout.CENTER);
 	}
 	
 	public void setValueOfMouse(int val) {
 		valueOfMouse = val;
+	}
+	
+	public GridMazePanel getGridMazePanel() {
+		return gridMazePanel;
 	}
 	
 	public int getValueOfMouse() {
