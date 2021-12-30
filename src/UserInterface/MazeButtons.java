@@ -10,12 +10,12 @@ public class MazeButtons extends JPanel{
 	private final DepartureButton departureButton;
 	private final EmptyButton emptyButton;
 	
-	public MazeButtons(DrawingApp drawingApp) {
+	public MazeButtons(DrawingApp drawingApp, WindowPanel windowPanel) {
 		
 		setLayout(new GridLayout(2,2)) ; // 1 row, 3 columns
-		add(wallButton = new WallButton     (drawingApp));
-		add(emptyButton   = new EmptyButton (drawingApp));
-		add(arrivalButton   = new ArrivalButton (drawingApp));
-		add(departureButton   = new DepartureButton (drawingApp));
+		add(wallButton = new WallButton     (drawingApp, windowPanel));
+		add(emptyButton   = new EmptyButton (drawingApp, windowPanel));
+		add(arrivalButton   = new ArrivalButton (drawingApp, windowPanel));
+		add(departureButton   = new DepartureButton (drawingApp, windowPanel));
 	}
 }

@@ -6,13 +6,14 @@ import javax.swing.* ;
 public class GridMazePanel extends JPanel
 {
 
-	public GridMazePanel(DrawingApp drawingApp, int rowLen, int colLen)
+	public GridMazePanel(DrawingApp drawingApp,WindowPanel windowPanel, int rowLen, int colLen)
 	{
 		int i = 0;
-		setLayout(new GridLayout(rowLen, colLen)) ; // 1 row, 3 columns
+		GridLayout grid = new GridLayout(rowLen, colLen); 
+		setLayout(grid) ; // 1 row, 3 columns
 		
 		while(i < rowLen * colLen) {
-			add(new GridMazeButton(drawingApp));
+			add(new GridMazeButton(drawingApp, windowPanel, i));
 			i++;
 		}
 	}
