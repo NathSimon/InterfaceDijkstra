@@ -5,24 +5,23 @@ import javax.swing.* ;
 
 public class ButtonPanelMaze extends JPanel
 {
-	private final WallButton wallButton;
-	private final ArrivalButton arrivalButton;
-	private final DepartureButton departureButton;
-	private final EmptyButton emptyButton;
+	private final MazeButtons mazeButtons;
 	private final ResetButton resetButton;
 	private final SolveButton solveButton;
+	private final SizeButtons sizeButtons;
 	
 	public ButtonPanelMaze(DrawingApp drawingApp)
 	{
-		setLayout(new GridLayout(4,2)) ; // 1 row, 3 columns
-		add(wallButton = new WallButton     (drawingApp));
-		add(emptyButton   = new EmptyButton (drawingApp));
-		add(arrivalButton   = new ArrivalButton (drawingApp));
-		add(departureButton   = new DepartureButton (drawingApp));
+		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS)) ; // 1 row, 3 columns
+		
+		add(mazeButtons = new MazeButtons(drawingApp));
 		add(Box.createRigidArea(new Dimension(0, 80)));
+		add(sizeButtons = new SizeButtons(drawingApp));
 		add(Box.createRigidArea(new Dimension(0, 80)));
+		add(Box.createVerticalGlue());
 		add(solveButton   = new SolveButton(drawingApp)) ;
 		add(resetButton = new ResetButton(drawingApp));
+		
 	}
 }
 
