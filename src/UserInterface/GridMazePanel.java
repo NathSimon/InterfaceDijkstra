@@ -9,10 +9,15 @@ public class GridMazePanel extends JPanel
 {
 	private int rowLen;
 	private int colLen;
+	private DrawingApp drawingApp;
+	private WindowPanel windowPanel;
 	ArrayList<GridMazeButton> buttonList = new ArrayList<GridMazeButton>();
 
 	public GridMazePanel(DrawingApp drawingApp,WindowPanel windowPanel, int rowLen, int colLen)
 	{
+		this.drawingApp = drawingApp;
+		this.windowPanel = windowPanel;
+		
 		int i = 0;
 		this.rowLen = rowLen;
 		this.colLen = colLen;

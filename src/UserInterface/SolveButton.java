@@ -62,10 +62,11 @@ public class SolveButton extends JButton {
         		break;
         	case "E" :  printWriter.printf("E");
         		break;
-        	default : 
+        	case "P" : printWriter.printf("E");
+        	default :
         		break;
         	}
-        	if((i+1) % gridMazePanel.getColLen() == 0 && !(i == 0)) {
+        	if((i+1) % gridMazePanel.getColLen() == 0 && !(i == 0)) { //sans le +1 il est decale de 1
         		System.out.println(i);
         		printWriter.println();
         	}
