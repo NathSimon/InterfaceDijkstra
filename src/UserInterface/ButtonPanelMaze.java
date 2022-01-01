@@ -9,6 +9,7 @@ public class ButtonPanelMaze extends JPanel
 	private final ResetButton resetButton;
 	private final SolveButton solveButton;
 	private final SizeButtons sizeButtons;
+	private final ModeButton modeButton;
 	
 	public ButtonPanelMaze(DrawingApp drawingApp, WindowPanel windowPanel, GridMazePanel gridMazePanel)
 	{
@@ -17,8 +18,9 @@ public class ButtonPanelMaze extends JPanel
 		add(mazeButtons = new MazeButtons(drawingApp, windowPanel));
 		add(Box.createRigidArea(new Dimension(0, 80)));
 		add(sizeButtons = new SizeButtons(drawingApp, windowPanel, gridMazePanel));
-		add(Box.createRigidArea(new Dimension(0, 80)));
+		add(Box.createRigidArea(new Dimension(0, 100)));
 		add(Box.createVerticalGlue());
+		add(modeButton   = new ModeButton(drawingApp));
 		add(solveButton   = new SolveButton(drawingApp, windowPanel.getGridMazePanel())) ;
 		add(resetButton = new ResetButton(drawingApp, windowPanel, gridMazePanel));
 		
@@ -26,6 +28,10 @@ public class ButtonPanelMaze extends JPanel
 	
 	public SolveButton getSolveButton() {
 		return solveButton;
+	}
+	
+	public ModeButton getModeButton() {
+		return modeButton;
 	}
 }
 

@@ -12,6 +12,7 @@ public class GridMazeButton extends JButton {
 	private WindowPanel windowPanel;
 	private int index;
 	private String label;
+	private String mode;
 	
 	public GridMazeButton(DrawingApp drawingApp, WindowPanel windowPanel, int index)
 	{
@@ -24,11 +25,17 @@ public class GridMazeButton extends JButton {
 		this.windowPanel = windowPanel;
 		
 		addActionListener(new ActionListener(){  
-			  public void actionPerformed(ActionEvent e){  
-			        if(windowPanel.getValueOfMouse() == 1) {      
-			        	setLabel("W");
+			  public void actionPerformed(ActionEvent e){ 
+				 				  
+			        if(windowPanel.getValueOfMouse() == 1) {    
+			        	if(getLabel().equals("W")) {
+			        		setLabel("E");
+			        	}
+			        	else {
+			        		setLabel("W");
+			        	}
 			        }
-			        if(windowPanel.getValueOfMouse() == 2) {   
+			        if(windowPanel.getValueOfMouse() == 2) {
 					  	setText("Empty"); 
 					  	setLabel("E");
 			        }
@@ -36,14 +43,17 @@ public class GridMazeButton extends JButton {
 					  	resetDeparture();
 				        setText("Departure");  
 					  	setLabel("D");
-					  	recalculatePath();
 				  	
 			        }
 			        if(windowPanel.getValueOfMouse() == 4) {     
 				        resetArrival();
 					  	setText("Arrival");  
 					  	setLabel("A");
-					  	recalculatePath();
+			        }
+					 
+			        mode = windowPanel.getButtonPanelMaze().getModeButton().getMode();
+			        if(mode.equals("AUTO")) {
+			        	recalculatePath();
 			        }
 			  }
 		});  

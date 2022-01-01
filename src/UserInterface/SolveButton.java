@@ -72,7 +72,6 @@ public class SolveButton extends JButton {
         		break;
         	}
         	if((i+1) % gridMazePanel.getColLen() == 0 && !(i == 0)) { //sans le +1 il est decale de 1
-        		System.out.println(i);
         		printWriter.println();
         	}
         	i++;
