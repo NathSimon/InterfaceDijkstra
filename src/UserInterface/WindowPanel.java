@@ -27,8 +27,6 @@ public class WindowPanel extends JPanel
 		int colLen = Integer.parseInt(colNum);
 		int rowLen = Integer.parseInt(rowNum);
 		
-		System.out.println("test");
-		
 		gridMazePanel = new GridMazePanel(drawingApp, this, rowLen, colLen);
 		
 		add(buttonPanelMaze = new ButtonPanelMaze (this.drawingApp, this, gridMazePanel), BorderLayout.EAST);	
@@ -42,6 +40,10 @@ public class WindowPanel extends JPanel
 	
 	public GridMazePanel getGridMazePanel() {
 		return gridMazePanel;
+	}
+	
+	public ButtonPanelMaze getButtonPanelMaze() {
+		return buttonPanelMaze;
 	}
 	
 	public int getValueOfMouse() {

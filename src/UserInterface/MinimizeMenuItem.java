@@ -1,4 +1,7 @@
 package UserInterface;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.* ;
 
 public class MinimizeMenuItem extends JMenuItem
@@ -12,5 +15,10 @@ public class MinimizeMenuItem extends JMenuItem
 		super("Minimize") ; // Text of menu item
 
 		this.drawingApp = drawingApp ;
+		
+		addActionListener(new ActionListener(){  
+			public void actionPerformed(ActionEvent e){
+				drawingApp.pack();
+			}}); 
 	}
 }

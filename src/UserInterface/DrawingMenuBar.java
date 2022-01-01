@@ -13,13 +13,13 @@ public class DrawingMenuBar extends JMenuBar
 	private final HelpMenu	helpMenu;
 	
 	
-	public DrawingMenuBar(DrawingApp drawingApp)
+	public DrawingMenuBar(DrawingApp drawingApp, WindowPanel windowPanel, GridMazePanel gridMazePanel)
 	{
 		super() ;
 		
 		// Create and add menus
 		add(fileMenu = new FileMenu(drawingApp)) ;
-		add(mazeMenu = new MazeMenu(drawingApp)) ;
+		add(mazeMenu = new MazeMenu(drawingApp, windowPanel, gridMazePanel)) ;
 		add(displayMenu = new DisplayMenu(drawingApp)) ;
 		add(helpMenu = new HelpMenu(drawingApp)) ;
 		

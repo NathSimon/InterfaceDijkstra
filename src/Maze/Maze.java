@@ -125,9 +125,9 @@ public class Maze implements GraphInterface {
         int total = 0;
         String str;
         
-        while(i < this.colLen) {
+        while(i < this.rowLen) {
         	j = 0;
-        	while(j < this.rowLen) {
+        	while(j < this.colLen) {
         		str = maze[i][j].getLabel();
         		switch(str) {
         		case "Arrival" : printWriter.printf("A");

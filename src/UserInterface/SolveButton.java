@@ -27,22 +27,27 @@ public class SolveButton extends JButton {
 		
 		addActionListener(new ActionListener(){  
 			public void actionPerformed(ActionEvent e){  
-				try {
-					saveToTextFile("data/labyrinthe.txt");
-				} catch (FileNotFoundException e1) {
-					e1.printStackTrace();
-				}
-				try {
-					MainMaze.mainMaze(gridMazePanel.getRowLen(), gridMazePanel.getColLen(), gridMazePanel);
-				} catch (IOException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				} catch (MazeReadingException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-				showPath();
+				solveAction();
 			}}); 
+	}
+	
+	public void solveAction() {
+		resetPath();
+		try {
+			saveToTextFile("data/labyrinthe.txt");
+		} catch (FileNotFoundException e1) {
+			e1.printStackTrace();
+		}
+		try {
+			MainMaze.mainMaze(gridMazePanel.getRowLen(), gridMazePanel.getColLen(), gridMazePanel);
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (MazeReadingException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		showPath();
 	}
 	
 	public void saveToTextFile(String fileName) throws FileNotFoundException {
@@ -75,11 +80,19 @@ public class SolveButton extends JButton {
         printWriter.close();
     }
 	
+	public void resetPath() {
+		for(int i = 0; i < gridMazePanel.getRowLen() * gridMazePanel.getColLen(); i++) {
+			if(gridMazePanel.getMazeButton(i).getLabel().equals("P")) {
+				gridMazePanel.getMazeButton(i).setLabel("E");
+				gridMazePanel.getMazeButton(i).setIcon(new ImageIcon("data/Empty.png"));
+			}
+		}
+	}
+	
 	public void showPath() {
 		for(int i = 0; i < gridMazePanel.getRowLen() * gridMazePanel.getColLen(); i++) {
 			if(gridMazePanel.getMazeButton(i).getLabel().equals("P")) {
-				System.out.println(i);
-				gridMazePanel.getMazeButton(i).setText("Path");
+				gridMazePanel.getMazeButton(i).setIcon(new ImageIcon("data/path.jpg"));
 			}
 		}
 	}

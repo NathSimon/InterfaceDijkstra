@@ -12,19 +12,21 @@ public class SizeButtons extends JPanel {
 	private JTextField fieldCol;
 	private JTextField fieldRow;
 	private WindowPanel windowPanel;
+	private GridMazePanel gridMazePanel;
 	
-	public SizeButtons(DrawingApp drawingApp, WindowPanel windowPanel) {
+	public SizeButtons(DrawingApp drawingApp, WindowPanel windowPanel, GridMazePanel gridMazePanel) {
 		
 		this.windowPanel = windowPanel;
+		this.gridMazePanel = gridMazePanel;
 		
 		setLayout(new GridLayout(2,2)) ; // 1 row, 3 columns
-		add(labelRow = new JLabel("Rows : "));
+		add(labelRow = new JLabel("Columns : "));
 		add(fieldCol = new JTextField());
-		add(labelCol = new JLabel("Collumns : "));
+		add(labelCol = new JLabel("Rows : "));
 		add(fieldRow = new JTextField());	
 		
-		fieldRow.setText("10");
-		fieldCol.setText("10");
+		fieldRow.setText(Integer.toString(this.gridMazePanel.getRowLen()));
+		fieldCol.setText(Integer.toString(this.gridMazePanel.getColLen()));
 		
 		fieldCol.addActionListener(new ActionListener(){
 			public void actionPerformed(java.awt.event.ActionEvent e) {

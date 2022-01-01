@@ -11,9 +11,10 @@ public class DrawingApp extends JFrame
 	public DrawingApp()
 	   {
 	      super("Maze solver") ; // Window title
-	      setJMenuBar(drawingMenuBar = new DrawingMenuBar(this)) ;
+	      
 			
 	      setContentPane(windowPanel = new WindowPanel(this)) ;
+	      setJMenuBar(drawingMenuBar = new DrawingMenuBar(this, windowPanel, windowPanel.getGridMazePanel())) ;
 	      
 	      setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE) ; // Explicit !
 	

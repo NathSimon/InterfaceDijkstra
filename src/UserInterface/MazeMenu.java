@@ -8,13 +8,13 @@ public class MazeMenu extends JMenu
 	private final SolveMenuItem solveMenuItem ;
 	private final ResetMenuItem resetMenuItem ;
 
-	public MazeMenu(DrawingApp drawingApp)
+	public MazeMenu(DrawingApp drawingApp, WindowPanel windowPanel, GridMazePanel gridMazePanel)
 	{
 		super("Maze") ; // Text of the menu
 
       // Create and add menu items
-		add(solveMenuItem = new SolveMenuItem(drawingApp));
-		add(resetMenuItem = new ResetMenuItem(drawingApp));
+		add(solveMenuItem = new SolveMenuItem(drawingApp, gridMazePanel));
+		add(resetMenuItem = new ResetMenuItem(drawingApp, windowPanel, gridMazePanel));
 
 	}
 

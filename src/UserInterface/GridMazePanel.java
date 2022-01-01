@@ -11,6 +11,7 @@ public class GridMazePanel extends JPanel
 	private int colLen;
 	private DrawingApp drawingApp;
 	private WindowPanel windowPanel;
+	
 	ArrayList<GridMazeButton> buttonList = new ArrayList<GridMazeButton>();
 
 	public GridMazePanel(DrawingApp drawingApp,WindowPanel windowPanel, int rowLen, int colLen)
