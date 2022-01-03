@@ -18,7 +18,7 @@ public class DrawingApp extends JFrame
 	      
 	      setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE) ; // Explicit !
 	
-	      pack() ;            // Components sizes and positions
+	  	 setExtendedState(JFrame.MAXIMIZED_BOTH);     
 	      setVisible(true) ;  // The great show
 	   }
 	

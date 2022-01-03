@@ -7,7 +7,7 @@ public class WindowPanel extends JPanel
     private ButtonPanelMaze buttonPanelMaze ;
     private GridMazePanel gridMazePanel;
     private DrawingApp drawingApp;
-    private int valueOfMouse = 0;
+    private int valueOfMouse = 1;
     
 	public WindowPanel(DrawingApp drawingApp)
 	{

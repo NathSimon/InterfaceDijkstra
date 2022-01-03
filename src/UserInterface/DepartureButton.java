@@ -16,6 +16,8 @@ public class DepartureButton extends JButton {
 		addActionListener(new ActionListener(){  
 			public void actionPerformed(ActionEvent e){  
 		              windowPanel.setValueOfMouse(3);
+				      windowPanel.getButtonPanelMaze().getMazeButtons().updateBlockType(); //mise a jour de linfo user sur le block selectionne
+
 			}}); 
 		
 		this.drawingApp = drawingApp ;

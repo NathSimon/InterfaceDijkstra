@@ -8,16 +8,15 @@ import java.io.PrintWriter;
 
 import javax.swing.* ;
 
-import Dijkstra.MainMaze;
+import Dijkstra.StartDijkstra;
 import Maze.MazeReadingException;
 
 
 public class SolveMenuItem extends JMenuItem {
 
-	private static final long serialVersionUID = 1L;
-	
 	private final DrawingApp drawingApp ;
 	private GridMazePanel gridMazePanel;
+	private StartDijkstra startDijkstra;
 	
 	public SolveMenuItem(DrawingApp drawingApp, GridMazePanel gridMazePanel)
 	{
@@ -29,23 +28,27 @@ public class SolveMenuItem extends JMenuItem {
 		
 		addActionListener(new ActionListener(){  
 			public void actionPerformed(ActionEvent e){  
-				resetPath();
-				try {
-					saveToTextFile("data/labyrinthe.txt");
-				} catch (FileNotFoundException e1) {
-					e1.printStackTrace();
-				}
-				try {
-					MainMaze.mainMaze(gridMazePanel.getRowLen(), gridMazePanel.getColLen(), gridMazePanel);
-				} catch (IOException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				} catch (MazeReadingException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-				showPath();
+				solveAction();
 			}}); 
+	}
+	
+	public void solveAction() {
+		resetPath();
+		try {
+			saveToTextFile("data/labyrinthe.txt");
+		} catch (FileNotFoundException e1) {
+			e1.printStackTrace();
+		}
+		try {
+			startDijkstra = new StartDijkstra(gridMazePanel.getRowLen(), gridMazePanel.getColLen(), gridMazePanel);
+		} catch (IOException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (MazeReadingException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		showPath();
 	}
 	
 	public void saveToTextFile(String fileName) throws FileNotFoundException {
@@ -70,7 +73,6 @@ public class SolveMenuItem extends JMenuItem {
         		break;
         	}
         	if((i+1) % gridMazePanel.getColLen() == 0 && !(i == 0)) { //sans le +1 il est decale de 1
-        		System.out.println(i);
         		printWriter.println();
         	}
         	i++;

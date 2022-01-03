@@ -7,7 +7,6 @@ import java.io.IOException;
 
 import javax.swing.* ;
 
-import Dijkstra.MainMaze;
 import Maze.MazeReadingException;
 
 

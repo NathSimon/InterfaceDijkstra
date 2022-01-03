@@ -8,7 +8,7 @@ import java.io.PrintWriter;
 
 import javax.swing.* ;
 
-import Dijkstra.MainMaze;
+import Dijkstra.StartDijkstra;
 import Maze.MazeReadingException;
 
 
@@ -16,6 +16,7 @@ public class SolveButton extends JButton {
 
 	private final DrawingApp drawingApp ;
 	private GridMazePanel gridMazePanel;
+	private StartDijkstra startDijkstra;
 	
 	public SolveButton(DrawingApp drawingApp, GridMazePanel gridMazePanel)
 	{
@@ -39,7 +40,7 @@ public class SolveButton extends JButton {
 			e1.printStackTrace();
 		}
 		try {
-			MainMaze.mainMaze(gridMazePanel.getRowLen(), gridMazePanel.getColLen(), gridMazePanel);
+			startDijkstra = new StartDijkstra(gridMazePanel.getRowLen(), gridMazePanel.getColLen(), gridMazePanel);
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();

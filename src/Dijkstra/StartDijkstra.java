@@ -8,9 +8,9 @@ import Maze.Maze;
 import Maze.MazeReadingException;
 import UserInterface.GridMazePanel;
 
-public class MainMaze {
+public class StartDijkstra {
 	
-	public static void mainMaze(int rowLen, int colLen, GridMazePanel gridMazePanel) throws IOException, MazeReadingException {
+	public StartDijkstra(int rowLen, int colLen, GridMazePanel gridMazePanel) throws IOException, MazeReadingException {
 		
 		PreviousInterface previous;
 		ArrayList<VertexInterface> path = new ArrayList<VertexInterface>();
