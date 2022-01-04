@@ -1,5 +1,6 @@
 package UserInterface;
 
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -13,16 +14,26 @@ public class GridMazeButton extends JButton {
 	private int index;
 	private String label;
 	private String mode;
+	private ImageIcon wallImage;
+	private ImageIcon emptyImage;
+	private Image wallImageSized;
+	
 	
 	public GridMazeButton(DrawingApp drawingApp, WindowPanel windowPanel, int index)
 	{
 		super("Empty");// Button's text
-		this.setLabel("E");
-		setIcon(new ImageIcon("data/Empty.png"));
+		this.label = "E";
+		
 		
 		this.index = index;
 		this.drawingApp = drawingApp ;
 		this.windowPanel = windowPanel;
+		
+		emptyImage = new ImageIcon("data/Empty.png");
+		wallImage = new ImageIcon("data/Wall.jpg");
+		
+		setIcon(emptyImage);
+		
 		
 		addActionListener(new ActionListener(){  
 			  public void actionPerformed(ActionEvent e){ 
@@ -96,11 +107,13 @@ public class GridMazeButton extends JButton {
 	}
 	
 	public void setLabel(String value) {
+		
 		this.label = value;
+		
 		switch(label) {
-		case "E" : setIcon(new ImageIcon("data/Empty.png"));
+		case "E" : setIcon(emptyImage);
 			break;
-		case "W" : setIcon(new ImageIcon("data/Wall.jpg"));
+		case "W" : setIcon(wallImage);
 			break;
 		case "D" : setIcon(null);
 			break;
