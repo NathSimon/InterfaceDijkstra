@@ -4,6 +4,7 @@ import java.awt.*;
 import java.util.ArrayList;
 
 import javax.swing.* ;
+import javax.swing.border.LineBorder;
 
 public class GridMazePanel extends JPanel
 {
@@ -27,6 +28,7 @@ public class GridMazePanel extends JPanel
 		
 		while(i < rowLen * colLen) {
 			GridMazeButton gridTmp = new GridMazeButton(drawingApp, windowPanel, i);
+			gridTmp.setBorder(new LineBorder(Color.BLACK)); //je sais pas si je le garde, cest pas tres beau mais aide a la visibilite
 			add(gridTmp);
 			buttonList.add(gridTmp);
 			i++;

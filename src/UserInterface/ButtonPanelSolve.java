@@ -13,9 +13,9 @@ public class ButtonPanelSolve extends JPanel
 	{
 		setLayout(new GridLayout(3,1)) ; // 1 row, 3 columns
 	
-		add(modeButton   = new ModeButton(drawingApp)) ;
-		add(resetButton = new ResetButton(drawingApp, windowPanel, gridMazePanel)) ;
-		add(solveButton   = new SolveButton(drawingApp, gridMazePanel)) ;
+		add(modeButton   = new ModeButton(drawingApp));
+		add(solveButton   = new SolveButton(drawingApp, gridMazePanel));
+		add(resetButton = new ResetButton(drawingApp, windowPanel, gridMazePanel));
 	}
 	
 	public SolveButton getSolveButton() {

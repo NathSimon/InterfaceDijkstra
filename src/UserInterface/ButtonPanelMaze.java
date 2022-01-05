@@ -26,15 +26,37 @@ public class ButtonPanelMaze extends JPanel
 		add(mazeButtons = new MazeButtons(drawingApp, windowPanel));
 		add(labelBlocktype = new JLabel("Selected : " + mazeButtons.getBlockType()));
 		labelBlocktype.setAlignmentX(JComponent.CENTER_ALIGNMENT);
-		add(Box.createRigidArea(new Dimension(0, 100)));
+		add(Box.createRigidArea(new Dimension(0, 50)));
 		
 		add(labelSize = new JLabel("ENTER THE MAZE SIZE"));
+		labelSize.setAlignmentX(JComponent.CENTER_ALIGNMENT);
+		add(labelSize = new JLabel("must be between 4 and 100"));
 		labelSize.setAlignmentX(JComponent.CENTER_ALIGNMENT);
 		add(Box.createRigidArea(new Dimension(0,10)));
 		add(sizeButtons = new SizeButtons(drawingApp, windowPanel, gridMazePanel));
 		add(Box.createRigidArea(new Dimension(0,0)));
 		
 		add(Box.createVerticalGlue());
+		
+		add(labelSize = new JLabel("AUTOMATIC"));
+		labelSize.setAlignmentX(JComponent.CENTER_ALIGNMENT);
+		
+		add(labelSize = new JLabel("Solves automaticly"));
+		labelSize.setAlignmentX(JComponent.CENTER_ALIGNMENT);
+		
+		add(Box.createRigidArea(new Dimension(0,10)));
+		
+		add(labelSize = new JLabel("MANUAL"));
+		labelSize.setAlignmentX(JComponent.CENTER_ALIGNMENT);
+		
+		add(labelSize = new JLabel("Solves with button"));
+		labelSize.setAlignmentX(JComponent.CENTER_ALIGNMENT);
+		
+		add(Box.createRigidArea(new Dimension(0,40)));
+		
+		add(labelSize = new JLabel("CLICK TO SWITCH"));
+		labelSize.setAlignmentX(JComponent.CENTER_ALIGNMENT);
+		
 		add(buttonPanelSolve = new ButtonPanelSolve(drawingApp, gridMazePanel, windowPanel));
 		
 	}

@@ -15,7 +15,7 @@ public class WindowPanel extends JPanel
 		setLayout(new BorderLayout()) ;
 		
 		gridMazePanel = new GridMazePanel(this.drawingApp, this, 10,10);
-		add(buttonPanelMaze = new ButtonPanelMaze (this.drawingApp, this, gridMazePanel), BorderLayout.EAST);	
+		add(buttonPanelMaze = new ButtonPanelMaze (this.drawingApp, this, gridMazePanel), BorderLayout.WEST);	
 		add(gridMazePanel, BorderLayout.CENTER);
 	}
 	
@@ -29,7 +29,7 @@ public class WindowPanel extends JPanel
 		
 		gridMazePanel = new GridMazePanel(drawingApp, this, rowLen, colLen);
 		
-		add(buttonPanelMaze = new ButtonPanelMaze (this.drawingApp, this, gridMazePanel), BorderLayout.EAST);	
+		add(buttonPanelMaze = new ButtonPanelMaze (this.drawingApp, this, gridMazePanel), BorderLayout.WEST);	
 		add(gridMazePanel, BorderLayout.CENTER);
 		revalidate(); //ne pas oublier cette ligne sinon cest une nuit blanche pour rien
 	}
