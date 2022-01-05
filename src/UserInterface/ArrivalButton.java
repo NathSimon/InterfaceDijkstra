@@ -16,7 +16,7 @@ public class ArrivalButton extends JButton {
 		addActionListener(new ActionListener(){  
 			public void actionPerformed(ActionEvent e){  
 		              windowPanel.setValueOfMouse(4);
-				      windowPanel.getButtonPanelMaze().getMazeButtons().updateBlockType(); //mise a jour de linfo user sur le block selectionne
+				      windowPanel.getButtonPanelMaze().updateBlockType(); //mise a jour de linfo user sur le block selectionne
 
 			}}); 
 		
