@@ -18,9 +18,15 @@ public class DrawingApp extends JFrame
 	      
 	      setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE) ; // Explicit !
 	
-	  	 setExtendedState(JFrame.MAXIMIZED_BOTH);     
+	  	  setExtendedState(JFrame.MAXIMIZED_BOTH);     
 	      setVisible(true) ;  // The great show
 	   }
 	
+	public WindowPanel getWindowPanel() {
+		return windowPanel;
+	}
 	
+	public DrawingMenuBar getDrawingMenuBar() {
+		return drawingMenuBar;
+	}
 }

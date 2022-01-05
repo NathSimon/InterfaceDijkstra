@@ -69,6 +69,10 @@ public class ButtonPanelMaze extends JPanel
 		return buttonPanelSolve.getModeButton();
 	}
 	
+	public ButtonPanelSolve getButtonPanelSolve() {
+		return buttonPanelSolve;
+	}
+	
 	public MazeButtons getMazeButtons() {
 		return mazeButtons;
 	}
