@@ -1,4 +1,4 @@
-package UserInterface;
+package UserInterfaceButtons;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -8,6 +8,7 @@ import java.io.IOException;
 import javax.swing.* ;
 
 import Maze.MazeReadingException;
+import UserInterface.DrawingApp;
 
 
 public class ColorBorderButton extends JButton {
@@ -17,7 +18,7 @@ public class ColorBorderButton extends JButton {
 	
 	public ColorBorderButton(DrawingApp drawingApp)
 	{
-		super("Switch border color to black");
+		super("Color");
 
 		this.drawingApp = drawingApp ;
 		
@@ -34,10 +35,10 @@ public class ColorBorderButton extends JButton {
 	
 	public void changeText(int colorBorder) {
 		if(colorBorder == 0) {
-			setText("Switch border color to black");
+			setText("Black");
 		}
 		else {
-			setText("Switch border color to gray");
+			setText("Gray");
 		}
 		
 	}

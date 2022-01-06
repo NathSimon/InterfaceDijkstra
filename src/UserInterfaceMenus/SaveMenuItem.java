@@ -1,6 +1,8 @@
-package UserInterface;
+package UserInterfaceMenus;
 
 import javax.swing.* ;
+
+import UserInterface.DrawingApp;
 
 public class SaveMenuItem extends JMenuItem
 {

@@ -1,5 +1,9 @@
-package UserInterface;
+package UserInterfaceMenus;
 import javax.swing.* ;
+
+import UserInterface.DrawingApp;
+import UserInterface.GridMazePanel;
+import UserInterface.WindowPanel;
 
 public class MazeMenu extends JMenu
 {

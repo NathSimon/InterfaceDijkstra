@@ -1,5 +1,7 @@
-package UserInterface;
+package UserInterfaceMenus;
 import javax.swing.* ;
+
+import UserInterface.DrawingApp;
 
 public class HelpMenuItem extends JMenuItem
 {

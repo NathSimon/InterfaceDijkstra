@@ -7,6 +7,8 @@ import javax.swing.* ;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 
+import UserInterfaceButtons.GridMazeButton;
+
 public class GridMazePanel extends JPanel
 {
 	private int rowLen;

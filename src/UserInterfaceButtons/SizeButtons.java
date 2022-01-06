@@ -1,10 +1,15 @@
-package UserInterface;
+package UserInterfaceButtons;
 
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 
 import javax.swing.* ;
+
+import UserInterface.DrawingApp;
+import UserInterface.GridMazePanel;
+import UserInterface.SizeReadingException;
+import UserInterface.WindowPanel;
 
 public class SizeButtons extends JPanel {
 	

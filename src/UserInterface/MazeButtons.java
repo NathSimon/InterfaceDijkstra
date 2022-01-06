@@ -3,6 +3,11 @@ package UserInterface;
 import java.awt.*;
 import javax.swing.* ;
 
+import UserInterfaceButtons.ArrivalButton;
+import UserInterfaceButtons.DepartureButton;
+import UserInterfaceButtons.EmptyButton;
+import UserInterfaceButtons.WallButton;
+
 public class MazeButtons extends JPanel{
 	
 	private final WallButton wallButton;

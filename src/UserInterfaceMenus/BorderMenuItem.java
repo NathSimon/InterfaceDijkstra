@@ -1,8 +1,10 @@
-package UserInterface;
+package UserInterfaceMenus;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.* ;
+
+import UserInterface.DrawingApp;
 
 public class BorderMenuItem extends JMenuItem
 {

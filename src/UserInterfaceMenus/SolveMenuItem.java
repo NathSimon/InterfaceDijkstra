@@ -1,4 +1,4 @@
-package UserInterface;
+package UserInterfaceMenus;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -10,17 +10,19 @@ import javax.swing.* ;
 
 import Dijkstra.StartDijkstra;
 import Maze.MazeReadingException;
+import UserInterface.DrawingApp;
+import UserInterface.GridMazePanel;
 
 
-public class SolveButton extends JButton {
+public class SolveMenuItem extends JMenuItem {
 
 	private final DrawingApp drawingApp ;
 	private GridMazePanel gridMazePanel;
 	private StartDijkstra startDijkstra;
 	
-	public SolveButton(DrawingApp drawingApp, GridMazePanel gridMazePanel)
+	public SolveMenuItem(DrawingApp drawingApp, GridMazePanel gridMazePanel)
 	{
-		super("SOLVE") ; // Button's text
+		super("Solve") ; // Button's text
 		
 		this.gridMazePanel = gridMazePanel;
 		

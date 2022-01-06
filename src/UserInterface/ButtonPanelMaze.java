@@ -3,6 +3,10 @@ package UserInterface;
 import java.awt.*;
 import javax.swing.* ;
 
+import UserInterfaceButtons.ModeButton;
+import UserInterfaceButtons.SizeButtons;
+import UserInterfaceButtons.SolveButton;
+
 public class ButtonPanelMaze extends JPanel
 {
 	private final MazeButtons mazeButtons;

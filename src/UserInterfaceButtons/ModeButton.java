@@ -1,4 +1,4 @@
-package UserInterface;
+package UserInterfaceButtons;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -8,6 +8,7 @@ import java.io.IOException;
 import javax.swing.* ;
 
 import Maze.MazeReadingException;
+import UserInterface.DrawingApp;
 
 
 public class ModeButton extends JButton {

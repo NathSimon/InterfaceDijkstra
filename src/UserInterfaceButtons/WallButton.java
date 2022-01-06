@@ -1,9 +1,12 @@
-package UserInterface;
+package UserInterfaceButtons;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.* ;
+
+import UserInterface.DrawingApp;
+import UserInterface.WindowPanel;
 
 
 public class WallButton extends JButton {

@@ -2,6 +2,11 @@ package UserInterface;
 
 import javax.swing.* ;
 
+import UserInterfaceMenus.DisplayMenu;
+import UserInterfaceMenus.FileMenu;
+import UserInterfaceMenus.HelpMenu;
+import UserInterfaceMenus.MazeMenu;
+
 public class DrawingMenuBar extends JMenuBar
 {
 
