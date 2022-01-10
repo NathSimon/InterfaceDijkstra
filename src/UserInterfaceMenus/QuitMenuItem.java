@@ -1,5 +1,8 @@
 package UserInterfaceMenus;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.* ;
 
 import UserInterface.DrawingApp;
@@ -16,6 +19,12 @@ public class QuitMenuItem extends JMenuItem
 		super("Quit") ; // Text of menu item
 
 		this.drawingApp = drawingApp ;
+		
+		addActionListener(new ActionListener(){  
+			public void actionPerformed(ActionEvent e){  
+				drawingApp.closeFrame();
+		}}); 
+
 	}
 
 }

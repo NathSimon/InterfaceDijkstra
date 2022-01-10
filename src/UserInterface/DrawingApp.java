@@ -29,4 +29,9 @@ public class DrawingApp extends JFrame
 	public DrawingMenuBar getDrawingMenuBar() {
 		return drawingMenuBar;
 	}
+	
+	public void closeFrame() {
+		setVisible(false);
+		dispose(); 
+	}
 }
