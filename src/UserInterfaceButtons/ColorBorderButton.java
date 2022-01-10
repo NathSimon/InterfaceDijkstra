@@ -25,10 +25,10 @@ public class ColorBorderButton extends JButton {
 		addActionListener(new ActionListener(){  
 			public void actionPerformed(ActionEvent e){
 				colorBorder = drawingApp.getDrawingMenuBar().getDisplayMenu().getBorderMenuItem().getColorBorder();
-				changeText(colorBorder);
 				drawingApp.getDrawingMenuBar().getDisplayMenu().getBorderMenuItem().changeText(colorBorder);
 				colorBorder = drawingApp.getWindowPanel().getGridMazePanel().setButtonsBorder(colorBorder); 
 				drawingApp.getDrawingMenuBar().getDisplayMenu().getBorderMenuItem().setColorBorder(colorBorder);
+				changeText(colorBorder);
 				
 			}}); 
 	}

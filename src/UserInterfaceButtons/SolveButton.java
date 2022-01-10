@@ -2,14 +2,21 @@ package UserInterfaceButtons;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.Reader;
 
 import javax.swing.* ;
 
 import Dijkstra.StartDijkstra;
+import Maze.ABox;
+import Maze.DBox;
+import Maze.EBox;
 import Maze.MazeReadingException;
+import Maze.WBox;
 import UserInterface.DrawingApp;
 import UserInterface.GridMazePanel;
 
@@ -85,7 +92,7 @@ public class SolveButton extends JButton {
         	i++;
         }
         printWriter.close();
-    }
+    }	
 	
 	public void resetPath() {
 		for(int i = 0; i < gridMazePanel.getRowLen() * gridMazePanel.getColLen(); i++) {

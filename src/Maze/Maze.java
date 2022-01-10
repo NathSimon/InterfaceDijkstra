@@ -66,7 +66,7 @@ public class Maze implements GraphInterface {
 	}
 	
 	// RAJOUTER LES MESSAGES DERREURS
-	public final void initFromTextFile(String fileName) throws IOException, MazeReadingException { //cest quoi ca 
+	public final void initFromTextFile(String fileName) throws IOException, MazeReadingException {
 		int i = 0;
 		int j = 0;
 		int arrivalCount = 0;
