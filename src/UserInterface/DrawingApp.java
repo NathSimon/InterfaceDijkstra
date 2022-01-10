@@ -1,4 +1,6 @@
 package UserInterface;
+import java.awt.Dimension;
+
 import javax.swing.* ;
 
 public class DrawingApp extends JFrame
@@ -17,8 +19,10 @@ public class DrawingApp extends JFrame
 	      setJMenuBar(drawingMenuBar = new DrawingMenuBar(this, windowPanel, windowPanel.getGridMazePanel())) ;
 	      
 	      setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE) ; // Explicit !
-	
-	  	  setExtendedState(JFrame.MAXIMIZED_BOTH);     
+	      
+	      setPreferredSize(new Dimension(1000, 600));
+	  	  pack();
+	      //setExtendedState(JFrame.MAXIMIZED_BOTH);     
 	      setVisible(true) ;  // The great show
 	   }
 	
