@@ -3,6 +3,7 @@ package SaveFrame;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import javax.swing.* ;
@@ -23,18 +24,24 @@ public class SaveFieldsPanel extends JPanel {
 	private JButton saveButton;
 	private JButton cancelButton;
 	
-	public SaveFieldsPanel(SaveApp saveApp) {
+	public SaveFieldsPanel(SaveApp saveApp, DrawingApp drawingApp) {
 		
 		setLayout(new FlowLayout()); //Le flow Layout contient un gridLayout pour lempecher de changer de taille
 		
-		add(labelTitle = new JLabel("Save maze to default folder"));
+		add(labelTitle = new JLabel("Save maze in .txt to project folder"));
 		
 		add(createGridLayout());
 		add(createBoxLayout());
 		
 		saveButton.addActionListener(new ActionListener(){  
-			public void actionPerformed(ActionEvent e){  
-				
+			public void actionPerformed(ActionEvent e){ 
+				try {
+					drawingApp.getWindowPanel().getButtonPanelMaze().getSolveButton().saveToTextFile(fieldFileName.getText() + ".txt", 1);
+				} catch (FileNotFoundException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				saveApp.closeFrame();
 			}}); 
 		
 		cancelButton.addActionListener(new ActionListener(){  
@@ -55,7 +62,7 @@ public class SaveFieldsPanel extends JPanel {
 		gridTmp.add(fieldFileName = new JTextField());
 		fieldFileName.setMaximumSize(getMinimumSize());
 		
-		fieldFileName.setText("personnalMaze.txt");
+		fieldFileName.setText("personnalMaze");
 		
 		return gridTmp;
 	}

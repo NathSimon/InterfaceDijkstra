@@ -3,20 +3,22 @@ import java.awt.Dimension;
 
 import javax.swing.* ;
 
+import UserInterface.DrawingApp;
+
 public class SaveApp extends JFrame
 {
 
 	private static final long serialVersionUID = 1L;
 	private SavePanel savePanel;
 
-	public SaveApp()
+	public SaveApp(DrawingApp drawinApp)
 	   {
 	      super("Maze solver") ; // Window title
 	      
 			
-	      setContentPane(savePanel = new SavePanel(this)) ;
+	      setContentPane(savePanel = new SavePanel(this, drawinApp)) ;
 	      
-	      setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE) ; // Explicit !
+	      setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE) ; // Explicit !
 	      
 	      setPreferredSize(new Dimension(300, 120));
 	

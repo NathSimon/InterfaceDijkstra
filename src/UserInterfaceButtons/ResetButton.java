@@ -9,7 +9,7 @@ import UserInterface.DrawingApp;
 import UserInterface.GridMazePanel;
 import UserInterface.WindowPanel;
 
-public class ResetButton extends JButton implements ActionListener{
+public class ResetButton extends JButton {
 
 	private static final long serialVersionUID = 1L;
 
@@ -21,22 +21,12 @@ public class ResetButton extends JButton implements ActionListener{
 
 		this.drawingApp = drawingApp ;
 		
-		addActionListener(this);
-//			public void actionPerformed(ActionEvent e){  
-//				windowPanel.initMazePanel(Integer.toString(gridMazePanel.getColLen()), Integer.toString(gridMazePanel.getRowLen()));
-//			}});
-	}
-	public void actionPerformed(ActionEvent evt) {
+		//addActionListener(this);
 		
-		int response = JOptionPane.showOptionDialog(this, " Reset the maze?", "Reset ?", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.WARNING_MESSAGE, null, null, null);
-		switch(response) {
-		case JOptionPane.CANCEL_OPTION :
-			return ;
-		case JOptionPane.OK_OPTION :
-			this.drawingApp.getWindowPanel().initMazePanel(Integer.toString(drawingApp.getWindowPanel().getGridMazePanel().getColLen()), Integer.toString(drawingApp.getWindowPanel().getGridMazePanel().getRowLen()));
-			break;
-		case JOptionPane.NO_OPTION :
-			break;
-		}	
+		addActionListener(new ActionListener(){
+		public void actionPerformed(ActionEvent e){  
+			drawingApp.getDrawingMenuBar().getMazeMenu().getResetMenuItem().actionPerformed(e);
+		}});
 	}
+
 }

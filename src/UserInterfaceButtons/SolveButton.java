@@ -37,7 +37,7 @@ public class SolveButton extends JButton {
 	public void solveAction() {
 		resetPath();
 		try {
-			saveToTextFile("data/labyrinthe.txt");
+			saveToTextFile("data/labyrinthe.txt", 0);
 		} catch (FileNotFoundException e1) {
 			e1.printStackTrace();
 		}
@@ -53,7 +53,7 @@ public class SolveButton extends JButton {
 		showPath();
 	}
 	
-	public void saveToTextFile(String fileName) throws FileNotFoundException {
+	public void saveToTextFile(String fileName, int saveOrSolve) throws FileNotFoundException { //saveOrSolve permet denregistrer un E si on veut resoudre, un P si on veut save
         PrintWriter printWriter = new PrintWriter(fileName);
         int i = 0;
         int j = 0;
@@ -70,7 +70,12 @@ public class SolveButton extends JButton {
         		break;
         	case "E" :  printWriter.printf("E");
         		break;
-        	case "P" : printWriter.printf("E");
+        	case "P" :	if(saveOrSolve == 0) {
+        					printWriter.printf("E");
+        				}
+        				else {
+        					printWriter.printf("P");
+        				}
         	default :
         		break;
         	}

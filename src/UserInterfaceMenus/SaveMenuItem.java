@@ -6,7 +6,6 @@ import java.awt.event.ActionListener;
 import javax.swing.* ;
 
 import SaveFrame.SaveApp;
-import SaveFrame.SaveFrame;
 import UserInterface.DrawingApp;
 
 public class SaveMenuItem extends JMenuItem
@@ -37,7 +36,7 @@ public class SaveMenuItem extends JMenuItem
 	}
 	
 	private void openSaveWindow() {
-		new SaveApp();
+		new SaveApp(drawingApp);
 	}
 	
 	//Runtime.getRuntime().exec("Explorer.exe "C:\Program Files\Adobe"); 

@@ -15,7 +15,7 @@ public class WallButton extends JButton {
 	
 	public WallButton(DrawingApp drawingApp, WindowPanel windowPanel)
 	{
-		super("Wall") ; // Button's text
+		super("Wall / Empty") ; // Button's text
 				
 		addActionListener(new ActionListener(){  
 				public void actionPerformed(ActionEvent e){  

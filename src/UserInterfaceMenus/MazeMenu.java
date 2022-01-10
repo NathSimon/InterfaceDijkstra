@@ -22,4 +22,14 @@ public class MazeMenu extends JMenu
 
 	}
 
+	public SolveMenuItem getSolveMenuItem() {
+		return solveMenuItem;
+	}
+
+	public ResetMenuItem getResetMenuItem() {
+		return resetMenuItem;
+	}
+	
+	
+
 }
