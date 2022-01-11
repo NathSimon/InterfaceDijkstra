@@ -35,7 +35,19 @@ public class SizeButtons extends JPanel {
 			public void actionPerformed(java.awt.event.ActionEvent e) {
 				try {
 					if(checkInput(fieldCol.getText(),fieldRow.getText()) == 1) {
-						windowPanel.initMazePanel(fieldCol.getText(), fieldRow.getText());
+						int response = JOptionPane.showOptionDialog(drawingApp, "Update size of the maze ?", "Update ?", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
+						
+						switch(response) {
+						
+						case JOptionPane.CANCEL_OPTION :
+							return ;
+						case JOptionPane.OK_OPTION :
+							windowPanel.initMazePanel(fieldCol.getText(), fieldRow.getText());
+							break;
+						case JOptionPane.NO_OPTION :
+							break;
+						}		
+						
 					}
 				} catch (SizeReadingException e1) {
 					// TODO Auto-generated catch block
@@ -43,11 +55,24 @@ public class SizeButtons extends JPanel {
 				}
 			}
 			});
+		
 		fieldRow.addActionListener(new ActionListener(){
 			public void actionPerformed(java.awt.event.ActionEvent e) {
 				try {
 					if(checkInput(fieldCol.getText(),fieldRow.getText()) == 1) {
-						windowPanel.initMazePanel(fieldCol.getText(), fieldRow.getText());
+ 					
+						int response = JOptionPane.showOptionDialog(drawingApp, "Update size of the maze ?", "Update ?", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
+						
+						switch(response) {
+						
+						case JOptionPane.CANCEL_OPTION :
+							return ;
+						case JOptionPane.OK_OPTION :
+							windowPanel.initMazePanel(fieldCol.getText(), fieldRow.getText());
+							break;
+						case JOptionPane.NO_OPTION :
+							break;
+						}		
 					}
 				} catch (SizeReadingException e1) {
 					// TODO Auto-generated catch block
@@ -86,10 +111,19 @@ public class SizeButtons extends JPanel {
 					return 1;
 				}
 			}
+			JOptionPane.showMessageDialog(windowPanel,
+				    "Invalid input size",
+				    "Size Error",
+				    JOptionPane.ERROR_MESSAGE);
 			throw new SizeReadingException();
+			
 			
 		} catch (NumberFormatException e1) {
 			e1.printStackTrace();
+			JOptionPane.showMessageDialog(windowPanel,
+				    "Invalid input format",
+				    "Format Error",
+				    JOptionPane.ERROR_MESSAGE);
 		}
 		return 0;
 	}

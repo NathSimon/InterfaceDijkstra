@@ -1,5 +1,7 @@
 package UserInterface;
 
+import javax.swing.JOptionPane;
+
 public class SizeReadingException extends Exception {
 	
 	private static final long serialVersionUID = 1L;

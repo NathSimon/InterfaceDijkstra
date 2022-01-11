@@ -8,6 +8,8 @@ import java.io.PrintWriter;
 import java.io.Reader;
 import java.util.ArrayList;
 
+import javax.swing.JOptionPane;
+
 import Dijkstra.GraphInterface;
 import Dijkstra.VertexInterface;
 import UserInterface.GridMazePanel;
