@@ -62,38 +62,44 @@ public class SolveButton extends JButton {
 	}
 	
 	public void saveToTextFile(String fileName, int saveOrSolve) throws FileNotFoundException { //saveOrSolve permet denregistrer un E si on veut resoudre, un P si on veut save
-		FileOutputStream fos = new FileOutputStream(fileName);
-		PrintWriter printWriter = new PrintWriter(fos);
-        int i = 0;
-        int j = 0;
-        String str;
+		
+		int i = 0;
+	    int j = 0;
+	    String str;
+		
+	    try( FileOutputStream fos = new FileOutputStream(fileName);
+			 PrintWriter printWriter = new PrintWriter(fos); ) {
+	      
         
-        while(i < gridMazePanel.getRowLen() * gridMazePanel.getColLen()) {
-        	str = gridMazePanel.getMazeButton(i).getLabel();
-        	switch(str) {
-        	case "A" : printWriter.printf("A");
-        		break;
-        	case "D" :  printWriter.printf("D");
-        		break;
-        	case "W" :  printWriter.printf("W");
-        		break;
-        	case "E" :  printWriter.printf("E");
-        		break;
-        	case "P" :	if(saveOrSolve == 0) {
-        					printWriter.printf("E");
-        				}
-        				else {
-        					printWriter.printf("P");
-        				}
-        	default :
-        		break;
-        	}
-        	if((i+1) % gridMazePanel.getColLen() == 0 && !(i == 0)) { //sans le +1 il est decale de 1
-        		printWriter.println();
-        	}
-        	i++;
-        }
-        printWriter.close();
+	        while(i < gridMazePanel.getRowLen() * gridMazePanel.getColLen()) {
+	        	str = gridMazePanel.getMazeButton(i).getLabel();
+	        	switch(str) {
+	        	case "A" : printWriter.printf("A");
+	        		break;
+	        	case "D" :  printWriter.printf("D");
+	        		break;
+	        	case "W" :  printWriter.printf("W");
+	        		break;
+	        	case "E" :  printWriter.printf("E");
+	        		break;
+	        	case "P" :	if(saveOrSolve == 0) {
+	        					printWriter.printf("E");
+	        				}
+	        				else {
+	        					printWriter.printf("P");
+	        				}
+	        	default :
+	        		break;
+	        	}
+	        	if((i+1) % gridMazePanel.getColLen() == 0 && !(i == 0)) { //sans le +1 il est decale de 1
+	        		printWriter.println();
+	        	}
+	        	i++;
+	        }	
+	        
+	    } catch (Exception e) {
+	    	e.printStackTrace();
+	    }
     }	
 	
 	public void resetPath() {

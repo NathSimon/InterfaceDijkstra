@@ -133,40 +133,43 @@ public class Maze implements GraphInterface {
 	}
 	
 	public final void saveToTextFile(String fileName) throws FileNotFoundException {
-		FileOutputStream fos = new FileOutputStream(fileName);
-		PrintWriter printWriter = new PrintWriter(fos);
+		
         int i = 0;
         int j = 0;
         int total = 0;
         String str;
         
-        while(i < this.rowLen) {
-        	j = 0;
-        	while(j < this.colLen) {
-        		str = maze[i][j].getLabel();
-        		switch(str) {
-        		case "Arrival" : printWriter.printf("A");
-        			break;
-        		case "Departure" :  printWriter.printf("D");
-        			break;
-        		case "Wall" :  printWriter.printf("W");
-        			break;
-        		case "Path" :  printWriter.printf("E");
-        			break;
-        		case "Point" :  printWriter.printf(".");
-        						gridMazePanel.getMazeButton(total).setLabel("P");
-        			break;
-        		default : 
-        			break;
-        		}
-        		j++;
-        		total++;
-        	}
-        	printWriter.println();
-        	i++;
+        try (FileOutputStream fos = new FileOutputStream(fileName);
+		PrintWriter printWriter = new PrintWriter(fos); ) {
+	        while(i < this.rowLen) {
+	        	j = 0;
+	        	while(j < this.colLen) {
+	        		str = maze[i][j].getLabel();
+	        		switch(str) {
+	        		case "Arrival" : printWriter.printf("A");
+	        			break;
+	        		case "Departure" :  printWriter.printf("D");
+	        			break;
+	        		case "Wall" :  printWriter.printf("W");
+	        			break;
+	        		case "Path" :  printWriter.printf("E");
+	        			break;
+	        		case "Point" :  printWriter.printf(".");
+	        						gridMazePanel.getMazeButton(total).setLabel("P");
+	        			break;
+	        		default : 
+	        			break;
+	        		}
+	        		j++;
+	        		total++;
+	        	}
+	        	printWriter.println();
+	        	i++;
+	        }
+	        printWriter.println();
+        } catch (Exception e) {
+        	e.printStackTrace();
         }
-        printWriter.println();
-        printWriter.close();
     }
 
 	public ArrayList<VertexInterface> getAllVertices() {
