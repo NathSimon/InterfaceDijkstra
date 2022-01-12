@@ -1,3 +1,13 @@
+/**
+ * Exception lors de la lecture du maze. Déclenchée dans Maze.java
+ * 
+ * @author Nathanael SIMON
+ * 
+ * @see Maze.java
+ *  
+ * @since TP07
+ */
+
 package Maze;
 
 public class MazeReadingException extends Exception {

@@ -1,3 +1,13 @@
+/**
+ * Classe permttant l'initialisation et l'exécution de Dijkstra.
+ * 
+ * @author Nathanael SIMON
+ * 
+ * @see Dijkstra.java
+ * 
+ * @since TP09
+ */
+
 package Dijkstra;
 
 import java.io.IOException;

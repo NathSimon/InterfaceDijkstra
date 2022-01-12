@@ -1,3 +1,13 @@
+/**
+ * Classe de la box wall. Implémente la classe abstraite MBox
+ * 
+ * @author Nathanael SIMON
+ * 
+ * @see MBox.java
+ *  
+ * @since TP07
+ */
+
 package Maze;
 import Dijkstra.VertexInterface;
 

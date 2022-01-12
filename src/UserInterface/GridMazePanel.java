@@ -12,6 +12,7 @@ import javax.swing.* ;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 
+import Dijkstra.VertexInterface;
 import Maze.ABox;
 import Maze.DBox;
 import Maze.EBox;
@@ -50,6 +51,18 @@ public class GridMazePanel extends JPanel
 		}		
 	}
 
+	public void setAllEmpty() {
+		for(GridMazeButton button : buttonList) {
+			button.setLabel("E");
+		}
+	}
+	
+	public void setAllWall() {
+		for(GridMazeButton button : buttonList) {
+			button.setLabel("W");
+		}
+	}
+	
 	public int getRowLen() {
 		return rowLen;
 	}

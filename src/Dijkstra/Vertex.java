@@ -1,3 +1,13 @@
+/**
+ * Classe des vertex. Permet l'assiociation d'un numéro a chaque vertex.
+ * 
+ * @author Nathanael SIMON
+ * 
+ * @see Dijkstra.java
+ * 
+ * @since TP09
+ */
+
 package Dijkstra;
 
 public class Vertex implements VertexInterface {

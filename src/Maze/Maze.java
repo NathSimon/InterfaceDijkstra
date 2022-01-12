@@ -1,14 +1,26 @@
+/**
+ * Classe de la création du Maze. Implémente GraphInterface. Permet l'initialisation et la sauvegarde du graphe dans un fichier text. Permet enfin de récupérer les prédécesseurs d'un vertex particulier.  
+ * 
+ * @author Nathanael SIMON
+ * 
+ * @see MBox.java
+ * @see MazeReadingException.java
+ * 
+ * @exception MazeReadingException Déclenchée si le labyrinthe possède un format incorrect.
+ * @exception IOException Déclenchée si le programme ne peut lire le fichier d'initialisation du maze.
+ *  
+ * @since TP07
+ */
+
 package Maze;
 import java.io.BufferedReader;
-
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.Reader;
 import java.util.ArrayList;
-
-import javax.swing.JOptionPane;
 
 import Dijkstra.GraphInterface;
 import Dijkstra.VertexInterface;
@@ -121,7 +133,8 @@ public class Maze implements GraphInterface {
 	}
 	
 	public final void saveToTextFile(String fileName) throws FileNotFoundException {
-        PrintWriter printWriter = new PrintWriter(fileName);
+		FileOutputStream fos = new FileOutputStream(fileName);
+		PrintWriter printWriter = new PrintWriter(fos);
         int i = 0;
         int j = 0;
         int total = 0;

@@ -1,3 +1,13 @@
+/**
+ * Interface de la classe Previous.
+ * 
+ * @author Nathanael SIMON
+ * 
+ * @see Previous.java
+ * 
+ * @since TP06
+ */
+
 package Dijkstra;
 
 import java.util.ArrayList;

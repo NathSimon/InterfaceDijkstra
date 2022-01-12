@@ -1,3 +1,13 @@
+/**
+ * Classe abstraite des box.
+ * 
+ * @author Nathanael SIMON
+ * 
+ * @see ABox.java DBox.java WBox.java EBox.java
+ * 
+ * @since TP07
+ */
+
 package Maze;
 import Dijkstra.VertexInterface;
 

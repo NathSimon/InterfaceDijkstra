@@ -1,3 +1,14 @@
+/**
+ * Classe permttant de mémoriser et récupérer les valeurs des vertexs.
+ * 
+ * @author Nathanael SIMON
+ * 
+ * @see Dijkstra.java
+ * 
+ * @since TP09
+ */
+
+
 package Dijkstra;
 
 import java.util.Hashtable;

@@ -1,3 +1,13 @@
+/**
+ * Class qui représente l'ensemble des vertex déjà traité par Dijkstra. Implémente l'interface ASet.
+ * 
+ * @author Nathanael SIMON
+ * 
+ * @see Dijksra.java
+ * 
+ * @since TP09
+ */
+
 package Dijkstra;
 
 import java.util.HashSet;

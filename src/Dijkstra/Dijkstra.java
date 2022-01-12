@@ -1,3 +1,13 @@
+/**
+ * Classe qui implémente l'algorithme de Dijkstra. 
+ * 
+ * @author Nathanael SIMON
+ * 
+ * @see StartDijkstra.java
+ * 
+ * @since TP09
+ */
+
 package Dijkstra;
 
 import java.util.ArrayList;

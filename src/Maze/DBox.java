@@ -1,3 +1,13 @@
+/**
+ * Classe de la box departure. Implémente la classe abstraite MBox
+ * 
+ * @author Nathanael SIMON
+ * 
+ * @see MBox.java
+ *  
+ * @since TP07
+ */
+
 package Maze;
 
 public class DBox extends MBox {

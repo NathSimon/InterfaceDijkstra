@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -61,7 +62,8 @@ public class SolveButton extends JButton {
 	}
 	
 	public void saveToTextFile(String fileName, int saveOrSolve) throws FileNotFoundException { //saveOrSolve permet denregistrer un E si on veut resoudre, un P si on veut save
-        PrintWriter printWriter = new PrintWriter(fileName);
+		FileOutputStream fos = new FileOutputStream(fileName);
+		PrintWriter printWriter = new PrintWriter(fos);
         int i = 0;
         int j = 0;
         String str;

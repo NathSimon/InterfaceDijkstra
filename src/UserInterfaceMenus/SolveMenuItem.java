@@ -3,6 +3,7 @@ package UserInterfaceMenus;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -54,7 +55,8 @@ public class SolveMenuItem extends JMenuItem {
 	}
 	
 	public void saveToTextFile(String fileName) throws FileNotFoundException {
-        PrintWriter printWriter = new PrintWriter(fileName);
+		FileOutputStream fos = new FileOutputStream(fileName);
+		PrintWriter printWriter = new PrintWriter(fos);
         int i = 0;
         int j = 0;
         String str;

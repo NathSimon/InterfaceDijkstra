@@ -1,3 +1,14 @@
+/**
+ * Interface de la classe Graph.
+ * 
+ * @author Nathanael SIMON
+ * 
+ * @see Graph.java
+ * 
+ * @since TP06
+ */
+
+
 package Dijkstra;
 
 import java.util.ArrayList;
