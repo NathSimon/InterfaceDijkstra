@@ -112,10 +112,19 @@ public class SolveButton extends JButton {
 	}
 	
 	public void showPath() {
+		int numberOfPaths = 0;
 		for(int i = 0; i < gridMazePanel.getRowLen() * gridMazePanel.getColLen(); i++) {
 			if(gridMazePanel.getMazeButton(i).getLabel().equals("P")) {
 				gridMazePanel.getMazeButton(i).setIcon(new ImageIcon("data/path.jpg"));
+				numberOfPaths++;
 			}
+		
+		}		
+		if(numberOfPaths == 0) {
+			JOptionPane.showMessageDialog(drawingApp,
+				    "No path found for this maze",
+				    "Path error",
+				    JOptionPane.WARNING_MESSAGE);
 		}
 	}
 }
