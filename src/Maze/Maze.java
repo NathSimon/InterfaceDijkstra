@@ -24,7 +24,7 @@ import java.util.ArrayList;
 
 import Dijkstra.GraphInterface;
 import Dijkstra.VertexInterface;
-import UserInterface.GridMazePanel;
+import view.UserInterface.GridMazePanel;
 
 public class Maze implements GraphInterface {
 

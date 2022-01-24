@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import Maze.MBox;
 import Maze.Maze;
 import Maze.MazeReadingException;
-import UserInterface.GridMazePanel;
+import view.UserInterface.GridMazePanel;
 
 public class StartDijkstra {
 	
