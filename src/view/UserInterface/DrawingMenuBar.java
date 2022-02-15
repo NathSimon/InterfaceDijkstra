@@ -26,7 +26,8 @@ public class DrawingMenuBar extends JMenuBar
 		add(fileMenu = new FileMenu(drawingApp)) ;
 		add(mazeMenu = new MazeMenu(drawingApp, windowPanel, gridMazePanel)) ;
 		add(displayMenu = new DisplayMenu(drawingApp)) ;
-		add(helpMenu = new HelpMenu(drawingApp)) ;
+		helpMenu = new HelpMenu(drawingApp);
+		//add(helpMenu); Pour l'instant cette fonctionnalité n'est pas implémentée.
 	}
 
 	public FileMenu getFileMenu() {
