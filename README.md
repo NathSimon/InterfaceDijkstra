@@ -73,7 +73,7 @@ Minimize : Minimise la taille d'affichage de l'application vers une valeur prédé
 
 Maximize : Maximise la taille d'affichage de l'applcation en plein écran. 
 
-##Import from file
+## Import from file
 
 Génération d'une fenetre permettant l'importation d'un l'labyrinthe déjà fait.
 
@@ -109,7 +109,7 @@ Erreur de taille/de nombre d'entrées sorties/de caractère inconnu.
 
 
 
-##Save to file
+## Save to file
 
 Génération d'une fenetre permettant l'exportation dans un fichier texte du labyrinthe affiché.
 
