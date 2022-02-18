@@ -14,7 +14,7 @@ public class SaveApp extends JFrame
 	private static final long serialVersionUID = 1L;
 	private SavePanel savePanel;
 
-	public SaveApp(DrawingApp drawinApp)
+	public SaveApp(MazeApp drawinApp)
 	   {
 	      super("Maze solver") ; // Window title
 	      

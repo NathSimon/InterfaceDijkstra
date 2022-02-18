@@ -16,14 +16,14 @@ public class DisplayMenu extends JMenu
 	private final BorderMenuItem borderMenuItem;
 	
 
-	public DisplayMenu(DrawingApp drawingApp)
+	public DisplayMenu(MazeApp mazeApp)
 	{
 		super("Display") ; // Text of the menu
 
       // Create and add menu items
-		add(borderMenuItem = new BorderMenuItem(drawingApp));
-		add(fullscreenMenuItem = new FullscreenMenuItem(drawingApp));
-		add(minimizeMenuItem = new MinimizeMenuItem(drawingApp));
+		add(borderMenuItem = new BorderMenuItem(mazeApp));
+		add(fullscreenMenuItem = new FullscreenMenuItem(mazeApp));
+		add(minimizeMenuItem = new MinimizeMenuItem(mazeApp));
 
 	}
 

@@ -17,19 +17,19 @@ public class MazeButtons extends JPanel{
 	private WindowPanel windowPanel;
 	private Container secondContainer;
 	
-	public MazeButtons(DrawingApp drawingApp, WindowPanel windowPanel) {
+	public MazeButtons(MazeApp mazeApp, WindowPanel windowPanel) {
 		
 		this.windowPanel = windowPanel;
 		secondContainer = new Container();
 		secondContainer.setLayout(new GridLayout(1,2));
-		secondContainer.add(departureButton   = new DepartureButton (drawingApp, windowPanel));
-		secondContainer.add(arrivalButton   = new ArrivalButton (drawingApp, windowPanel));
+		secondContainer.add(departureButton   = new DepartureButton (mazeApp, windowPanel));
+		secondContainer.add(arrivalButton   = new ArrivalButton (mazeApp, windowPanel));
 		
 		setLayout(new GridLayout(2,1)) ; // 1 row, 3 columns
 		
-		add(wallButton = new WallButton     (drawingApp, windowPanel));
+		add(wallButton = new WallButton     (mazeApp, windowPanel));
 		add(secondContainer);
-		//add(emptyButton   = new EmptyButton (drawingApp, windowPanel));
+		//add(emptyButton   = new EmptyButton (mazeApp, windowPanel));
 		
 	}
 	

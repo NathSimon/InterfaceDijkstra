@@ -13,11 +13,11 @@ public class SavePanel extends JPanel
     private SaveApp saveApp;
     private SaveFieldsPanel saveFieldsPanel;
   
-	public SavePanel(SaveApp saveApp, DrawingApp drawingApp)
+	public SavePanel(SaveApp saveApp, MazeApp mazeApp)
 	{
 		this.saveApp = saveApp;
 		setLayout(new BorderLayout()) ;
 
-		add(saveFieldsPanel = new SaveFieldsPanel(saveApp, drawingApp), BorderLayout.CENTER);	
+		add(saveFieldsPanel = new SaveFieldsPanel(saveApp, mazeApp), BorderLayout.CENTER);	
 	}
 }

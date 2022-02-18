@@ -16,14 +16,14 @@ import view.UserInterface.*;
 
 public class ModeButton extends JButton {
 
-	private final DrawingApp drawingApp ;
+	private final MazeApp mazeApp ;
 	private String mode;
 	
-	public ModeButton(DrawingApp drawingApp)
+	public ModeButton(MazeApp mazeApp)
 	{
 		super("AUTO") ; // Button's text
 		
-		this.drawingApp = drawingApp ;
+		this.mazeApp = mazeApp ;
 		mode = "AUTO";
 		
 		addActionListener(new ActionListener(){  

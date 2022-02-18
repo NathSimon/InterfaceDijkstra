@@ -8,20 +8,20 @@ import view.UserInterfaceButtons.*;
 import view.UserInterfaceMenus.*;
 import view.UserInterface.*;
 
-public class DrawingApp extends JFrame
+public class MazeApp extends JFrame
 {
 
 	private static final long serialVersionUID = 1L;
-	private DrawingMenuBar drawingMenuBar;
+	private MazeMenuBar mazeMenuBar;
 	private WindowPanel windowPanel;
 	
-	public DrawingApp()
+	public MazeApp()
 	   {
 	      super("Maze solver") ; // Window title
 	      
 			
 	      setContentPane(windowPanel = new WindowPanel(this)) ;
-	      setJMenuBar(drawingMenuBar = new DrawingMenuBar(this, windowPanel, windowPanel.getGridMazePanel())) ;
+	      setJMenuBar(mazeMenuBar = new MazeMenuBar(this, windowPanel, windowPanel.getGridMazePanel())) ;
 	      
 	      setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE) ; // Explicit !
 	      
@@ -35,8 +35,8 @@ public class DrawingApp extends JFrame
 		return windowPanel;
 	}
 	
-	public DrawingMenuBar getDrawingMenuBar() {
-		return drawingMenuBar;
+	public MazeMenuBar getMazeMenuBar() {
+		return mazeMenuBar;
 	}
 	
 	public void closeFrame() {

@@ -15,13 +15,13 @@ public class SaveMenuItem extends JMenuItem
 
 	private static final long serialVersionUID = 1L;
 
-	private final DrawingApp drawingApp ;
+	private final MazeApp mazeApp ;
 
-	public SaveMenuItem(DrawingApp drawingApp)
+	public SaveMenuItem(MazeApp mazeApp)
 	{
 		super("Save to file") ; // Text of menu item
 
-		this.drawingApp = drawingApp ;
+		this.mazeApp = mazeApp ;
 		
 		addActionListener(new ActionListener(){  
 			public void actionPerformed(ActionEvent e){  
@@ -38,7 +38,7 @@ public class SaveMenuItem extends JMenuItem
 	}
 	
 	private void openSaveWindow() {
-		new SaveApp(drawingApp);
+		new SaveApp(mazeApp);
 	}
 	
 	//Runtime.getRuntime().exec("Explorer.exe "C:\Program Files\Adobe"); 

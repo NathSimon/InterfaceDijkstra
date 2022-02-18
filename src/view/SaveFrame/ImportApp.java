@@ -16,15 +16,15 @@ public class ImportApp extends JFrame
 
 	private static final long serialVersionUID = 1L;
 	private ImportPanel importPanel;
-	private DrawingApp drawingApp;
+	private MazeApp mazeApp;
 
-	public ImportApp(DrawingApp drawingApp)
+	public ImportApp(MazeApp mazeApp)
 	   {
 	      super("Maze solver") ; // Window title
 	      
-	      this.drawingApp = drawingApp;
+	      this.mazeApp = mazeApp;
 	      
-	      setContentPane(importPanel = new ImportPanel(this, drawingApp)) ;
+	      setContentPane(importPanel = new ImportPanel(this, mazeApp)) ;
 	      
 	      setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE) ; // Explicit !
 	      

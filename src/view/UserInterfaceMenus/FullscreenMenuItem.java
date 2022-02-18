@@ -14,16 +14,16 @@ public class FullscreenMenuItem extends JMenuItem
 	
 	private static final long serialVersionUID = 1L;
 
-	private final DrawingApp drawingApp ;
+	private final MazeApp mazeApp ;
 
-	public FullscreenMenuItem(DrawingApp drawingApp)
+	public FullscreenMenuItem(MazeApp mazeApp)
 	{
 		super("Fullscreen") ; // Text of menu item
 
-		this.drawingApp = drawingApp ;
+		this.mazeApp = mazeApp ;
 		addActionListener(new ActionListener(){  
 			public void actionPerformed(ActionEvent e){
-				drawingApp.setExtendedState(JFrame.MAXIMIZED_BOTH); 
+				mazeApp.setExtendedState(JFrame.MAXIMIZED_BOTH); 
 			}}); 
 	}
 

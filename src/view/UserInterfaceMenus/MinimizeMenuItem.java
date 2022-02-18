@@ -13,17 +13,17 @@ public class MinimizeMenuItem extends JMenuItem
 {
 	private static final long serialVersionUID = 1L;
 
-	private final DrawingApp drawingApp ;
+	private final MazeApp mazeApp ;
 
-	public MinimizeMenuItem(DrawingApp drawingApp)
+	public MinimizeMenuItem(MazeApp mazeApp)
 	{
 		super("Minimize") ; // Text of menu item
 
-		this.drawingApp = drawingApp ;
+		this.mazeApp = mazeApp ;
 		
 		addActionListener(new ActionListener(){  
 			public void actionPerformed(ActionEvent e){
-				drawingApp.pack();
+				mazeApp.pack();
 			}}); 
 	}
 }

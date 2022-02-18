@@ -10,12 +10,12 @@ public class HelpMenuItem extends JMenuItem
 {
 	private static final long serialVersionUID = 1L;
 
-	private final DrawingApp drawingApp ;
+	private final MazeApp mazeApp ;
 
-	public HelpMenuItem(DrawingApp drawingApp)
+	public HelpMenuItem(MazeApp mazeApp)
 	{
 		super("Help") ; // Text of menu item
 
-		this.drawingApp = drawingApp ;
+		this.mazeApp = mazeApp ;
 	}
 }

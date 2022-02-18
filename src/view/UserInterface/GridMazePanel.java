@@ -27,16 +27,16 @@ public class GridMazePanel extends JPanel
 {
 	private int rowLen;
 	private int colLen;
-	private DrawingApp drawingApp;
+	private MazeApp mazeApp;
 	private WindowPanel windowPanel;
 	private Color baseButtonColor;
 	private Border baseLineBorder;
 	
 	ArrayList<GridMazeButton> buttonList = new ArrayList<GridMazeButton>();
 
-	public GridMazePanel(DrawingApp drawingApp,WindowPanel windowPanel, int rowLen, int colLen)
+	public GridMazePanel(MazeApp mazeApp,WindowPanel windowPanel, int rowLen, int colLen)
 	{
-		this.drawingApp = drawingApp;
+		this.mazeApp = mazeApp;
 		this.windowPanel = windowPanel;
 		
 		int i = 0;
@@ -46,7 +46,7 @@ public class GridMazePanel extends JPanel
 		setLayout(grid) ; // 1 row, 3 columns
 		
 		while(i < rowLen * colLen) {
-			GridMazeButton gridTmp = new GridMazeButton(drawingApp, windowPanel, i);
+			GridMazeButton gridTmp = new GridMazeButton(mazeApp, windowPanel, i);
 			gridTmp.setBorder(new LineBorder(Color.GRAY));
 			add(gridTmp);
 			buttonList.add(gridTmp);

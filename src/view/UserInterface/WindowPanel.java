@@ -6,16 +6,16 @@ public class WindowPanel extends JPanel
 {
     private ButtonPanelMaze buttonPanelMaze ;
     private GridMazePanel gridMazePanel;
-    private DrawingApp drawingApp;
+    private MazeApp mazeApp;
     private int valueOfMouse = 1;
     
-	public WindowPanel(DrawingApp drawingApp)
+	public WindowPanel(MazeApp mazeApp)
 	{
-		this.drawingApp = drawingApp;
+		this.mazeApp = mazeApp;
 		setLayout(new BorderLayout()) ;
 		
-		gridMazePanel = new GridMazePanel(this.drawingApp, this, 10,10);
-		add(buttonPanelMaze = new ButtonPanelMaze (this.drawingApp, this, gridMazePanel), BorderLayout.WEST);	
+		gridMazePanel = new GridMazePanel(this.mazeApp, this, 10,10);
+		add(buttonPanelMaze = new ButtonPanelMaze (this.mazeApp, this, gridMazePanel), BorderLayout.WEST);	
 		add(gridMazePanel, BorderLayout.CENTER);
 	}
 	
@@ -27,9 +27,9 @@ public class WindowPanel extends JPanel
 		int colLen = Integer.parseInt(colNum);
 		int rowLen = Integer.parseInt(rowNum);
 		
-		gridMazePanel = new GridMazePanel(drawingApp, this, rowLen, colLen);
+		gridMazePanel = new GridMazePanel(mazeApp, this, rowLen, colLen);
 		
-		add(buttonPanelMaze = new ButtonPanelMaze (this.drawingApp, this, gridMazePanel), BorderLayout.WEST);	
+		add(buttonPanelMaze = new ButtonPanelMaze (this.mazeApp, this, gridMazePanel), BorderLayout.WEST);	
 		add(gridMazePanel, BorderLayout.CENTER);
 		revalidate(); //ne pas oublier cette ligne sinon cest une nuit blanche pour rien
 	}

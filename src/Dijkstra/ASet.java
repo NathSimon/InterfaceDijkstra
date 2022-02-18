@@ -14,7 +14,7 @@ import java.util.HashSet;
 
 public class ASet extends HashSet<VertexInterface> implements ASetInterface {
 
-	private static final long serialVersionUID = 1L; //jsp pas trop ce que ca fait
+	private static final long serialVersionUID = 1L;
 	
 	public ASet() {
 		super();

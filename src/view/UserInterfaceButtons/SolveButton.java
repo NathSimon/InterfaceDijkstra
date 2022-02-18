@@ -27,17 +27,17 @@ import view.UserInterfaceMenus.*;
 
 public class SolveButton extends JButton {
 
-	private final DrawingApp drawingApp ;
+	private final MazeApp mazeApp ;
 	private GridMazePanel gridMazePanel;
 	private StartDijkstra startDijkstra;
 	
-	public SolveButton(DrawingApp drawingApp, GridMazePanel gridMazePanel)
+	public SolveButton(MazeApp mazeApp, GridMazePanel gridMazePanel)
 	{
 		super("SOLVE") ; // Button's text
 		
 		this.gridMazePanel = gridMazePanel;
 		
-		this.drawingApp = drawingApp ;
+		this.mazeApp = mazeApp ;
 		
 		addActionListener(new ActionListener(){  
 			public void actionPerformed(ActionEvent e){  
@@ -124,7 +124,7 @@ public class SolveButton extends JButton {
 		
 		}		
 		if(numberOfPaths == 0) {
-			JOptionPane.showMessageDialog(drawingApp,
+			JOptionPane.showMessageDialog(mazeApp,
 				    "No path found for this maze",
 				    "Path error",
 				    JOptionPane.WARNING_MESSAGE);

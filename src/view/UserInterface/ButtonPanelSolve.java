@@ -16,19 +16,19 @@ public class ButtonPanelSolve extends JPanel
 	private final ColorBorderButton colorBorderButton;
 	private Container gridLayout;
 	
-	public ButtonPanelSolve(DrawingApp drawingApp, GridMazePanel gridMazePanel, WindowPanel windowPanel)
+	public ButtonPanelSolve(MazeApp mazeApp, GridMazePanel gridMazePanel, WindowPanel windowPanel)
 	{	
 		gridLayout = new Container();
 		setLayout(new GridLayout(4,1)) ; // 1 row, 3 columns
 		gridLayout.setLayout(new GridLayout(1,2)) ;
-		gridLayout.add(modeButton   = new ModeButton(drawingApp));
-		colorBorderButton = new ColorBorderButton(drawingApp);
+		gridLayout.add(modeButton   = new ModeButton(mazeApp));
+		colorBorderButton = new ColorBorderButton(mazeApp);
 		colorBorderButton.setPreferredSize(getMinimumSize());
 		gridLayout.add(colorBorderButton);
 		add(gridLayout);
 		add(Box.createRigidArea(new Dimension(0,0)));
-		add(solveButton   = new SolveButton(drawingApp, gridMazePanel));
-		add(resetButton = new ResetButton(drawingApp, windowPanel, gridMazePanel));
+		add(solveButton   = new SolveButton(mazeApp, gridMazePanel));
+		add(resetButton = new ResetButton(mazeApp, windowPanel, gridMazePanel));
 	}
 	
 	public SolveButton getSolveButton() {

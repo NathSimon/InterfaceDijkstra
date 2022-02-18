@@ -30,16 +30,16 @@ public class ImportFieldsPanel extends JPanel {
 	private Container grid;
 	private JButton importButton;
 	private JButton cancelButton;
-	private DrawingApp drawingApp;
+	private MazeApp mazeApp;
 	
 	
 	private int row = 0;
 	private int col = 0;
 	
 	
-	public ImportFieldsPanel(ImportApp importApp, DrawingApp drawingApp) {
+	public ImportFieldsPanel(ImportApp importApp, MazeApp mazeApp) {
 		
-		this.drawingApp = drawingApp;
+		this.mazeApp = mazeApp;
 		
 		setLayout(new FlowLayout()); //Le flow Layout contient un gridLayout pour lempecher de changer de taille
 		
@@ -52,7 +52,7 @@ public class ImportFieldsPanel extends JPanel {
 			public void actionPerformed(ActionEvent e){ 
 				try {
 					checkSizeOfMaze(fieldFileName.getText() + ".txt");
-					drawingApp.getWindowPanel().getGridMazePanel().initFromTextFile(fieldFileName.getText() + ".txt");
+					mazeApp.getWindowPanel().getGridMazePanel().initFromTextFile(fieldFileName.getText() + ".txt");
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -129,7 +129,7 @@ public class ImportFieldsPanel extends JPanel {
 					case('A') : arrivalCount++;
 						break;
 					default : 
-						JOptionPane.showMessageDialog(drawingApp,
+						JOptionPane.showMessageDialog(mazeApp,
 							    "Invalid charactere at line : " + i,
 							    "File error",
 							    JOptionPane.ERROR_MESSAGE);
@@ -138,7 +138,7 @@ public class ImportFieldsPanel extends JPanel {
 					j++;
 			}
 			if(j != col) {
-				JOptionPane.showMessageDialog(drawingApp,
+				JOptionPane.showMessageDialog(mazeApp,
 					    "Invalid size of the maze",
 					    "File error",
 					    JOptionPane.ERROR_MESSAGE);
@@ -152,7 +152,7 @@ public class ImportFieldsPanel extends JPanel {
 	    
 	    } catch(FileNotFoundException error) {
 	    	
-	    	JOptionPane.showMessageDialog(drawingApp,
+	    	JOptionPane.showMessageDialog(mazeApp,
 				    "File Not found",
 				    "File error",
 				    JOptionPane.ERROR_MESSAGE);
@@ -161,7 +161,7 @@ public class ImportFieldsPanel extends JPanel {
 	    }
 	    if(arrivalCount != 1) {
 	    	
-	    	JOptionPane.showMessageDialog(drawingApp,
+	    	JOptionPane.showMessageDialog(mazeApp,
 				    "Invalid number of arrival",
 				    "File error",
 				    JOptionPane.ERROR_MESSAGE);
@@ -170,7 +170,7 @@ public class ImportFieldsPanel extends JPanel {
 	    }
 	    if(departureCount != 1) {
 	    	
-	    	JOptionPane.showMessageDialog(drawingApp,
+	    	JOptionPane.showMessageDialog(mazeApp,
 				    "Invalid number of departure",
 				    "File error",
 				    JOptionPane.ERROR_MESSAGE);
@@ -178,7 +178,7 @@ public class ImportFieldsPanel extends JPanel {
 	    	throw new MazeReadingException(fileName, i, "Invalid number of arrival in maze : " + departureCount + ". There should be only one");
 	    }
 
-		drawingApp.getWindowPanel().initMazePanel(Integer.toString(col), Integer.toString(++i));
+		mazeApp.getWindowPanel().initMazePanel(Integer.toString(col), Integer.toString(++i));
 	}		
 	    
 			

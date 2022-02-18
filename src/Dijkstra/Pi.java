@@ -13,21 +13,21 @@ package Dijkstra;
 
 import java.util.Hashtable;
 
-public class Pi extends Hashtable<VertexInterface, Integer> implements PiInterface {
+public class Pi implements PiInterface {
 
-	private static final long serialVersionUID = 1L;
+	private final Hashtable<VertexInterface, Integer> hashVertex;
 
 	public Pi() {
-		super();
+		hashVertex = new  Hashtable<VertexInterface, Integer>();
 	}
 
 	public void setValue(VertexInterface vertex, int weight) {
-		this.put(vertex, weight);
+		hashVertex.put(vertex, weight);
 		
 	}
 
 	public int getValue(VertexInterface vertex) {
-		return this.get(vertex);
+		return hashVertex.get(vertex);
 	}
 	
 

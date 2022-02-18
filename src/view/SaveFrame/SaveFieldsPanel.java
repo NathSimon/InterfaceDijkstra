@@ -24,7 +24,7 @@ public class SaveFieldsPanel extends JPanel {
 	private JButton saveButton;
 	private JButton cancelButton;
 	
-	public SaveFieldsPanel(SaveApp saveApp, DrawingApp drawingApp) {
+	public SaveFieldsPanel(SaveApp saveApp, MazeApp mazeApp) {
 		
 		setLayout(new FlowLayout()); //Le flow Layout contient un gridLayout pour lempecher de changer de taille
 		
@@ -36,7 +36,7 @@ public class SaveFieldsPanel extends JPanel {
 		saveButton.addActionListener(new ActionListener(){  
 			public void actionPerformed(ActionEvent e){ 
 				try {
-					drawingApp.getWindowPanel().getButtonPanelMaze().getSolveButton().saveToTextFile(fieldFileName.getText() + ".txt", 1);
+					mazeApp.getWindowPanel().getButtonPanelMaze().getSolveButton().saveToTextFile(fieldFileName.getText() + ".txt", 1);
 				} catch (FileNotFoundException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();

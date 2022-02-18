@@ -22,7 +22,7 @@ public class SizeButtons extends JPanel {
 	private GridMazePanel gridMazePanel;
 	private Container grid;
 	
-	public SizeButtons(DrawingApp drawingApp, WindowPanel windowPanel, GridMazePanel gridMazePanel) {
+	public SizeButtons(MazeApp mazeApp, WindowPanel windowPanel, GridMazePanel gridMazePanel) {
 		
 		this.windowPanel = windowPanel;
 		this.gridMazePanel = gridMazePanel;
@@ -35,7 +35,7 @@ public class SizeButtons extends JPanel {
 			public void actionPerformed(java.awt.event.ActionEvent e) {
 				try {
 					if(checkInput(fieldCol.getText(),fieldRow.getText()) == 1) {
-						int response = JOptionPane.showOptionDialog(drawingApp, "Update size of the maze ?", "Update ?", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
+						int response = JOptionPane.showOptionDialog(mazeApp, "Update size of the maze ?", "Update ?", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
 						
 						switch(response) {
 						
@@ -61,7 +61,7 @@ public class SizeButtons extends JPanel {
 				try {
 					if(checkInput(fieldCol.getText(),fieldRow.getText()) == 1) {
  					
-						int response = JOptionPane.showOptionDialog(drawingApp, "Update size of the maze ?", "Update ?", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
+						int response = JOptionPane.showOptionDialog(mazeApp, "Update size of the maze ?", "Update ?", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, null, null);
 						
 						switch(response) {
 						

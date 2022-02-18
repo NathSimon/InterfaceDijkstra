@@ -15,25 +15,25 @@ public class QuitMenuItem extends JMenuItem
 
 	private static final long serialVersionUID = 1L;
 
-	private final DrawingApp drawingApp ;
+	private final MazeApp mazeApp ;
 
-	public QuitMenuItem(DrawingApp drawingApp)
+	public QuitMenuItem(MazeApp mazeApp)
 	{
 		super("Quit") ; // Text of menu item
 
-		this.drawingApp = drawingApp ;
+		this.mazeApp = mazeApp ;
 		
 		addActionListener(new ActionListener(){  
 			public void actionPerformed(ActionEvent e){ 
 			
-				int response = JOptionPane.showOptionDialog(drawingApp, " Quit the application ?", "Quit ?", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.WARNING_MESSAGE, null, null, null);
+				int response = JOptionPane.showOptionDialog(mazeApp, " Quit the application ?", "Quit ?", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.WARNING_MESSAGE, null, null, null);
 				
 				switch(response) {
 				
 				case JOptionPane.CANCEL_OPTION :
 					return ;
 				case JOptionPane.OK_OPTION :
-					drawingApp.closeFrame();
+					mazeApp.closeFrame();
 					break;
 				case JOptionPane.NO_OPTION :
 					break;

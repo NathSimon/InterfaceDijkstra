@@ -7,7 +7,7 @@ import view.UserInterfaceButtons.*;
 import view.UserInterfaceMenus.*;
 import view.UserInterface.*;
 
-public class DrawingMenuBar extends JMenuBar
+public class MazeMenuBar extends JMenuBar
 {
 
 	private static final long serialVersionUID = 1L;
@@ -18,15 +18,15 @@ public class DrawingMenuBar extends JMenuBar
 	private final HelpMenu	helpMenu;
 	
 	
-	public DrawingMenuBar(DrawingApp drawingApp, WindowPanel windowPanel, GridMazePanel gridMazePanel)
+	public MazeMenuBar(MazeApp mazeApp, WindowPanel windowPanel, GridMazePanel gridMazePanel)
 	{
 		super() ;
 		
 		// Create and add menus
-		add(fileMenu = new FileMenu(drawingApp)) ;
-		add(mazeMenu = new MazeMenu(drawingApp, windowPanel, gridMazePanel)) ;
-		add(displayMenu = new DisplayMenu(drawingApp)) ;
-		helpMenu = new HelpMenu(drawingApp);
+		add(fileMenu = new FileMenu(mazeApp)) ;
+		add(mazeMenu = new MazeMenu(mazeApp, windowPanel, gridMazePanel)) ;
+		add(displayMenu = new DisplayMenu(mazeApp)) ;
+		helpMenu = new HelpMenu(mazeApp);
 		//add(helpMenu); Pour l'instant cette fonctionnalité n'est pas implémentée.
 	}
 

@@ -13,9 +13,9 @@ import view.UserInterface.*;
 
 public class EmptyButton extends JButton {
 
-	private final DrawingApp drawingApp ;
+	private final MazeApp mazeApp ;
 	
-	public EmptyButton(DrawingApp drawingApp, WindowPanel windowPanel)
+	public EmptyButton(MazeApp mazeApp, WindowPanel windowPanel)
 	{
 		super("Empty") ; // Button's text
 		addActionListener(new ActionListener(){  
@@ -25,6 +25,6 @@ public class EmptyButton extends JButton {
 
 			}}); 
 		
-		this.drawingApp = drawingApp ;
+		this.mazeApp = mazeApp ;
 	}
 }

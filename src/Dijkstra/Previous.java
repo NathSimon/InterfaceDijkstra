@@ -11,40 +11,26 @@
 
 package Dijkstra;
 
-import java.util.ArrayList;
 import java.util.Hashtable;
 
-public final class Previous extends Hashtable<VertexInterface, VertexInterface> implements PreviousInterface {
+public final class Previous implements PreviousInterface {
 	
 	private static final long serialVersionUID = 1L;
-
+	private final Hashtable<VertexInterface, VertexInterface> hashPreviousHashtable;
+	
 	public Previous() {
-		super();
+		hashPreviousHashtable = new Hashtable<VertexInterface, VertexInterface>();
 	}
 
 	public void setValue(VertexInterface vertex, VertexInterface value) {
-		super.put(vertex, value);
+		hashPreviousHashtable.put(vertex, value);
 	}
 
 	public VertexInterface getVertex(VertexInterface vertex) {
-		return super.get(vertex);
+		return hashPreviousHashtable.get(vertex);
 	}
 
 	public boolean containsVertex(VertexInterface vertex) {
-		return contains(vertex);
-	}
-	
-	public ArrayList<VertexInterface> getPathTo(VertexInterface vertex) {
-		ArrayList<VertexInterface> path = new ArrayList<VertexInterface>();
-		if(getVertex(vertex) == null) { //Pas de solution = arrivee non exploree donc non implementee dans la hashtable
-			System.out.println("Le labyrinthe n'a pas de solutions");
-		}
-		else {
-			while (vertex != null) {
-				path.add(vertex);
-				vertex = getVertex(vertex);
-			}
-		}
-		return path;
+		return hashPreviousHashtable.contains(vertex);
 	}
 }

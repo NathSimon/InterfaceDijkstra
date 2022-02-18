@@ -12,9 +12,9 @@ import view.UserInterface.*;
 
 public class DepartureButton extends JButton {
 
-	private final DrawingApp drawingApp ;
+	private final MazeApp mazeApp ;
 	
-	public DepartureButton(DrawingApp drawingApp, WindowPanel windowPanel)
+	public DepartureButton(MazeApp mazeApp, WindowPanel windowPanel)
 	{
 		super("Departure") ; // Button's text
 		addActionListener(new ActionListener(){  
@@ -24,6 +24,6 @@ public class DepartureButton extends JButton {
 
 			}}); 
 		
-		this.drawingApp = drawingApp ;
+		this.mazeApp = mazeApp ;
 	}
 }

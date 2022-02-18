@@ -13,17 +13,17 @@ public class AllEmptyMenuItem extends JMenuItem
 {
 	private static final long serialVersionUID = 1L;
 
-	private final DrawingApp drawingApp ;
+	private final MazeApp mazeApp ;
 
-	public AllEmptyMenuItem(DrawingApp drawingApp)
+	public AllEmptyMenuItem(MazeApp mazeApp)
 	{
 		super("Put every box to empty") ; // Text of menu item
 
-		this.drawingApp = drawingApp ;
+		this.mazeApp = mazeApp ;
 		
 		addActionListener(new ActionListener(){  
 			public void actionPerformed(ActionEvent e){
-				drawingApp.getWindowPanel().getGridMazePanel().setAllEmpty();
+				mazeApp.getWindowPanel().getGridMazePanel().setAllEmpty();
 			}}); 
 	}
 }

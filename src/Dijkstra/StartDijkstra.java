@@ -33,14 +33,28 @@ public class StartDijkstra {
 
 		previous = Dijkstra.dijkstra((GraphInterface)maze, (VertexInterface)departure);
 		
-		path = previous.getPathTo(arrival);
+		path = getPathTo(arrival, previous);
 		
 		for(VertexInterface vertex : path) {
 			if(vertex != arrival && vertex != departure) //continuer a afficher les departs arrives
 			((MBox) vertex).setLabel("Point");
-		}
-				
+		}		
+		
 		maze.saveToTextFile("data/labyrinthe2.txt");
 		maze.readFile("data/labyrinthe2.txt");
+	}
+	
+	public ArrayList<VertexInterface> getPathTo(VertexInterface vertex, PreviousInterface previous) {
+		ArrayList<VertexInterface> path = new ArrayList<VertexInterface>();
+		if(previous.getVertex(vertex) == null) { //Pas de solution = arrivee non exploree donc non implementee dans la hashtable
+			System.out.println("Le labyrinthe n'a pas de solutions");
+		}
+		else {
+			while (vertex != null) {
+				path.add(vertex);
+				vertex = previous.getVertex(vertex);
+			}
+		}
+		return path;
 	}
 }

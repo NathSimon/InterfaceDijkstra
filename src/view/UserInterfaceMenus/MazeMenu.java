@@ -15,15 +15,15 @@ public class MazeMenu extends JMenu
 	private final AllWallMenuItem allWallMenuItem;
 	private final AllEmptyMenuItem allEmptyMenuItem;
 
-	public MazeMenu(DrawingApp drawingApp, WindowPanel windowPanel, GridMazePanel gridMazePanel)
+	public MazeMenu(MazeApp mazeApp, WindowPanel windowPanel, GridMazePanel gridMazePanel)
 	{
 		super("Maze") ; // Text of the menu
 
       // Create and add menu items
-		add(allWallMenuItem = new AllWallMenuItem(drawingApp));
-		add(allEmptyMenuItem = new AllEmptyMenuItem(drawingApp));
-		add(solveMenuItem = new SolveMenuItem(drawingApp, gridMazePanel));
-		add(resetMenuItem = new ResetMenuItem(drawingApp, windowPanel, gridMazePanel));
+		add(allWallMenuItem = new AllWallMenuItem(mazeApp));
+		add(allEmptyMenuItem = new AllEmptyMenuItem(mazeApp));
+		add(solveMenuItem = new SolveMenuItem(mazeApp, gridMazePanel));
+		add(resetMenuItem = new ResetMenuItem(mazeApp, windowPanel, gridMazePanel));
 		
 
 	}

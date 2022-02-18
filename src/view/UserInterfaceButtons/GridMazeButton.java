@@ -14,7 +14,7 @@ import view.UserInterface.*;
 
 public class GridMazeButton extends JButton {
 
-	private final DrawingApp drawingApp ;
+	private final MazeApp mazeApp ;
 	private WindowPanel windowPanel;
 	private int index;
 	private String label;
@@ -24,14 +24,14 @@ public class GridMazeButton extends JButton {
 	private Image wallImageSized;
 	
 	
-	public GridMazeButton(DrawingApp drawingApp, WindowPanel windowPanel, int index)
+	public GridMazeButton(MazeApp mazeApp, WindowPanel windowPanel, int index)
 	{
 		super("Empty");// Button's text
 		this.label = "E";
 		
 		
 		this.index = index;
-		this.drawingApp = drawingApp ;
+		this.mazeApp = mazeApp ;
 		this.windowPanel = windowPanel;
 		
 		emptyImage = new ImageIcon("data/Empty.png");

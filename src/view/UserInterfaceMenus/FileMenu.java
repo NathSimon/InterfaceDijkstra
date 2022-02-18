@@ -15,14 +15,14 @@ public class FileMenu extends JMenu
 	private final SaveMenuItem saveMenuItem ;
 	private final ImportMenuItem importMenuItem ;
 
-	public FileMenu(DrawingApp drawingApp)
+	public FileMenu(MazeApp mazeApp)
 	{
 		super("File") ; // Text of the menu
 
       // Create and add menu items
-		add(importMenuItem = new ImportMenuItem(drawingApp));
-		add(saveMenuItem = new SaveMenuItem(drawingApp));
-		add(quitMenuItem = new QuitMenuItem(drawingApp));
+		add(importMenuItem = new ImportMenuItem(mazeApp));
+		add(saveMenuItem = new SaveMenuItem(mazeApp));
+		add(quitMenuItem = new QuitMenuItem(mazeApp));
 		
 	}
 

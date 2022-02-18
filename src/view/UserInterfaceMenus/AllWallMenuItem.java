@@ -12,17 +12,17 @@ public class AllWallMenuItem extends JMenuItem
 {
 	private static final long serialVersionUID = 1L;
 
-	private final DrawingApp drawingApp ;
+	private final MazeApp mazeApp ;
 
-	public AllWallMenuItem(DrawingApp drawingApp)
+	public AllWallMenuItem(MazeApp mazeApp)
 	{
 		super("Put every box to wall") ; // Text of menu item
 
-		this.drawingApp = drawingApp ;
+		this.mazeApp = mazeApp ;
 		
 		addActionListener(new ActionListener(){  
 			public void actionPerformed(ActionEvent e){
-				drawingApp.getWindowPanel().getGridMazePanel().setAllWall();
+				mazeApp.getWindowPanel().getGridMazePanel().setAllWall();
 			}}); 
 	}
 }

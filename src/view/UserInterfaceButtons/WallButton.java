@@ -13,9 +13,9 @@ import view.UserInterface.*;
 
 public class WallButton extends JButton {
 
-	private final DrawingApp drawingApp ;
+	private final MazeApp mazeApp ;
 	
-	public WallButton(DrawingApp drawingApp, WindowPanel windowPanel)
+	public WallButton(MazeApp mazeApp, WindowPanel windowPanel)
 	{
 		super("Wall / Empty") ; // Button's text
 				
@@ -25,7 +25,7 @@ public class WallButton extends JButton {
 					      windowPanel.getButtonPanelMaze().updateBlockType(); //mise a jour de linfo user sur le block selectionne
 
 				}}); 
-		this.drawingApp = drawingApp ;
+		this.mazeApp = mazeApp ;
 	}
 }
 

@@ -17,7 +17,7 @@ public class ButtonPanelMaze extends JPanel
 	private JLabel labelBlocktype;
 	private JLabel labelSize;
 		
-	public ButtonPanelMaze(DrawingApp drawingApp, WindowPanel windowPanel, GridMazePanel gridMazePanel)
+	public ButtonPanelMaze(MazeApp mazeApp, WindowPanel windowPanel, GridMazePanel gridMazePanel)
 	{
 		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS)) ;
 		
@@ -28,7 +28,7 @@ public class ButtonPanelMaze extends JPanel
 		labelSelect.setAlignmentX(JComponent.CENTER_ALIGNMENT);
 		add(Box.createRigidArea(new Dimension(0,10)));
 		
-		add(mazeButtons = new MazeButtons(drawingApp, windowPanel));
+		add(mazeButtons = new MazeButtons(mazeApp, windowPanel));
 		add(labelBlocktype = new JLabel("Selected : " + mazeButtons.getBlockType()));
 		labelBlocktype.setAlignmentX(JComponent.CENTER_ALIGNMENT);
 		add(Box.createRigidArea(new Dimension(0, 50)));
@@ -38,7 +38,7 @@ public class ButtonPanelMaze extends JPanel
 		add(labelSize = new JLabel("must be between 4 and 100"));
 		labelSize.setAlignmentX(JComponent.CENTER_ALIGNMENT);
 		add(Box.createRigidArea(new Dimension(0,10)));
-		add(sizeButtons = new SizeButtons(drawingApp, windowPanel, gridMazePanel));
+		add(sizeButtons = new SizeButtons(mazeApp, windowPanel, gridMazePanel));
 		add(Box.createRigidArea(new Dimension(0,0)));
 		
 		add(Box.createVerticalGlue());
@@ -62,7 +62,7 @@ public class ButtonPanelMaze extends JPanel
 		add(labelSize = new JLabel("CLICK TO SWITCH"));
 		labelSize.setAlignmentX(JComponent.CENTER_ALIGNMENT);
 		
-		add(buttonPanelSolve = new ButtonPanelSolve(drawingApp, gridMazePanel, windowPanel));
+		add(buttonPanelSolve = new ButtonPanelSolve(mazeApp, gridMazePanel, windowPanel));
 		
 	}
 	

@@ -14,19 +14,19 @@ public class ResetButton extends JButton {
 
 	private static final long serialVersionUID = 1L;
 
-	private final DrawingApp drawingApp ;
+	private final MazeApp mazeApp ;
 
-	public ResetButton(DrawingApp drawingApp, WindowPanel windowPanel, GridMazePanel gridMazePanel)
+	public ResetButton(MazeApp mazeApp, WindowPanel windowPanel, GridMazePanel gridMazePanel)
 	{
 		super("RESET") ; // Text of menu item
 
-		this.drawingApp = drawingApp ;
+		this.mazeApp = mazeApp ;
 		
 		//addActionListener(this);
 		
 		addActionListener(new ActionListener(){
 		public void actionPerformed(ActionEvent e){  
-			drawingApp.getDrawingMenuBar().getMazeMenu().getResetMenuItem().actionPerformed(e);
+			mazeApp.getMazeMenuBar().getMazeMenu().getResetMenuItem().actionPerformed(e);
 		}});
 	}
 

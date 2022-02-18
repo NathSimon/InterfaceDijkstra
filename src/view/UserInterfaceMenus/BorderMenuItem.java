@@ -14,23 +14,23 @@ public class BorderMenuItem extends JMenuItem
 	
 	private static final long serialVersionUID = 1L;
 
-	private final DrawingApp drawingApp ;
+	private final MazeApp mazeApp ;
 	private int colorBorder = 1;
 
-	public BorderMenuItem(DrawingApp drawingApp)
+	public BorderMenuItem(MazeApp mazeApp)
 	{
 		super("Switch border color to black");
 
-		this.drawingApp = drawingApp ;
+		this.mazeApp = mazeApp ;
 		
 		
 		addActionListener(new ActionListener(){  
 			public void actionPerformed(ActionEvent e){
-				colorBorder = drawingApp.getWindowPanel().getButtonPanelMaze().getButtonPanelSolve().getColorBorderButton().getColorBorder();
+				colorBorder = mazeApp.getWindowPanel().getButtonPanelMaze().getButtonPanelSolve().getColorBorderButton().getColorBorder();
 				changeText(colorBorder);
-				drawingApp.getWindowPanel().getButtonPanelMaze().getButtonPanelSolve().getColorBorderButton().changeText(colorBorder);
-				colorBorder = drawingApp.getWindowPanel().getGridMazePanel().setButtonsBorder(colorBorder); 
-				drawingApp.getWindowPanel().getButtonPanelMaze().getButtonPanelSolve().getColorBorderButton().setColorBorder(colorBorder);
+				mazeApp.getWindowPanel().getButtonPanelMaze().getButtonPanelSolve().getColorBorderButton().changeText(colorBorder);
+				colorBorder = mazeApp.getWindowPanel().getGridMazePanel().setButtonsBorder(colorBorder); 
+				mazeApp.getWindowPanel().getButtonPanelMaze().getButtonPanelSolve().getColorBorderButton().setColorBorder(colorBorder);
 				
 			}}); 
 	}

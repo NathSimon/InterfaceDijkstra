@@ -15,13 +15,13 @@ public class ImportMenuItem extends JMenuItem
 
 	private static final long serialVersionUID = 1L;
 
-	private final DrawingApp drawingApp ;
+	private final MazeApp mazeApp ;
 
-	public ImportMenuItem(DrawingApp drawingApp)
+	public ImportMenuItem(MazeApp mazeApp)
 	{
 		super("Import Maze") ; // Text of menu item
 
-		this.drawingApp = drawingApp ;
+		this.mazeApp = mazeApp ;
 		
 		addActionListener(new ActionListener(){  
 			public void actionPerformed(ActionEvent e){  
@@ -30,7 +30,7 @@ public class ImportMenuItem extends JMenuItem
 	}
 	
 	private void openSaveWindow() {
-		new ImportApp(drawingApp);
+		new ImportApp(mazeApp);
 	}
 
 }

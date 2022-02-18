@@ -14,13 +14,13 @@ public class ResetMenuItem extends JMenuItem implements ActionListener{
 
 	private static final long serialVersionUID = 1L;
 
-	private final DrawingApp drawingApp ;
+	private final MazeApp mazeApp ;
 
-	public ResetMenuItem(DrawingApp drawingApp, WindowPanel windowPanel, GridMazePanel gridMazePanel)
+	public ResetMenuItem(MazeApp mazeApp, WindowPanel windowPanel, GridMazePanel gridMazePanel)
 	{
 		super("Reset") ; // Text of menu item
 
-		this.drawingApp = drawingApp ;
+		this.mazeApp = mazeApp ;
 		
 		addActionListener(this);
 //			public void actionPerformed(ActionEvent e){  
@@ -34,7 +34,7 @@ public class ResetMenuItem extends JMenuItem implements ActionListener{
 		case JOptionPane.CANCEL_OPTION :
 			return ;
 		case JOptionPane.OK_OPTION :
-			this.drawingApp.getWindowPanel().initMazePanel(Integer.toString(drawingApp.getWindowPanel().getGridMazePanel().getColLen()), Integer.toString(drawingApp.getWindowPanel().getGridMazePanel().getRowLen()));
+			this.mazeApp.getWindowPanel().initMazePanel(Integer.toString(mazeApp.getWindowPanel().getGridMazePanel().getColLen()), Integer.toString(mazeApp.getWindowPanel().getGridMazePanel().getRowLen()));
 			break;
 		case JOptionPane.NO_OPTION :
 			break;

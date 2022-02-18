@@ -7,11 +7,11 @@ public class SizePanelSelection extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 
-	private final DrawingApp drawingApp ;
+	private final MazeApp mazeApp ;
 	
-	public SizePanelSelection(DrawingApp drawingApp)
+	public SizePanelSelection(MazeApp mazeApp)
 	{
-			this.drawingApp = drawingApp ;
+			this.mazeApp = mazeApp ;
 			setPreferredSize(new Dimension(100,100)) ;
 	}
 }

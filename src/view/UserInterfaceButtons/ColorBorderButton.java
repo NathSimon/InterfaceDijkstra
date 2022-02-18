@@ -16,21 +16,21 @@ import view.UserInterface.*;
 
 public class ColorBorderButton extends JButton {
 
-	private final DrawingApp drawingApp ;
+	private final MazeApp mazeApp ;
 	private int colorBorder = 1;
 	
-	public ColorBorderButton(DrawingApp drawingApp)
+	public ColorBorderButton(MazeApp mazeApp)
 	{
 		super("Color");
 
-		this.drawingApp = drawingApp ;
+		this.mazeApp = mazeApp ;
 		
 		addActionListener(new ActionListener(){  
 			public void actionPerformed(ActionEvent e){
-				colorBorder = drawingApp.getDrawingMenuBar().getDisplayMenu().getBorderMenuItem().getColorBorder();
-				drawingApp.getDrawingMenuBar().getDisplayMenu().getBorderMenuItem().changeText(colorBorder);
-				colorBorder = drawingApp.getWindowPanel().getGridMazePanel().setButtonsBorder(colorBorder); 
-				drawingApp.getDrawingMenuBar().getDisplayMenu().getBorderMenuItem().setColorBorder(colorBorder);
+				colorBorder = mazeApp.getMazeMenuBar().getDisplayMenu().getBorderMenuItem().getColorBorder();
+				mazeApp.getMazeMenuBar().getDisplayMenu().getBorderMenuItem().changeText(colorBorder);
+				colorBorder = mazeApp.getWindowPanel().getGridMazePanel().setButtonsBorder(colorBorder); 
+				mazeApp.getMazeMenuBar().getDisplayMenu().getBorderMenuItem().setColorBorder(colorBorder);
 				changeText(colorBorder);
 				
 			}}); 

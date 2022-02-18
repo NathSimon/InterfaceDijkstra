@@ -19,17 +19,17 @@ import view.UserInterface.*;
 
 public class SolveMenuItem extends JMenuItem {
 
-	private final DrawingApp drawingApp ;
+	private final MazeApp mazeApp ;
 	private GridMazePanel gridMazePanel;
 	private StartDijkstra startDijkstra;
 	
-	public SolveMenuItem(DrawingApp drawingApp, GridMazePanel gridMazePanel)
+	public SolveMenuItem(MazeApp mazeApp, GridMazePanel gridMazePanel)
 	{
 		super("Solve") ; // Button's text
 		
 		this.gridMazePanel = gridMazePanel;
 		
-		this.drawingApp = drawingApp ;
+		this.mazeApp = mazeApp ;
 		
 		addActionListener(new ActionListener(){  
 			public void actionPerformed(ActionEvent e){  
@@ -117,7 +117,7 @@ public class SolveMenuItem extends JMenuItem {
 		}
 		
 		if(numberOfPaths == 0) {
-			JOptionPane.showMessageDialog(drawingApp,
+			JOptionPane.showMessageDialog(mazeApp,
 				    "No path found for this maze",
 				    "Path error",
 				    JOptionPane.WARNING_MESSAGE);

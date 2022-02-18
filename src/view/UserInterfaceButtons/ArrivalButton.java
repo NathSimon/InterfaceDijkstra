@@ -12,9 +12,9 @@ import view.UserInterface.*;
 
 public class ArrivalButton extends JButton {
 
-	private final DrawingApp drawingApp ;
+	private final MazeApp mazeApp ;
 	
-	public ArrivalButton(DrawingApp drawingApp, WindowPanel windowPanel)
+	public ArrivalButton(MazeApp mazeApp, WindowPanel windowPanel)
 	{
 		super("Arrival") ; // Button's text
 		addActionListener(new ActionListener(){  
@@ -24,6 +24,6 @@ public class ArrivalButton extends JButton {
 
 			}}); 
 		
-		this.drawingApp = drawingApp ;
+		this.mazeApp = mazeApp ;
 	}
 }
