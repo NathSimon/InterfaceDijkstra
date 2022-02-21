@@ -8,19 +8,27 @@
  * @since TP09
  */
 
-package Dijkstra;
+package controller;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
-import Maze.MBox;
-import Maze.Maze;
-import Maze.MazeReadingException;
+import model.Dijkstra.Dijkstra;
+import model.Dijkstra.GraphInterface;
+import model.Dijkstra.PreviousInterface;
+import model.Dijkstra.VertexInterface;
+import model.Maze.MBox;
+import model.Maze.Maze;
+import model.Maze.MazeReadingException;
 import view.UserInterface.GridMazePanel;
 
-public class StartDijkstra {
+public class Controller {
 	
-	public StartDijkstra(int rowLen, int colLen, GridMazePanel gridMazePanel) throws IOException, MazeReadingException {
+	public Controller() {
+	}
+	
+	
+	public void startDijkstra (int rowLen, int colLen, GridMazePanel gridMazePanel) throws IOException, MazeReadingException {
 		
 		PreviousInterface previous;
 		ArrayList<VertexInterface> path = new ArrayList<VertexInterface>();

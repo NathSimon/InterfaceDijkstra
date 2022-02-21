@@ -8,7 +8,7 @@
  * @since TP07
  */
 
-package Maze;
+package model.Maze;
 
 public class ABox extends MBox {
 

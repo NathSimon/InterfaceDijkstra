@@ -9,8 +9,8 @@ import java.io.PrintWriter;
 
 import javax.swing.* ;
 
-import Dijkstra.StartDijkstra;
-import Maze.MazeReadingException;
+import model.Maze.MazeReadingException;
+import controller.Controller;
 import view.SaveFrame.*;
 import view.UserInterfaceButtons.*;
 import view.UserInterfaceMenus.*;
@@ -21,13 +21,15 @@ public class SolveMenuItem extends JMenuItem {
 
 	private final MazeApp mazeApp ;
 	private GridMazePanel gridMazePanel;
-	private StartDijkstra startDijkstra;
+	private Controller controller;
 	
 	public SolveMenuItem(MazeApp mazeApp, GridMazePanel gridMazePanel)
 	{
 		super("Solve") ; // Button's text
 		
 		this.gridMazePanel = gridMazePanel;
+		
+		controller = new Controller();
 		
 		this.mazeApp = mazeApp ;
 		
@@ -45,7 +47,7 @@ public class SolveMenuItem extends JMenuItem {
 			e1.printStackTrace();
 		}
 		try {
-			startDijkstra = new StartDijkstra(gridMazePanel.getRowLen(), gridMazePanel.getColLen(), gridMazePanel);
+			controller.startDijkstra(gridMazePanel.getRowLen(), gridMazePanel.getColLen(), gridMazePanel);
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();

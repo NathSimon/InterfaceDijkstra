@@ -9,7 +9,7 @@
  */
 
 
-package Dijkstra;
+package model.Dijkstra;
 
 import java.util.ArrayList;
 

@@ -8,7 +8,7 @@
  * @since TP06
  */
 
-package Dijkstra;
+package model.Dijkstra;
 
 public interface ASetInterface {
 	public void addVertex(VertexInterface vertex);

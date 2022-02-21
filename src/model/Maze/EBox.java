@@ -9,7 +9,7 @@
  */
 
 
-package Maze;
+package model.Maze;
 
 public class EBox extends MBox {
 	

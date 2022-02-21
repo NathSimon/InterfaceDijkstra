@@ -15,11 +15,11 @@ import view.SaveFrame.*;
 import view.UserInterfaceButtons.*;
 import view.UserInterfaceMenus.*;
 import view.UserInterface.*;
-import Maze.ABox;
-import Maze.DBox;
-import Maze.EBox;
-import Maze.MazeReadingException;
-import Maze.WBox;
+import model.Maze.ABox;
+import model.Maze.DBox;
+import model.Maze.EBox;
+import model.Maze.MazeReadingException;
+import model.Maze.WBox;
 
 public class ImportFieldsPanel extends JPanel {
 	

@@ -7,7 +7,7 @@ import java.io.IOException;
 
 import javax.swing.* ;
 
-import Maze.MazeReadingException;
+import model.Maze.MazeReadingException;
 import view.SaveFrame.*;
 import view.UserInterfaceButtons.*;
 import view.UserInterfaceMenus.*;

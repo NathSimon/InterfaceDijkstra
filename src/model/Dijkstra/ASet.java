@@ -8,7 +8,7 @@
  * @since TP09
  */
 
-package Dijkstra;
+package model.Dijkstra;
 
 import java.util.HashSet;
 

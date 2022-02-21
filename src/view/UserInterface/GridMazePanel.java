@@ -12,12 +12,12 @@ import javax.swing.* ;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 
-import Dijkstra.VertexInterface;
-import Maze.ABox;
-import Maze.DBox;
-import Maze.EBox;
-import Maze.MazeReadingException;
-import Maze.WBox;
+import model.Dijkstra.VertexInterface;
+import model.Maze.ABox;
+import model.Maze.DBox;
+import model.Maze.EBox;
+import model.Maze.MazeReadingException;
+import model.Maze.WBox;
 import view.SaveFrame.*;
 import view.UserInterfaceButtons.*;
 import view.UserInterfaceMenus.*;

@@ -12,7 +12,7 @@
  * @since TP07
  */
 
-package Maze;
+package model.Maze;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -22,8 +22,8 @@ import java.io.PrintWriter;
 import java.io.Reader;
 import java.util.ArrayList;
 
-import Dijkstra.GraphInterface;
-import Dijkstra.VertexInterface;
+import model.Dijkstra.GraphInterface;
+import model.Dijkstra.VertexInterface;
 import view.UserInterface.GridMazePanel;
 
 public class Maze implements GraphInterface {

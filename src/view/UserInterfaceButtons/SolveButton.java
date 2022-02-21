@@ -12,12 +12,12 @@ import java.io.Reader;
 
 import javax.swing.* ;
 
-import Dijkstra.StartDijkstra;
-import Maze.ABox;
-import Maze.DBox;
-import Maze.EBox;
-import Maze.MazeReadingException;
-import Maze.WBox;
+import model.Maze.ABox;
+import model.Maze.DBox;
+import model.Maze.EBox;
+import model.Maze.MazeReadingException;
+import model.Maze.WBox;
+import controller.Controller;
 import view.UserInterface.*;
 import view.SaveFrame.*;
 import view.UserInterfaceButtons.*;
@@ -29,7 +29,7 @@ public class SolveButton extends JButton {
 
 	private final MazeApp mazeApp ;
 	private GridMazePanel gridMazePanel;
-	private StartDijkstra startDijkstra;
+	private Controller controller;
 	
 	public SolveButton(MazeApp mazeApp, GridMazePanel gridMazePanel)
 	{
@@ -38,6 +38,8 @@ public class SolveButton extends JButton {
 		this.gridMazePanel = gridMazePanel;
 		
 		this.mazeApp = mazeApp ;
+		
+		this.controller = new Controller();
 		
 		addActionListener(new ActionListener(){  
 			public void actionPerformed(ActionEvent e){  
@@ -53,7 +55,7 @@ public class SolveButton extends JButton {
 			e1.printStackTrace();
 		}
 		try {
-			startDijkstra = new StartDijkstra(gridMazePanel.getRowLen(), gridMazePanel.getColLen(), gridMazePanel);
+			controller.startDijkstra(gridMazePanel.getRowLen(), gridMazePanel.getColLen(), gridMazePanel);
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();

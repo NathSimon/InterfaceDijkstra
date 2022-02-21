@@ -8,8 +8,8 @@
  * @since TP07
  */
 
-package Maze;
-import Dijkstra.VertexInterface;
+package model.Maze;
+import model.Dijkstra.VertexInterface;
 
 public class WBox extends MBox implements VertexInterface  {
 
