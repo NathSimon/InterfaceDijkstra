@@ -57,12 +57,14 @@ public class GridMazePanel extends JPanel
 	public void setAllEmpty() {
 		for(GridMazeButton button : buttonList) {
 			button.setLabel("E");
+			button.setText(null);
 		}
 	}
 	
 	public void setAllWall() {
 		for(GridMazeButton button : buttonList) {
 			button.setLabel("W");
+			button.setText(null);
 		}
 	}
 	

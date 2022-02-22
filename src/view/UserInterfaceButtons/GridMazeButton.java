@@ -1,5 +1,6 @@
 package view.UserInterfaceButtons;
 
+import java.awt.Color;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -26,7 +27,7 @@ public class GridMazeButton extends JButton {
 	
 	public GridMazeButton(MazeApp mazeApp, WindowPanel windowPanel, int index)
 	{
-		super("Empty");// Button's text
+		super();// Button's text
 		this.label = "E";
 		
 		
@@ -37,7 +38,8 @@ public class GridMazeButton extends JButton {
 		emptyImage = new ImageIcon("data/Empty.png");
 		wallImage = new ImageIcon("data/Wall.jpg");
 		
-		setIcon(emptyImage);
+		//setIcon(emptyImage);
+		setButtonColor(Color.LIGHT_GRAY);
 		
 		
 		addActionListener(new ActionListener(){  
@@ -78,6 +80,7 @@ public class GridMazeButton extends JButton {
 	public int resetDeparture() {
 		for(int i = 0; i < windowPanel.getGridMazePanel().getRowLen() * windowPanel.getGridMazePanel().getColLen(); i++) {
 			if(windowPanel.getGridMazePanel().getMazeButton(i).getLabel().equals("D")) {
+				windowPanel.getGridMazePanel().getMazeButton(i).setText(null);
 				windowPanel.getGridMazePanel().getMazeButton(i).setLabel("E");
 				return 1;
 			}
@@ -88,6 +91,7 @@ public class GridMazeButton extends JButton {
 	public int resetArrival() {
 		for(int i = 0; i < windowPanel.getGridMazePanel().getRowLen() * windowPanel.getGridMazePanel().getColLen(); i++) {
 			if(windowPanel.getGridMazePanel().getMazeButton(i).getLabel().equals("A")) {
+				windowPanel.getGridMazePanel().getMazeButton(i).setText(null);
 				windowPanel.getGridMazePanel().getMazeButton(i).setLabel("E");
 				return 1;
 			}
@@ -111,18 +115,24 @@ public class GridMazeButton extends JButton {
 		return index;
 	}
 	
+	public void setButtonColor(Color color) {
+		setBackground(color);
+		setContentAreaFilled(false);
+		setOpaque(true);
+	}
+	
 	public void setLabel(String value) {
 		
 		this.label = value;
 		
 		switch(label) {
-		case "E" : setIcon(emptyImage);
+		case "E" :	setButtonColor(Color.LIGHT_GRAY);
 			break;
-		case "W" : setIcon(wallImage);
+		case "W" : setButtonColor(Color.DARK_GRAY);
 			break;
-		case "D" : setIcon(null);
+		case "D" : setButtonColor(Color.YELLOW);
 			break;
-		case "A": setIcon(null);
+		case "A": setButtonColor(Color.GREEN);
 			break;
 		default :
 			break;

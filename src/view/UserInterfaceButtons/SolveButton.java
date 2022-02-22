@@ -2,6 +2,7 @@ package view.UserInterfaceButtons;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.Color;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -111,7 +112,7 @@ public class SolveButton extends JButton {
 		for(int i = 0; i < gridMazePanel.getRowLen() * gridMazePanel.getColLen(); i++) {
 			if(gridMazePanel.getMazeButton(i).getLabel().equals("P")) {
 				gridMazePanel.getMazeButton(i).setLabel("E");
-				gridMazePanel.getMazeButton(i).setIcon(new ImageIcon("data/Empty.png"));
+				gridMazePanel.getMazeButton(i).setButtonColor(Color.LIGHT_GRAY);
 			}
 		}
 	}
@@ -120,7 +121,11 @@ public class SolveButton extends JButton {
 		int numberOfPaths = 0;
 		for(int i = 0; i < gridMazePanel.getRowLen() * gridMazePanel.getColLen(); i++) {
 			if(gridMazePanel.getMazeButton(i).getLabel().equals("P")) {
-				gridMazePanel.getMazeButton(i).setIcon(new ImageIcon("data/path.jpg"));
+				gridMazePanel.getMazeButton(i).setText(null);
+				gridMazePanel.getMazeButton(i).setIcon(null);
+				gridMazePanel.getMazeButton(i).setBackground(Color.RED);
+				gridMazePanel.getMazeButton(i).setContentAreaFilled(false);
+				gridMazePanel.getMazeButton(i).setOpaque(true);
 				numberOfPaths++;
 			}
 		

@@ -1,5 +1,6 @@
 package view.UserInterfaceMenus;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
@@ -112,7 +113,9 @@ public class SolveMenuItem extends JMenuItem {
 		int numberOfPaths = 0;
 		for(int i = 0; i < gridMazePanel.getRowLen() * gridMazePanel.getColLen(); i++) {
 			if(gridMazePanel.getMazeButton(i).getLabel().equals("P")) {
-				gridMazePanel.getMazeButton(i).setIcon(new ImageIcon("data/path.jpg"));
+				gridMazePanel.getMazeButton(i).setBackground(Color.RED);
+				gridMazePanel.getMazeButton(i).setContentAreaFilled(false);
+				gridMazePanel.getMazeButton(i).setOpaque(true);
 				numberOfPaths++;
 			}
 		
