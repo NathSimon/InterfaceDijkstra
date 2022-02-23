@@ -180,18 +180,28 @@ public class ImportFieldsPanel extends JPanel {
 	    	throw new MazeReadingException(fileName, i, "Invalid number of arrival in maze : " + departureCount + ". There should be only one");
 	    }
 	    
+	    if(col < 4 || i + 1 < 4) {
+	    	
+	    	JOptionPane.showMessageDialog(mazeApp,
+				    "Maze too small. Must be at least 4*4",
+				    "File error",
+				    JOptionPane.ERROR_MESSAGE);
+	    	
+	    	throw new MazeReadingException(fileName, i, "Maze to small");
+	    }
+	    if(col > 100 || i + 1 > 100) {
+	    	
+	    	JOptionPane.showMessageDialog(mazeApp,
+				    "Maze too big. Must be at most 100*100",
+				    "File error",
+				    JOptionPane.ERROR_MESSAGE);
+	    	
+	    	throw new MazeReadingException(fileName, i, "Maze to big");
+	    }
+	    
+	    
 	    appModel.setSizeRow(i + 1);
 	    appModel.setSizeCol(col);
 		mazeApp.getWindowPanel().initMazePanel();
-	}		
-	    
-			
-	
-	public int getCol() {
-		return col;
-	}
-	public int getRow() {
-		return row;
-	}
-	
+	}			
 }
