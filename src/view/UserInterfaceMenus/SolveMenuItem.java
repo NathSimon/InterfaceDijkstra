@@ -72,7 +72,7 @@ public class SolveMenuItem extends JMenuItem {
 			 PrintWriter printWriter = new PrintWriter(fos); ) {
 	      
         
-	        while(i < gridMazePanel.getRowLen() * gridMazePanel.getColLen()) {
+	        while(i < appModel.getSizeRowInt() * appModel.getSizeColInt()) {
 	        	str = gridMazePanel.getMazeButton(i).getLabel();
 	        	switch(str) {
 	        	case "A" : printWriter.printf("A");
@@ -92,7 +92,7 @@ public class SolveMenuItem extends JMenuItem {
 	        	default :
 	        		break;
 	        	}
-	        	if((i+1) % gridMazePanel.getColLen() == 0 && !(i == 0)) { //sans le +1 il est decale de 1
+	        	if((i+1) % appModel.getSizeColInt() == 0 && !(i == 0)) { //sans le +1 il est decale de 1
 	        		printWriter.println();
 	        	}
 	        	i++;
@@ -104,17 +104,16 @@ public class SolveMenuItem extends JMenuItem {
     }	
 
 	public void resetPath() {
-		for(int i = 0; i < gridMazePanel.getRowLen() * gridMazePanel.getColLen(); i++) {
+		for(int i = 0; i < appModel.getSizeRowInt() * appModel.getSizeColInt(); i++) {
 			if(gridMazePanel.getMazeButton(i).getLabel().equals("P")) {
 				gridMazePanel.getMazeButton(i).setLabel("E");
-				gridMazePanel.getMazeButton(i).setIcon(new ImageIcon("data/Empty.png"));
 			}
 		}
 	}
 	
 	public void showPath() {
 		int numberOfPaths = 0;
-		for(int i = 0; i < gridMazePanel.getRowLen() * gridMazePanel.getColLen(); i++) {
+		for(int i = 0; i < appModel.getSizeRowInt() * appModel.getSizeColInt(); i++) {
 			if(gridMazePanel.getMazeButton(i).getLabel().equals("P")) {
 				gridMazePanel.getMazeButton(i).setBackground(Color.RED);
 				gridMazePanel.getMazeButton(i).setContentAreaFilled(false);

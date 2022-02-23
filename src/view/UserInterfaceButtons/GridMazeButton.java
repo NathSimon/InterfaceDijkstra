@@ -94,7 +94,7 @@ public class GridMazeButton extends JButton {
 	public void recalculatePath() {
 		for(int i = 0; i < appModel.getSizeRowInt()* appModel.getSizeColInt(); i++) {
 			if(windowPanel.getGridMazePanel().getMazeButton(i).getLabel().equals("D")) {
-				for(int j = 0; j < windowPanel.getGridMazePanel().getRowLen() * windowPanel.getGridMazePanel().getColLen(); j++) {
+				for(int j = 0; j <  appModel.getSizeRowInt()* appModel.getSizeColInt(); j++) {
 					if(windowPanel.getGridMazePanel().getMazeButton(j).getLabel().equals("A")) {
 						windowPanel.getButtonPanelMaze().getSolveButton().solveAction();
 					}

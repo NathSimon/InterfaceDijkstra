@@ -20,6 +20,7 @@ import model.Maze.DBox;
 import model.Maze.EBox;
 import model.Maze.MazeReadingException;
 import model.Maze.WBox;
+import model.appModel.AppModel;
 
 public class ImportFieldsPanel extends JPanel {
 	
@@ -30,6 +31,7 @@ public class ImportFieldsPanel extends JPanel {
 	private JButton importButton;
 	private JButton cancelButton;
 	private final MazeApp mazeApp;
+	private final AppModel appModel;
 	
 	
 	private int row = 0;
@@ -39,6 +41,7 @@ public class ImportFieldsPanel extends JPanel {
 	public ImportFieldsPanel(ImportApp importApp, MazeApp mazeApp) {
 		
 		this.mazeApp = mazeApp;
+		this.appModel = mazeApp.getAppModel();
 		
 		setLayout(new FlowLayout()); //Le flow Layout contient un gridLayout pour lempecher de changer de taille
 		
@@ -176,8 +179,10 @@ public class ImportFieldsPanel extends JPanel {
 	    	
 	    	throw new MazeReadingException(fileName, i, "Invalid number of arrival in maze : " + departureCount + ". There should be only one");
 	    }
-
-		mazeApp.getWindowPanel().initMazePanel(Integer.toString(col), Integer.toString(++i));
+	    
+	    appModel.setSizeRow(i + 1);
+	    appModel.setSizeCol(col);
+		mazeApp.getWindowPanel().initMazePanel();
 	}		
 	    
 			

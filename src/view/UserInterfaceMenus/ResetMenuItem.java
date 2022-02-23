@@ -37,7 +37,7 @@ public class ResetMenuItem extends JMenuItem implements ActionListener{
 		case JOptionPane.CANCEL_OPTION :
 			return ;
 		case JOptionPane.OK_OPTION :
-			this.mazeApp.getWindowPanel().initMazePanel(appModel.getSizeCol(), appModel.getSizeRow());
+			this.mazeApp.getWindowPanel().initMazePanel();
 			break;
 		case JOptionPane.NO_OPTION :
 			break;

@@ -44,7 +44,7 @@ public class SizeButtons extends JPanel {
 							return ;
 						case JOptionPane.OK_OPTION :
 							appModel.setSizeCol(fieldCol.getText());
-							windowPanel.initMazePanel(appModel.getSizeCol(), appModel.getSizeRow());
+							windowPanel.initMazePanel();
 							break;
 						case JOptionPane.NO_OPTION :
 							break;
@@ -71,7 +71,7 @@ public class SizeButtons extends JPanel {
 							return ;
 						case JOptionPane.OK_OPTION :
 							appModel.setSizeRow(fieldRow.getText());
-							windowPanel.initMazePanel(appModel.getSizeCol(), appModel.getSizeRow());
+							windowPanel.initMazePanel();
 							break;
 						case JOptionPane.NO_OPTION :
 							break;

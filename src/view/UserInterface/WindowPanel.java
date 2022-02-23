@@ -21,7 +21,7 @@ public class WindowPanel extends JPanel
 		add(gridMazePanel, BorderLayout.CENTER);
 	}
 	
-	public void initMazePanel(String colNum, String rowNum) {
+	public void initMazePanel() {
 		
 		remove(gridMazePanel);
 		remove(buttonPanelMaze);

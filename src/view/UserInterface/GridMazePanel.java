@@ -70,22 +70,6 @@ public class GridMazePanel extends JPanel
 			button.setText(null);
 		}
 	}
-	
-	public int getRowLen() {
-		return rowLen;
-	}
-
-	public void setRowLen(int rowLen) {
-		this.rowLen = rowLen;
-	}
-
-	public int getColLen() {
-		return colLen;
-	}
-
-	public void setColLen(int colLen) {
-		this.colLen = colLen;
-	}
 
 	public GridMazeButton getMazeButton(int index) { 
 			return buttonList.get(index);
@@ -141,13 +125,13 @@ public class GridMazePanel extends JPanel
 						break;
 					default : throw new MazeReadingException(fileName, i, "Invalid charactere in file at line : " + i);
 					}
-					if(j > getColLen()) {
+					if(j > appModel.getSizeColInt()) {
 						new MazeReadingException(fileName, i, "Invalid size of column at column : " + j);
 					}
 					totalCount++;
 					j++;
 				}
-				if(i > getRowLen()) {
+				if(i > appModel.getSizeRowInt()) {
 					new MazeReadingException(fileName, i, "Invalid size of column at row : " + i);
 				}
 				i++;
