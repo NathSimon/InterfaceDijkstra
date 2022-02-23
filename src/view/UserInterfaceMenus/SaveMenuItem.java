@@ -29,14 +29,6 @@ public class SaveMenuItem extends JMenuItem
 			}}); 
 	}
 	
-	public static boolean isWindows() {
-
-	    String os = System.getProperty("os.name").toLowerCase();
-	    // windows
-	    return (os.indexOf("win") >= 0);
-
-	}
-	
 	private void openSaveWindow() {
 		new SaveApp(mazeApp);
 	}

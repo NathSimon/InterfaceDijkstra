@@ -11,8 +11,8 @@ import java.awt.*;
 
 public class ImportPanel extends JPanel
 {
-    private ImportApp importApp;
-    private ImportFieldsPanel importFieldsPanel;
+    private final ImportApp importApp;
+    private final ImportFieldsPanel importFieldsPanel;
   
 	public ImportPanel(ImportApp importApp, MazeApp mazeApp)
 	{

@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.* ;
 
+import model.appModel.AppModel;
 import view.SaveFrame.*;
 import view.UserInterfaceButtons.*;
 import view.UserInterfaceMenus.*;
@@ -16,36 +17,28 @@ import view.UserInterface.*;
 public class GridMazeButton extends JButton {
 
 	private final MazeApp mazeApp ;
-	private WindowPanel windowPanel;
-	private int index;
+	private final WindowPanel windowPanel;
 	private String label;
 	private String mode;
-	private ImageIcon wallImage;
-	private ImageIcon emptyImage;
-	private Image wallImageSized;
+	private final AppModel appModel;
 	
 	
-	public GridMazeButton(MazeApp mazeApp, WindowPanel windowPanel, int index)
+	public GridMazeButton(MazeApp mazeApp, WindowPanel windowPanel)
 	{
 		super();// Button's text
 		this.label = "E";
 		
-		
-		this.index = index;
 		this.mazeApp = mazeApp ;
+		this.appModel = mazeApp.getAppModel();
 		this.windowPanel = windowPanel;
 		
-		emptyImage = new ImageIcon("data/Empty.png");
-		wallImage = new ImageIcon("data/Wall.jpg");
-		
-		//setIcon(emptyImage);
 		setButtonColor(Color.LIGHT_GRAY);
 		
 		
 		addActionListener(new ActionListener(){  
 			  public void actionPerformed(ActionEvent e){ 
 				 				  
-			        if(windowPanel.getValueOfMouse() == 1) {    
+			        if(appModel.getValueOfMouse() == 1) {    
 			        	if(getLabel().equals("W")) {
 			        		setLabel("E");
 			        	}
@@ -53,24 +46,23 @@ public class GridMazeButton extends JButton {
 			        		setLabel("W");
 			        	}
 			        }
-			        if(windowPanel.getValueOfMouse() == 2) {
+			        if(appModel.getValueOfMouse() == 2) {
 					  	setText("Empty"); 
 					  	setLabel("E");
 			        }
-			        if(windowPanel.getValueOfMouse() == 3) {      
+			        if(appModel.getValueOfMouse() == 3) {      
 					  	resetDeparture();
 				        setText("Departure");  
 					  	setLabel("D");
 				  	
 			        }
-			        if(windowPanel.getValueOfMouse() == 4) {     
+			        if(appModel.getValueOfMouse() == 4) {     
 				        resetArrival();
 					  	setText("Arrival");  
 					  	setLabel("A");
 			        }
-					 
-			        mode = windowPanel.getButtonPanelMaze().getModeButton().getMode();
-			        if(mode.equals("AUTO")) {
+
+			        if(appModel.getMode().equals("AUTO")) {
 			        	recalculatePath();
 			        }
 			  }
@@ -78,7 +70,7 @@ public class GridMazeButton extends JButton {
 	}
 	
 	public int resetDeparture() {
-		for(int i = 0; i < windowPanel.getGridMazePanel().getRowLen() * windowPanel.getGridMazePanel().getColLen(); i++) {
+		for(int i = 0; i < appModel.getSizeRowInt()* appModel.getSizeColInt(); i++) {
 			if(windowPanel.getGridMazePanel().getMazeButton(i).getLabel().equals("D")) {
 				windowPanel.getGridMazePanel().getMazeButton(i).setText(null);
 				windowPanel.getGridMazePanel().getMazeButton(i).setLabel("E");
@@ -89,7 +81,7 @@ public class GridMazeButton extends JButton {
 	}
 	
 	public int resetArrival() {
-		for(int i = 0; i < windowPanel.getGridMazePanel().getRowLen() * windowPanel.getGridMazePanel().getColLen(); i++) {
+		for(int i = 0; i < appModel.getSizeRowInt()* appModel.getSizeColInt(); i++) {
 			if(windowPanel.getGridMazePanel().getMazeButton(i).getLabel().equals("A")) {
 				windowPanel.getGridMazePanel().getMazeButton(i).setText(null);
 				windowPanel.getGridMazePanel().getMazeButton(i).setLabel("E");
@@ -100,7 +92,7 @@ public class GridMazeButton extends JButton {
 	}
 	
 	public void recalculatePath() {
-		for(int i = 0; i < windowPanel.getGridMazePanel().getRowLen() * windowPanel.getGridMazePanel().getColLen(); i++) {
+		for(int i = 0; i < appModel.getSizeRowInt()* appModel.getSizeColInt(); i++) {
 			if(windowPanel.getGridMazePanel().getMazeButton(i).getLabel().equals("D")) {
 				for(int j = 0; j < windowPanel.getGridMazePanel().getRowLen() * windowPanel.getGridMazePanel().getColLen(); j++) {
 					if(windowPanel.getGridMazePanel().getMazeButton(j).getLabel().equals("A")) {
@@ -109,10 +101,6 @@ public class GridMazeButton extends JButton {
 				}
 			}
 		}
-	}
-	
-	public int getIndex() {
-		return index;
 	}
 	
 	public void setButtonColor(Color color) {
@@ -126,13 +114,15 @@ public class GridMazeButton extends JButton {
 		this.label = value;
 		
 		switch(label) {
-		case "E" :	setButtonColor(Color.LIGHT_GRAY);
+		case "E" :	setText(null);
+					setButtonColor(Color.LIGHT_GRAY);
 			break;
-		case "W" : setButtonColor(Color.DARK_GRAY);
+		case "W" :  setText(null);
+					setButtonColor(Color.DARK_GRAY);
 			break;
-		case "D" : setButtonColor(Color.YELLOW);
+		case "D" :  setButtonColor(Color.YELLOW);
 			break;
-		case "A": setButtonColor(Color.GREEN);
+		case "A":   setButtonColor(Color.GREEN);
 			break;
 		default :
 			break;

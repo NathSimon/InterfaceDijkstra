@@ -14,10 +14,10 @@ import java.util.ArrayList;
 
 public class Dijkstra {
 	
-	public static PreviousInterface dijkstra(GraphInterface graph, VertexInterface root) {
-		ASetInterface set = new ASet();
-		PiInterface pi = new Pi();
-		PreviousInterface previous = new Previous();
+	public static PreviousInterface dijkstra(final GraphInterface graph, final VertexInterface root) {
+		final ASetInterface set = new ASet();
+		final PiInterface pi = new Pi();
+		final PreviousInterface previous = new Previous();
 		int value = 0;
 		int minValue = 0;
 	

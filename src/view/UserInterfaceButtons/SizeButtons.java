@@ -6,6 +6,7 @@ import java.io.IOException;
 
 import javax.swing.* ;
 
+import model.appModel.AppModel;
 import view.SaveFrame.*;
 import view.UserInterfaceButtons.*;
 import view.UserInterfaceMenus.*;
@@ -18,14 +19,14 @@ public class SizeButtons extends JPanel {
 	private JLabel labelSize;
 	private JTextField fieldCol;
 	private JTextField fieldRow;
-	private WindowPanel windowPanel;
-	private GridMazePanel gridMazePanel;
+	private final WindowPanel windowPanel;
 	private Container grid;
+	private final AppModel appModel;
 	
-	public SizeButtons(MazeApp mazeApp, WindowPanel windowPanel, GridMazePanel gridMazePanel) {
+	public SizeButtons(MazeApp mazeApp, WindowPanel windowPanel) {
 		
 		this.windowPanel = windowPanel;
-		this.gridMazePanel = gridMazePanel;
+		this.appModel = mazeApp.getAppModel();
 		
 		setLayout(new FlowLayout()); //Le flow Layout contient un gridLayout pour lempecher de changer de taille
 		
@@ -42,7 +43,8 @@ public class SizeButtons extends JPanel {
 						case JOptionPane.CANCEL_OPTION :
 							return ;
 						case JOptionPane.OK_OPTION :
-							windowPanel.initMazePanel(fieldCol.getText(), fieldRow.getText());
+							appModel.setSizeCol(fieldCol.getText());
+							windowPanel.initMazePanel(appModel.getSizeCol(), appModel.getSizeRow());
 							break;
 						case JOptionPane.NO_OPTION :
 							break;
@@ -68,7 +70,8 @@ public class SizeButtons extends JPanel {
 						case JOptionPane.CANCEL_OPTION :
 							return ;
 						case JOptionPane.OK_OPTION :
-							windowPanel.initMazePanel(fieldCol.getText(), fieldRow.getText());
+							appModel.setSizeRow(fieldRow.getText());
+							windowPanel.initMazePanel(appModel.getSizeCol(), appModel.getSizeRow());
 							break;
 						case JOptionPane.NO_OPTION :
 							break;
@@ -94,8 +97,8 @@ public class SizeButtons extends JPanel {
 		gridTmp.add(fieldRow = new JTextField());	
 		fieldRow.setMaximumSize(getMinimumSize());
 		
-		fieldRow.setText(Integer.toString(this.gridMazePanel.getRowLen()));
-		fieldCol.setText(Integer.toString(this.gridMazePanel.getColLen()));
+		fieldRow.setText(this.appModel.getSizeRow());
+		fieldCol.setText(this.appModel.getSizeCol());
 		
 		return gridTmp;
 	}

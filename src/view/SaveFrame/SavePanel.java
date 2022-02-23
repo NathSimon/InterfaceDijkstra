@@ -10,8 +10,8 @@ import java.awt.*;
 
 public class SavePanel extends JPanel
 {
-    private SaveApp saveApp;
-    private SaveFieldsPanel saveFieldsPanel;
+    private final SaveApp saveApp;
+    private final SaveFieldsPanel saveFieldsPanel;
   
 	public SavePanel(SaveApp saveApp, MazeApp mazeApp)
 	{

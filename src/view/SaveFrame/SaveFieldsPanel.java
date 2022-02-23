@@ -16,15 +16,16 @@ import view.UserInterface.*;
 public class SaveFieldsPanel extends JPanel {
 	
 	private JLabel labelFileName;
-	private JLabel labelTitle;
+	private final JLabel labelTitle;
 	private JTextField fieldFileName;
-	private WindowPanel windowPanel;
-	private SaveApp saveApp;
+	private final SaveApp saveApp;
 	private Container grid;
 	private JButton saveButton;
 	private JButton cancelButton;
 	
 	public SaveFieldsPanel(SaveApp saveApp, MazeApp mazeApp) {
+		
+		this.saveApp = saveApp;
 		
 		setLayout(new FlowLayout()); //Le flow Layout contient un gridLayout pour lempecher de changer de taille
 		

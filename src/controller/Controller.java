@@ -24,16 +24,22 @@ import view.UserInterface.GridMazePanel;
 
 public class Controller {
 	
+	private int rowLen;
+	private int colLen;
+	
 	public Controller() {
 	}
 	
 	
-	public void startDijkstra (int rowLen, int colLen, GridMazePanel gridMazePanel) throws IOException, MazeReadingException {
+	public void startDijkstra (String rowLen, String colLen, GridMazePanel gridMazePanel) throws IOException, MazeReadingException {
 		
 		PreviousInterface previous;
 		ArrayList<VertexInterface> path = new ArrayList<VertexInterface>();
 		
-		Maze maze = new Maze(rowLen, colLen, gridMazePanel);
+		this.rowLen = Integer.parseInt(rowLen);
+		this.colLen = Integer.parseInt(colLen);
+		
+		Maze maze = new Maze(this.rowLen, this.colLen, gridMazePanel);
 		maze.initFromTextFile("data/labyrinthe.txt");
 		
 		MBox departure = maze.findDeparture();
@@ -45,7 +51,7 @@ public class Controller {
 		
 		for(VertexInterface vertex : path) {
 			if(vertex != arrival && vertex != departure) //continuer a afficher les departs arrives
-			((MBox) vertex).setLabel("Point");
+				((MBox) vertex).setLabel("P");
 		}		
 		
 		maze.saveToTextFile("data/labyrinthe2.txt");

@@ -28,10 +28,10 @@ import view.UserInterface.GridMazePanel;
 
 public class Maze implements GraphInterface {
 
-	private MBox[][] maze;
-	private int rowLen;
-	private int colLen;
-	private GridMazePanel gridMazePanel;
+	private final MBox[][] maze;
+	private final int rowLen;
+	private final int colLen;
+	private final GridMazePanel gridMazePanel;
 
 	public Maze(int rowLen, int colLen, GridMazePanel gridMazePanel) {
 		this.colLen = colLen;
@@ -60,7 +60,7 @@ public class Maze implements GraphInterface {
 	public MBox findDeparture() {
 		for(int i = 0; i < rowLen; i++) {
 			for(int j = 0; j < colLen; j++) {
-				if(this.maze[i][j].getLabel().equals("Departure")) {
+				if(this.maze[i][j].getLabel().equals("D")) {
 					return this.maze[i][j];
 				}
 			}
@@ -71,7 +71,7 @@ public class Maze implements GraphInterface {
 	public MBox findArrival() {
 		for(int i = 0; i < rowLen; i++) {
 			for(int j = 0; j < colLen; j++) {
-				if(this.maze[i][j].getLabel().equals("Arrival")) {
+				if(this.maze[i][j].getLabel().equals("A")) {
 					return this.maze[i][j];
 				}
 			}
@@ -146,15 +146,15 @@ public class Maze implements GraphInterface {
 	        	while(j < this.colLen) {
 	        		str = maze[i][j].getLabel();
 	        		switch(str) {
-	        		case "Arrival" : printWriter.printf("A");
+	        		case "A" : printWriter.printf("A");
 	        			break;
-	        		case "Departure" :  printWriter.printf("D");
+	        		case "D" :  printWriter.printf("D");
 	        			break;
-	        		case "Wall" :  printWriter.printf("W");
+	        		case "W" :  printWriter.printf("W");
 	        			break;
-	        		case "Path" :  printWriter.printf("E");
+	        		case "E" :  printWriter.printf("E");
 	        			break;
-	        		case "Point" :  printWriter.printf(".");
+	        		case "P" :  printWriter.printf(".");
 	        						gridMazePanel.getMazeButton(total).setLabel("P");
 	        			break;
 	        		default : 
@@ -190,22 +190,22 @@ public class Maze implements GraphInterface {
 
 		try {
 			MBox voisinBas = maze[i+1][j];
-			if(voisinBas.getLabel().equals("Path") || voisinBas.getLabel().equals("Arrival")){
+			if(voisinBas.isTraversable()){
 				successors.add(voisinBas);
 			}}catch( Exception expection) {};
 		try {
 			MBox voisinHaut = maze[i-1][j];
-			if(voisinHaut.getLabel().equals("Path") || voisinHaut.getLabel().equals("Arrival")){
+			if(voisinHaut.isTraversable()){
 				successors.add(voisinHaut);
 			}}catch( Exception exception) {};
 		try {
 			MBox voisinGauche = maze[i][j-1];
-			if(voisinGauche.getLabel().equals("Path") || voisinGauche.getLabel().equals("Arrival")){
+			if(voisinGauche.isTraversable()){
 				successors.add(voisinGauche);
 			}}catch( Exception exception) {};
 		try {
 			MBox voisinDroite = maze[i][j+1];
-			if(voisinDroite.getLabel().equals("Path") || voisinDroite.getLabel().equals("Arrival")){
+			if(voisinDroite.isTraversable()){
 				successors.add(voisinDroite);
 			}}catch( Exception exception) {};
 			

@@ -28,7 +28,7 @@ public class ButtonPanelSolve extends JPanel
 		add(gridLayout);
 		add(Box.createRigidArea(new Dimension(0,0)));
 		add(solveButton   = new SolveButton(mazeApp, gridMazePanel));
-		add(resetButton = new ResetButton(mazeApp, windowPanel, gridMazePanel));
+		add(resetButton = new ResetButton(mazeApp));
 	}
 	
 	public SolveButton getSolveButton() {

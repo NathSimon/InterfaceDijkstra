@@ -8,6 +8,7 @@ import java.io.IOException;
 import javax.swing.* ;
 
 import model.Maze.MazeReadingException;
+import model.appModel.AppModel;
 import view.SaveFrame.*;
 import view.UserInterfaceButtons.*;
 import view.UserInterfaceMenus.*;
@@ -17,27 +18,31 @@ import view.UserInterface.*;
 public class ColorBorderButton extends JButton {
 
 	private final MazeApp mazeApp ;
-	private int colorBorder = 1;
+	private String colorBorder;
+	private final AppModel appModel;
 	
 	public ColorBorderButton(MazeApp mazeApp)
 	{
 		super("Color");
 
 		this.mazeApp = mazeApp ;
+		appModel = mazeApp.getAppModel();
+		colorBorder = appModel.getColorBorder();
 		
 		addActionListener(new ActionListener(){  
 			public void actionPerformed(ActionEvent e){
-				colorBorder = mazeApp.getMazeMenuBar().getDisplayMenu().getBorderMenuItem().getColorBorder();
-				mazeApp.getMazeMenuBar().getDisplayMenu().getBorderMenuItem().changeText(colorBorder);
-				colorBorder = mazeApp.getWindowPanel().getGridMazePanel().setButtonsBorder(colorBorder); 
-				mazeApp.getMazeMenuBar().getDisplayMenu().getBorderMenuItem().setColorBorder(colorBorder);
+				colorBorder = appModel.getColorBorder();
 				changeText(colorBorder);
+				mazeApp.getWindowPanel().getButtonPanelMaze().getButtonPanelSolve().getColorBorderButton().changeText(colorBorder);
+				colorBorder = mazeApp.getWindowPanel().getGridMazePanel().setButtonsBorder(colorBorder); 
+				appModel.setColorBorder(colorBorder);
+				mazeApp.getWindowPanel().getButtonPanelMaze().getButtonPanelSolve().getColorBorderButton().setColorBorder(colorBorder);
 				
 			}}); 
 	}
 	
-	public void changeText(int colorBorder) {
-		if(colorBorder == 0) {
+	public void changeText(String colorBorder2) {
+		if(colorBorder2 == "BLACK") {
 			setText("Black");
 		}
 		else {
@@ -46,11 +51,11 @@ public class ColorBorderButton extends JButton {
 		
 	}
 	
-	public int getColorBorder() {
+	public String getColorBorder() {
 		return colorBorder;
 	}
 	
-	public void setColorBorder(int color) {
-		colorBorder = color;
+	public void setColorBorder(String colorBorder2) {
+		colorBorder = colorBorder2;
 	}
 }

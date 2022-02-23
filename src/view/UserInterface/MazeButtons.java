@@ -3,6 +3,7 @@ package view.UserInterface;
 import java.awt.*;
 import javax.swing.* ;
 
+import model.appModel.AppModel;
 import view.SaveFrame.*;
 import view.UserInterfaceButtons.*;
 import view.UserInterfaceMenus.*;
@@ -14,12 +15,15 @@ public class MazeButtons extends JPanel{
 	private final ArrivalButton arrivalButton;
 	private final DepartureButton departureButton;
 	//private final EmptyButton emptyButton;
-	private WindowPanel windowPanel;
-	private Container secondContainer;
+	private final WindowPanel windowPanel;
+	private final Container secondContainer;
+	private final AppModel appModel;
 	
 	public MazeButtons(MazeApp mazeApp, WindowPanel windowPanel) {
 		
 		this.windowPanel = windowPanel;
+		
+		appModel = mazeApp.getAppModel();
 		secondContainer = new Container();
 		secondContainer.setLayout(new GridLayout(1,2));
 		secondContainer.add(departureButton   = new DepartureButton (mazeApp, windowPanel));
@@ -34,7 +38,7 @@ public class MazeButtons extends JPanel{
 	}
 	
 	public String getBlockType() {
-		switch(windowPanel.getValueOfMouse()) {
+		switch(appModel.getValueOfMouse()) {
 		case 1 : return "Wall / Empty";
 		case 2 : return "Empty";
 		case 3 : return "Departure";

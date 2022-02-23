@@ -13,8 +13,8 @@ public class ButtonPanelMaze extends JPanel
 	private final MazeButtons mazeButtons;
 	private final SizeButtons sizeButtons;
 	private final ButtonPanelSolve buttonPanelSolve;
-	private JLabel labelSelect;
-	private JLabel labelBlocktype;
+	private final JLabel labelSelect;
+	private final JLabel labelBlocktype;
 	private JLabel labelSize;
 		
 	public ButtonPanelMaze(MazeApp mazeApp, WindowPanel windowPanel, GridMazePanel gridMazePanel)
@@ -38,7 +38,7 @@ public class ButtonPanelMaze extends JPanel
 		add(labelSize = new JLabel("must be between 4 and 100"));
 		labelSize.setAlignmentX(JComponent.CENTER_ALIGNMENT);
 		add(Box.createRigidArea(new Dimension(0,10)));
-		add(sizeButtons = new SizeButtons(mazeApp, windowPanel, gridMazePanel));
+		add(sizeButtons = new SizeButtons(mazeApp, windowPanel));
 		add(Box.createRigidArea(new Dimension(0,0)));
 		
 		add(Box.createVerticalGlue());
@@ -85,5 +85,11 @@ public class ButtonPanelMaze extends JPanel
 	public void updateBlockType() {
 		labelBlocktype.setText("Selected : " + mazeButtons.getBlockType());
 	}
+	
+//	public void notifyForUpdate() {
+//		mazeButtons.notifyForUpdate();
+//		sizeButtons.notifyForUpdate();
+//		buttonPanelSolve.notifyForUpdate();
+//	}
 }
 

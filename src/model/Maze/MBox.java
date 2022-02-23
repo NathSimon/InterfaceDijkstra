@@ -13,11 +13,10 @@ import model.Dijkstra.VertexInterface;
 
 public abstract class MBox implements VertexInterface {
 
-	int x;
-	int y;
-	int type; // 0 = wall, 1 = path, 2 = Depart, 3 = Arrive
-	MBox[][] maze;
-	String label;
+	private final int x;
+	private final int y;
+	private final MBox[][] maze;
+	private String label;
 	
 	public MBox(int x, int y, MBox[][] maze2, String label) {
 		this.x = x;
@@ -33,13 +32,13 @@ public abstract class MBox implements VertexInterface {
 		return y;
 	}
 	
-	public int print() { //BESOIN DE REDIFINIR?????
-		return 0;
-	}
-	public final String getLabel() {
+	public String getLabel() {
 		return label;
 	}
-	public void  setLabel(String newLabel) {
+	
+	public abstract boolean isTraversable();
+	
+	public final void  setLabel(String newLabel) {
 		label = newLabel;
 	}
 	

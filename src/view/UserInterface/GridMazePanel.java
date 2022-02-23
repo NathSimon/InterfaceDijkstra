@@ -18,6 +18,7 @@ import model.Maze.DBox;
 import model.Maze.EBox;
 import model.Maze.MazeReadingException;
 import model.Maze.WBox;
+import model.appModel.AppModel;
 import view.SaveFrame.*;
 import view.UserInterfaceButtons.*;
 import view.UserInterfaceMenus.*;
@@ -27,26 +28,28 @@ public class GridMazePanel extends JPanel
 {
 	private int rowLen;
 	private int colLen;
-	private MazeApp mazeApp;
-	private WindowPanel windowPanel;
+	private final MazeApp mazeApp;
+	private final WindowPanel windowPanel;
 	private Color baseButtonColor;
 	private Border baseLineBorder;
+	private final AppModel appModel;
 	
 	ArrayList<GridMazeButton> buttonList = new ArrayList<GridMazeButton>();
 
-	public GridMazePanel(MazeApp mazeApp,WindowPanel windowPanel, int rowLen, int colLen)
+	public GridMazePanel(MazeApp mazeApp,WindowPanel windowPanel)
 	{
 		this.mazeApp = mazeApp;
+		this.appModel = mazeApp.getAppModel();
 		this.windowPanel = windowPanel;
 		
 		int i = 0;
-		this.rowLen = rowLen;
-		this.colLen = colLen;
+		this.rowLen = appModel.getSizeRowInt();
+		this.colLen = appModel.getSizeColInt();
 		GridLayout grid = new GridLayout(this.rowLen, this.colLen); 
 		setLayout(grid) ; // 1 row, 3 columns
 		
 		while(i < rowLen * colLen) {
-			GridMazeButton gridTmp = new GridMazeButton(mazeApp, windowPanel, i);
+			GridMazeButton gridTmp = new GridMazeButton(mazeApp, windowPanel);
 			gridTmp.setBorder(new LineBorder(Color.GRAY));
 			add(gridTmp);
 			buttonList.add(gridTmp);
@@ -88,19 +91,19 @@ public class GridMazePanel extends JPanel
 			return buttonList.get(index);
 	}
 	
-	public int setButtonsBorder(int color) {
+	public String setButtonsBorder(String color) {
 		for(int i = 0; i < buttonList.size(); i++) {
-			if(color == 1 ) {
+			if(color.equals("GREY") ) {
 				buttonList.get(i).setBorder(new LineBorder(Color.BLACK));
 			}
-			else if(color == 0 ) {
+			else if(color.equals("BLACK") ) {
 				buttonList.get(i).setBorder(new LineBorder(Color.GRAY));
 			}
 		}
-		if (color == 1) {
-			return 0;
+		if (color.equals("GREY")) {
+			return "BLACK";
 		}
-		return 1;
+		return "GREY";
 	}
 	
 	public final void initFromTextFile(String fileName) throws IOException, MazeReadingException {
@@ -160,5 +163,5 @@ public class GridMazePanel extends JPanel
 	    	throw new MazeReadingException(fileName, i, "Invalid number of arrival in maze : " + departureCount + ". There should be only one");
 	    }
 	}
-	
+
 }

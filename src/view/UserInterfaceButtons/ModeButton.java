@@ -8,6 +8,7 @@ import java.io.IOException;
 import javax.swing.* ;
 
 import model.Maze.MazeReadingException;
+import model.appModel.AppModel;
 import view.SaveFrame.*;
 import view.UserInterfaceButtons.*;
 import view.UserInterfaceMenus.*;
@@ -17,27 +18,26 @@ import view.UserInterface.*;
 public class ModeButton extends JButton {
 
 	private final MazeApp mazeApp ;
-	private String mode;
+	private final AppModel appModel;
 	
 	public ModeButton(MazeApp mazeApp)
 	{
 		super("AUTO") ; // Button's text
 		
 		this.mazeApp = mazeApp ;
-		mode = "AUTO";
+		appModel = mazeApp.getAppModel();
 		
 		addActionListener(new ActionListener(){  
 			public void actionPerformed(ActionEvent e){  
-				if(getText().equals("AUTO")) {
+				if(appModel.getMode().equals("AUTO")) {
+					
 					setText("MANUAL");
 				}
 				else {
 					setText("AUTO");
 				}
-				mode = getText();
+				appModel.setMode(getText());
 			}}); 
 	}
-	public String getMode() {
-		return mode;
-	}
+
 }

@@ -4,6 +4,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.* ;
 
+import model.appModel.AppModel;
 import view.SaveFrame.*;
 import view.UserInterfaceButtons.*;
 import view.UserInterfaceMenus.*;
@@ -15,28 +16,32 @@ public class BorderMenuItem extends JMenuItem
 	private static final long serialVersionUID = 1L;
 
 	private final MazeApp mazeApp ;
-	private int colorBorder = 1;
+	private String colorBorder;
+	private final AppModel appModel;
 
 	public BorderMenuItem(MazeApp mazeApp)
 	{
 		super("Switch border color to black");
 
 		this.mazeApp = mazeApp ;
+		this.appModel = mazeApp.getAppModel();
+		this.colorBorder = appModel.getColorBorder();
 		
 		
 		addActionListener(new ActionListener(){  
 			public void actionPerformed(ActionEvent e){
-				colorBorder = mazeApp.getWindowPanel().getButtonPanelMaze().getButtonPanelSolve().getColorBorderButton().getColorBorder();
+				colorBorder = appModel.getColorBorder();
 				changeText(colorBorder);
 				mazeApp.getWindowPanel().getButtonPanelMaze().getButtonPanelSolve().getColorBorderButton().changeText(colorBorder);
 				colorBorder = mazeApp.getWindowPanel().getGridMazePanel().setButtonsBorder(colorBorder); 
+				appModel.setColorBorder(colorBorder);
 				mazeApp.getWindowPanel().getButtonPanelMaze().getButtonPanelSolve().getColorBorderButton().setColorBorder(colorBorder);
 				
 			}}); 
 	}
 	
-	public void changeText(int colorBorder) {
-		if(colorBorder == 0) {
+	public void changeText(String colorBorder) {
+		if(colorBorder == "BLACK") {
 			setText("Switch border color to black");
 		}
 		else {
@@ -45,11 +50,11 @@ public class BorderMenuItem extends JMenuItem
 		
 	}
 	
-	public int getColorBorder() {
+	public String getColorBorder() {
 		return colorBorder;
 	}
 	
-	public void setColorBorder(int color) {
+	public void setColorBorder(String color) {
 		colorBorder = color;
 	}
 

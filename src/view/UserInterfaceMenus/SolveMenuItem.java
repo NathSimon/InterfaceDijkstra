@@ -11,6 +11,7 @@ import java.io.PrintWriter;
 import javax.swing.* ;
 
 import model.Maze.MazeReadingException;
+import model.appModel.AppModel;
 import controller.Controller;
 import view.SaveFrame.*;
 import view.UserInterfaceButtons.*;
@@ -21,8 +22,9 @@ import view.UserInterface.*;
 public class SolveMenuItem extends JMenuItem {
 
 	private final MazeApp mazeApp ;
-	private GridMazePanel gridMazePanel;
-	private Controller controller;
+	private final GridMazePanel gridMazePanel;
+	private final Controller controller;
+	private final AppModel appModel;
 	
 	public SolveMenuItem(MazeApp mazeApp, GridMazePanel gridMazePanel)
 	{
@@ -33,6 +35,7 @@ public class SolveMenuItem extends JMenuItem {
 		controller = new Controller();
 		
 		this.mazeApp = mazeApp ;
+		appModel = mazeApp.getAppModel();
 		
 		addActionListener(new ActionListener(){  
 			public void actionPerformed(ActionEvent e){  
@@ -48,7 +51,7 @@ public class SolveMenuItem extends JMenuItem {
 			e1.printStackTrace();
 		}
 		try {
-			controller.startDijkstra(gridMazePanel.getRowLen(), gridMazePanel.getColLen(), gridMazePanel);
+			controller.startDijkstra(appModel.getSizeRow(), appModel.getSizeCol(), gridMazePanel);
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();

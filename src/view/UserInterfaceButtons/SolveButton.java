@@ -18,6 +18,7 @@ import model.Maze.DBox;
 import model.Maze.EBox;
 import model.Maze.MazeReadingException;
 import model.Maze.WBox;
+import model.appModel.AppModel;
 import controller.Controller;
 import view.UserInterface.*;
 import view.SaveFrame.*;
@@ -29,8 +30,9 @@ import view.UserInterfaceMenus.*;
 public class SolveButton extends JButton {
 
 	private final MazeApp mazeApp ;
-	private GridMazePanel gridMazePanel;
-	private Controller controller;
+	private final GridMazePanel gridMazePanel;
+	private final Controller controller;
+	private final AppModel appModel;
 	
 	public SolveButton(MazeApp mazeApp, GridMazePanel gridMazePanel)
 	{
@@ -41,6 +43,8 @@ public class SolveButton extends JButton {
 		this.mazeApp = mazeApp ;
 		
 		this.controller = new Controller();
+		
+		appModel = mazeApp.getAppModel();
 		
 		addActionListener(new ActionListener(){  
 			public void actionPerformed(ActionEvent e){  
@@ -56,7 +60,7 @@ public class SolveButton extends JButton {
 			e1.printStackTrace();
 		}
 		try {
-			controller.startDijkstra(gridMazePanel.getRowLen(), gridMazePanel.getColLen(), gridMazePanel);
+			controller.startDijkstra(appModel.getSizeCol(), appModel.getSizeRow(), gridMazePanel);
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();

@@ -24,13 +24,12 @@ import model.Maze.WBox;
 public class ImportFieldsPanel extends JPanel {
 	
 	private JLabel labelFileName;
-	private JLabel labelTitle;
+	private final JLabel labelTitle;
 	private JTextField fieldFileName;
-	private SaveApp saveApp;
 	private Container grid;
 	private JButton importButton;
 	private JButton cancelButton;
-	private MazeApp mazeApp;
+	private final MazeApp mazeApp;
 	
 	
 	private int row = 0;

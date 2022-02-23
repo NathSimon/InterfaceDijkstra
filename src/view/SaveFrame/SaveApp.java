@@ -2,24 +2,30 @@ package view.SaveFrame;
 import java.awt.Dimension;
 
 import javax.swing.* ;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 
+import model.appModel.AppModel;
 import view.SaveFrame.*;
 import view.UserInterfaceButtons.*;
 import view.UserInterfaceMenus.*;
 import view.UserInterface.*;
 
-public class SaveApp extends JFrame
+public class SaveApp extends JFrame implements ChangeListener
 {
 
 	private static final long serialVersionUID = 1L;
-	private SavePanel savePanel;
+	private final SavePanel savePanel;
+	private final AppModel appModel;
 
-	public SaveApp(MazeApp drawinApp)
+	public SaveApp(MazeApp mazeApp)
 	   {
 	      super("Maze solver") ; // Window title
+	      appModel = mazeApp.getAppModel();
 	      
-			
-	      setContentPane(savePanel = new SavePanel(this, drawinApp)) ;
+	      appModel.addObserver(this);
+	      
+	      setContentPane(savePanel = new SavePanel(this, mazeApp)) ;
 	      
 	      setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE) ; // Explicit !
 	      
@@ -33,5 +39,11 @@ public class SaveApp extends JFrame
 	public void closeFrame() {
 		setVisible(false);
 		dispose(); 
+	}
+
+	@Override
+	public void stateChanged(ChangeEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 }

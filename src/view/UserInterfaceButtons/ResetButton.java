@@ -16,7 +16,7 @@ public class ResetButton extends JButton {
 
 	private final MazeApp mazeApp ;
 
-	public ResetButton(MazeApp mazeApp, WindowPanel windowPanel, GridMazePanel gridMazePanel)
+	public ResetButton(MazeApp mazeApp)
 	{
 		super("RESET") ; // Text of menu item
 

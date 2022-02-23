@@ -12,19 +12,20 @@ package model.Dijkstra;
 
 import java.util.HashSet;
 
-public class ASet extends HashSet<VertexInterface> implements ASetInterface {
+public class ASet implements ASetInterface {
 
-	private static final long serialVersionUID = 1L;
+	private final HashSet<VertexInterface> hashASet;
 	
 	public ASet() {
 		super();
+		hashASet = new HashSet<VertexInterface>();
 	}
 	
 	public void addVertex(VertexInterface vertex) {
-		add(vertex);
+		hashASet.add(vertex);
 	}
 	public boolean containsVertex(VertexInterface vertex) {
-		return contains(vertex);
+		return hashASet.contains(vertex);
 	}
 	
 }

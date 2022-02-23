@@ -14,12 +14,11 @@ import model.Dijkstra.VertexInterface;
 public class WBox extends MBox implements VertexInterface  {
 
 	public WBox(int x, int y, MBox[][] maze) {
-		super(x,y,maze, "Wall");
+		super(x,y,maze, "W");
 	}
 	
-	public int print() {
-		System.out.println("Wall");
-		return 0;
+	@Override
+	public boolean isTraversable() {
+		return false;
 	}
-	
 }

@@ -15,7 +15,6 @@ import java.util.Hashtable;
 
 public final class Previous implements PreviousInterface {
 	
-	private static final long serialVersionUID = 1L;
 	private final Hashtable<VertexInterface, VertexInterface> hashPreviousHashtable;
 	
 	public Previous() {
