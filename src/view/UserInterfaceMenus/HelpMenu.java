@@ -20,4 +20,6 @@ public class HelpMenu extends JMenu
       // Create and add menu items
 		add(helpMenuItem = new HelpMenuItem(mazeApp));
 	}
+	
+	
 }

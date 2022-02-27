@@ -147,5 +147,9 @@ public class GridMazePanel extends JPanel
 	    	throw new MazeReadingException(fileName, i, "Invalid number of arrival in maze : " + departureCount + ". There should be only one");
 	    }
 	}
+	
+	public void notifyForUpdate() {
+		//rien a update
+	}
 
 }

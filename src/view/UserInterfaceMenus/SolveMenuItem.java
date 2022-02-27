@@ -130,4 +130,8 @@ public class SolveMenuItem extends JMenuItem {
 				    JOptionPane.WARNING_MESSAGE);
 		}
 	}
+	
+	public void update () {
+		//rien a update
+	}
 }

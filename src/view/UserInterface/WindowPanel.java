@@ -40,9 +40,10 @@ public class WindowPanel extends JPanel
 	public ButtonPanelMaze getButtonPanelMaze() {
 		return buttonPanelMaze;
 	}	
-//	public void notifyForUpdate() {
-//		gridMazePanel.notifyForUpdate();
-//		buttonPanelMaze.notifyForUpdate();
-//	}
+	
+	public void notifyForUpdate() {
+		gridMazePanel.notifyForUpdate();
+		buttonPanelMaze.notifyForUpdate();
+	}
 	
 }

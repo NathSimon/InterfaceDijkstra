@@ -33,6 +33,9 @@ public class SaveMenuItem extends JMenuItem
 		new SaveApp(mazeApp);
 	}
 	
+	public void update () {
+		//rien a update
+	}
 	//Runtime.getRuntime().exec("Explorer.exe "C:\Program Files\Adobe"); 
 }
 

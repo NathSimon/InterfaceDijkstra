@@ -26,5 +26,9 @@ public class FullscreenMenuItem extends JMenuItem
 				mazeApp.setExtendedState(JFrame.MAXIMIZED_BOTH); 
 			}}); 
 	}
+	
+	public void update() {
+		//rien a update
+	}
 
 }

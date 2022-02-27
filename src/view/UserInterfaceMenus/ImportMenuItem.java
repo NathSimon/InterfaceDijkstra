@@ -32,5 +32,9 @@ public class ImportMenuItem extends JMenuItem
 	private void openSaveWindow() {
 		new ImportApp(mazeApp);
 	}
+	
+	public void update () {
+		//rien a update
+	}
 
 }

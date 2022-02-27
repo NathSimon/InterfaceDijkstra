@@ -26,4 +26,8 @@ public class MinimizeMenuItem extends JMenuItem
 				mazeApp.pack();
 			}}); 
 	}
+	
+	public void update() {
+		//rien a update
+	}
 }

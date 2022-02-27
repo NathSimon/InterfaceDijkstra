@@ -57,5 +57,9 @@ public class BorderMenuItem extends JMenuItem
 	public void setColorBorder(String color) {
 		colorBorder = color;
 	}
+	
+	public void update() {
+		//rien a update
+	}
 
 }

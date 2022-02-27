@@ -26,4 +26,8 @@ public class AllEmptyMenuItem extends JMenuItem
 				mazeApp.getWindowPanel().getGridMazePanel().setAllEmpty();
 			}}); 
 	}
+	
+	public void update () {
+		//rien a update
+	}
 }

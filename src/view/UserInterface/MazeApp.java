@@ -56,7 +56,7 @@ public class MazeApp extends JFrame implements ChangeListener
 	}
 
 	public void stateChanged(ChangeEvent e) {
-		//windowPanel.notifyForUpdate(); //exemple depqrture boutton
-		//mazeMenuBar.notifyForUpdate();
+		windowPanel.notifyForUpdate();
+		mazeMenuBar.notifyForUpdate();
 	}
 }

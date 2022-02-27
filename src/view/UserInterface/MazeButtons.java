@@ -47,4 +47,10 @@ public class MazeButtons extends JPanel{
 		}
 	}
 	
+	public void notifyForUpdate() {
+		wallButton.update();
+		arrivalButton.update();
+		departureButton.update();
+	}
+	
 }

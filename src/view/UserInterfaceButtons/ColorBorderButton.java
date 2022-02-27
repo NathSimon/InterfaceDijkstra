@@ -58,4 +58,8 @@ public class ColorBorderButton extends JButton {
 	public void setColorBorder(String colorBorder2) {
 		colorBorder = colorBorder2;
 	}
+	
+	public void update() {
+		appModel.setColorBorder(colorBorder);
+	}
 }

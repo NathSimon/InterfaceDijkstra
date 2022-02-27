@@ -33,5 +33,9 @@ public class WallButton extends JButton {
 				}}); 
 		
 	}
+	
+	public void update() {
+		//rien a mettre a jour
+	}
 }
 

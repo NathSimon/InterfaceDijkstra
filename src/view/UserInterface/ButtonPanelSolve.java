@@ -47,5 +47,12 @@ public class ButtonPanelSolve extends JPanel
 		return modeButton;
 	}
 	
+	public void notifyForUpdate() {
+		resetButton.update();
+		solveButton.update();
+		modeButton.update();
+		colorBorderButton.update();
+	}
+	
 }
 

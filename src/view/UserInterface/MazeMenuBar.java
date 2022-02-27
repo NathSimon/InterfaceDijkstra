@@ -48,4 +48,11 @@ public class MazeMenuBar extends JMenuBar
 	public HelpMenu getHelpMenu() {
 		return helpMenu;
 	}
+	
+	public void notifyForUpdate() {
+		fileMenu.notifyForUpdate();
+		mazeMenu.notifyForUpdate();
+		//helpMenu.notifyForUpdate(); pas implenter dans la version finale
+		displayMenu.notifyForUpdate();
+	}
 }

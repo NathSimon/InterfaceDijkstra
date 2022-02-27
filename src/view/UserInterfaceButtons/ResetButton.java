@@ -29,5 +29,9 @@ public class ResetButton extends JButton {
 			mazeApp.getMazeMenuBar().getMazeMenu().getResetMenuItem().actionPerformed(e);
 		}});
 	}
+	
+	public void update() {
+		//rien a update
+	}
 
 }

@@ -43,4 +43,8 @@ public class ResetMenuItem extends JMenuItem implements ActionListener{
 			break;
 		}	
 	}
+	
+	public void update () {
+		//rien a update
+	}
 }

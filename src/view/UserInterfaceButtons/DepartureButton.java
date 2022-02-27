@@ -30,4 +30,8 @@ public class DepartureButton extends JButton {
 		
 		this.mazeApp = mazeApp ;
 	}
+	
+	public void update() {
+		//rien a mettre a jour
+	}
 }

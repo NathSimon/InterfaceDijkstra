@@ -35,7 +35,11 @@ public class MazeMenu extends JMenu
 	public ResetMenuItem getResetMenuItem() {
 		return resetMenuItem;
 	}
-	
-	
 
+	public void notifyForUpdate() {
+		solveMenuItem.update();
+		resetMenuItem.update();
+		allWallMenuItem.update();
+		allEmptyMenuItem.update();
+	}
 }

@@ -41,5 +41,9 @@ public class QuitMenuItem extends JMenuItem
 			}}); 
 
 	}
+	
+	public void update () {
+		//rien a update
+	}
 }
 

@@ -39,5 +39,9 @@ public class ModeButton extends JButton {
 				appModel.setMode(getText());
 			}}); 
 	}
+	
+	public void update() {
+		appModel.setMode(getText());
+	}
 
 }

@@ -25,4 +25,8 @@ public class AllWallMenuItem extends JMenuItem
 				mazeApp.getWindowPanel().getGridMazePanel().setAllWall();
 			}}); 
 	}
+	
+	public void update () {
+		//rien a update
+	}
 }

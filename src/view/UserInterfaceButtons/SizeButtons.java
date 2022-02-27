@@ -130,4 +130,9 @@ public class SizeButtons extends JPanel {
 		}
 		return 0;
 	}
+	
+	public void update() {
+		appModel.setSizeCol(fieldCol.getText());
+		appModel.setSizeRow(fieldRow.getText());		
+	}
 }

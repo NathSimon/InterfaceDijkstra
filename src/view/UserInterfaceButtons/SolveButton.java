@@ -141,4 +141,8 @@ public class SolveButton extends JButton {
 				    JOptionPane.WARNING_MESSAGE);
 		}
 	}
+	
+	public void update() {
+		//rien a update
+	}
 }

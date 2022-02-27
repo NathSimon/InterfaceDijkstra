@@ -25,5 +25,11 @@ public class FileMenu extends JMenu
 		add(quitMenuItem = new QuitMenuItem(mazeApp));
 		
 	}
+	
+	public void notifyForUpdate() {
+		quitMenuItem.update();
+		saveMenuItem.update();
+		importMenuItem.update();
+	}
 
 }

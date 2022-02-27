@@ -86,10 +86,10 @@ public class ButtonPanelMaze extends JPanel
 		labelBlocktype.setText("Selected : " + mazeButtons.getBlockType());
 	}
 	
-//	public void notifyForUpdate() {
-//		mazeButtons.notifyForUpdate();
-//		sizeButtons.notifyForUpdate();
-//		buttonPanelSolve.notifyForUpdate();
-//	}
+	public void notifyForUpdate() {
+		mazeButtons.notifyForUpdate();
+		sizeButtons.update();
+		buttonPanelSolve.notifyForUpdate();
+	}
 }
 

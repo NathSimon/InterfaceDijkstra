@@ -34,5 +34,11 @@ public class DisplayMenu extends JMenu
 	public BorderMenuItem getBorderMenuItem() {
 		return borderMenuItem;
 	}
+	
+	public void notifyForUpdate() {
+		fullscreenMenuItem.update();
+		minimizeMenuItem.update();
+		borderMenuItem.update();
+	}
 
 }
