@@ -77,10 +77,10 @@ public class GridMazePanel extends JPanel
 	
 	public String setButtonsBorder(String color) {
 		for(int i = 0; i < buttonList.size(); i++) {
-			if(color.equals("GREY") ) {
+			if(color.equals("BLACK") ) {
 				buttonList.get(i).setBorder(new LineBorder(Color.BLACK));
 			}
-			else if(color.equals("BLACK") ) {
+			else if(color.equals("GREY") ) {
 				buttonList.get(i).setBorder(new LineBorder(Color.GRAY));
 			}
 		}

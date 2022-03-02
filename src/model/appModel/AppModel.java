@@ -19,7 +19,7 @@ public class AppModel {
 	public AppModel() {
 		listeners = new ArrayList<ChangeListener>();
 		mode = "AUTO";
-		colorBorder = "GREY";
+		colorBorder = "BLACK";
 		sizeRow = "10";
 		sizeRowInt = 10;
 		sizeCol = "10";
@@ -33,6 +33,7 @@ public class AppModel {
 
 	public void setValueOfMouse(int valueOfMouse) {
 		this.valueOfMouse = valueOfMouse;
+		stateChanges();
 	}
 
 	public String getSizeRow() {
@@ -42,6 +43,7 @@ public class AppModel {
 	public void setSizeRow(String sizeRow) {
 		this.sizeRow = sizeRow;
 		this.sizeRowInt = Integer.parseInt(sizeRow);
+		stateChanges();
 	}
 
 	public String getSizeCol() {
@@ -59,6 +61,9 @@ public class AppModel {
 	public void setSizeCol(String string) {
 		this.sizeCol = string;
 		this.sizeColInt = Integer.parseInt(sizeCol);
+		System.out.println("test2");
+		stateChanges();
+		
 	}
 	
 	public void setSizeCol(int col) {
@@ -77,6 +82,7 @@ public class AppModel {
 
 	public void setColorBorder(String colorBorder) {
 		this.colorBorder = colorBorder;
+		stateChanges();
 	}
 
 	public String getMode() {
@@ -85,6 +91,7 @@ public class AppModel {
 
 	public void setMode(String mode) {
 		this.mode = mode;
+		stateChanges();
 	}
 	
 	public void addObserver(ChangeListener listener) {

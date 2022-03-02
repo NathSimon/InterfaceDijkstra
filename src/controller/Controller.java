@@ -1,6 +1,6 @@
 /**
- * Classe permttant l'initialisation et l'exÃ©cution de Dijkstra.
- * 
+ * Classe permttant l'initialisation et l'exÃ©cution de Dijkstra. Réalise l'interface entre le model et la vue et est donc appellée ici controller même si l'appelation n'est pas exacte pour le modèle MVC.
+ *  
  * @author Nathanael SIMON
  * 
  * @see Dijkstra.java

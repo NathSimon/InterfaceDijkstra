@@ -31,12 +31,16 @@ public class ColorBorderButton extends JButton {
 		
 		addActionListener(new ActionListener(){  
 			public void actionPerformed(ActionEvent e){
-				colorBorder = appModel.getColorBorder();
-				changeText(colorBorder);
-				mazeApp.getWindowPanel().getButtonPanelMaze().getButtonPanelSolve().getColorBorderButton().changeText(colorBorder);
-				colorBorder = mazeApp.getWindowPanel().getGridMazePanel().setButtonsBorder(colorBorder); 
+				colorBorder = mazeApp.getWindowPanel().getGridMazePanel().setButtonsBorder(appModel.getColorBorder()); 
 				appModel.setColorBorder(colorBorder);
-				mazeApp.getWindowPanel().getButtonPanelMaze().getButtonPanelSolve().getColorBorderButton().setColorBorder(colorBorder);
+				setColorBorder(colorBorder);
+				changeText(colorBorder);
+//				colorBorder = appModel.getColorBorder();
+//				changeText(colorBorder);
+//				mazeApp.getWindowPanel().getButtonPanelMaze().getButtonPanelSolve().getColorBorderButton().changeText(colorBorder);
+//				colorBorder = mazeApp.getWindowPanel().getGridMazePanel().setButtonsBorder(colorBorder); 
+//				appModel.setColorBorder(colorBorder);
+//				mazeApp.getWindowPanel().getButtonPanelMaze().getButtonPanelSolve().getColorBorderButton().setColorBorder(colorBorder);
 				
 			}}); 
 	}
@@ -60,6 +64,10 @@ public class ColorBorderButton extends JButton {
 	}
 	
 	public void update() {
-		appModel.setColorBorder(colorBorder);
+		if(colorBorder != appModel.getColorBorder()) {
+		 colorBorder = appModel.getColorBorder();
+		 changeText(colorBorder);
+		}
+		
 	}
 }

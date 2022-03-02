@@ -22,20 +22,20 @@ public class MazeApp extends JFrame implements ChangeListener
 	
 	public MazeApp()
 	   {
-	      super("Maze solver") ; // Window title
+	      super("Maze solver");
 	      
 	      appModel = new AppModel();
 	      appModel.addObserver(this);
 	      
-	      setContentPane(windowPanel = new WindowPanel(this)) ;
-	      setJMenuBar(mazeMenuBar = new MazeMenuBar(this, windowPanel, windowPanel.getGridMazePanel())) ;
+	      setContentPane(windowPanel = new WindowPanel(this));
+	      setJMenuBar(mazeMenuBar = new MazeMenuBar(this, windowPanel, windowPanel.getGridMazePanel()));
 	      
-	      setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE) ; // Explicit !
+	      setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
 	      
 	      setPreferredSize(new Dimension(1000, 600));
 	  	  pack();
-	      //setExtendedState(JFrame.MAXIMIZED_BOTH);     
-	      setVisible(true) ;  // The great show
+    
+	      setVisible(true) ;  
 	   }
 
 	public AppModel getAppModel() {
@@ -56,7 +56,9 @@ public class MazeApp extends JFrame implements ChangeListener
 	}
 
 	public void stateChanged(ChangeEvent e) {
+		if(windowPanel != null) 
 		windowPanel.notifyForUpdate();
+		if(mazeMenuBar != null) 
 		mazeMenuBar.notifyForUpdate();
 	}
 }

@@ -41,6 +41,7 @@ public class ModeButton extends JButton {
 	}
 	
 	public void update() {
+		if(appModel.getMode() != getText())
 		appModel.setMode(getText());
 	}
 

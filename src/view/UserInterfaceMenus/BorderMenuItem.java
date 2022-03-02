@@ -30,12 +30,19 @@ public class BorderMenuItem extends JMenuItem
 		
 		addActionListener(new ActionListener(){  
 			public void actionPerformed(ActionEvent e){
-				colorBorder = appModel.getColorBorder();
-				changeText(colorBorder);
-				mazeApp.getWindowPanel().getButtonPanelMaze().getButtonPanelSolve().getColorBorderButton().changeText(colorBorder);
-				colorBorder = mazeApp.getWindowPanel().getGridMazePanel().setButtonsBorder(colorBorder); 
+				System.out.println(appModel.getColorBorder());
+				colorBorder = mazeApp.getWindowPanel().getGridMazePanel().setButtonsBorder(appModel.getColorBorder()); 
+				System.out.println(colorBorder);
 				appModel.setColorBorder(colorBorder);
-				mazeApp.getWindowPanel().getButtonPanelMaze().getButtonPanelSolve().getColorBorderButton().setColorBorder(colorBorder);
+				setColorBorder(colorBorder);
+				changeText(colorBorder);
+			
+//				colorBorder = appModel.getColorBorder();
+//				changeText(colorBorder);
+//				mazeApp.getWindowPanel().getButtonPanelMaze().getButtonPanelSolve().getColorBorderButton().changeText(colorBorder);
+//				colorBorder = mazeApp.getWindowPanel().getGridMazePanel().setButtonsBorder(colorBorder); 
+//				appModel.setColorBorder(colorBorder);
+//				mazeApp.getWindowPanel().getButtonPanelMaze().getButtonPanelSolve().getColorBorderButton().setColorBorder(colorBorder);
 				
 			}}); 
 	}
@@ -59,7 +66,7 @@ public class BorderMenuItem extends JMenuItem
 	}
 	
 	public void update() {
-		//rien a update
+		changeText(appModel.getColorBorder());
 	}
 
 }
