@@ -36,14 +36,6 @@ public class BorderMenuItem extends JMenuItem
 				appModel.setColorBorder(colorBorder);
 				setColorBorder(colorBorder);
 				changeText(colorBorder);
-			
-//				colorBorder = appModel.getColorBorder();
-//				changeText(colorBorder);
-//				mazeApp.getWindowPanel().getButtonPanelMaze().getButtonPanelSolve().getColorBorderButton().changeText(colorBorder);
-//				colorBorder = mazeApp.getWindowPanel().getGridMazePanel().setButtonsBorder(colorBorder); 
-//				appModel.setColorBorder(colorBorder);
-//				mazeApp.getWindowPanel().getButtonPanelMaze().getButtonPanelSolve().getColorBorderButton().setColorBorder(colorBorder);
-				
 			}}); 
 	}
 	
@@ -52,7 +44,7 @@ public class BorderMenuItem extends JMenuItem
 			setText("Switch border color to black");
 		}
 		else {
-			setText("Switch border color to gray");
+			setText("Switch border color to grey");
 		}
 		
 	}

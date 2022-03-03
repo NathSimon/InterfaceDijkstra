@@ -23,7 +23,7 @@ public class ColorBorderButton extends JButton {
 	
 	public ColorBorderButton(MazeApp mazeApp)
 	{
-		super("Color");
+		super("COLOR");
 
 		this.mazeApp = mazeApp ;
 		appModel = mazeApp.getAppModel();
@@ -34,23 +34,16 @@ public class ColorBorderButton extends JButton {
 				colorBorder = mazeApp.getWindowPanel().getGridMazePanel().setButtonsBorder(appModel.getColorBorder()); 
 				appModel.setColorBorder(colorBorder);
 				setColorBorder(colorBorder);
-				changeText(colorBorder);
-//				colorBorder = appModel.getColorBorder();
-//				changeText(colorBorder);
-//				mazeApp.getWindowPanel().getButtonPanelMaze().getButtonPanelSolve().getColorBorderButton().changeText(colorBorder);
-//				colorBorder = mazeApp.getWindowPanel().getGridMazePanel().setButtonsBorder(colorBorder); 
-//				appModel.setColorBorder(colorBorder);
-//				mazeApp.getWindowPanel().getButtonPanelMaze().getButtonPanelSolve().getColorBorderButton().setColorBorder(colorBorder);
-				
+				changeText(colorBorder);		
 			}}); 
 	}
 	
 	public void changeText(String colorBorder2) {
 		if(colorBorder2 == "BLACK") {
-			setText("Black");
+			setText("BLACK");
 		}
 		else {
-			setText("Gray");
+			setText("GREY");
 		}
 		
 	}
