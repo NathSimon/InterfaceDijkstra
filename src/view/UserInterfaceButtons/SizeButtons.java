@@ -12,6 +12,10 @@ import view.UserInterfaceButtons.*;
 import view.UserInterfaceMenus.*;
 import view.UserInterface.*;
 
+/**
+ * @author Nathanael
+ *
+ */
 public class SizeButtons extends JPanel {
 	
 	private JLabel labelRow;

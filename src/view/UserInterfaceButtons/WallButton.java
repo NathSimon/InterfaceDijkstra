@@ -12,6 +12,10 @@ import view.UserInterfaceMenus.*;
 import view.UserInterface.*;
 
 
+/**
+ * @author Nathanael
+ *
+ */
 public class WallButton extends JButton {
 
 	private static final long serialVersionUID = 1L;

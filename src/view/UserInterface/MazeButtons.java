@@ -9,6 +9,10 @@ import view.UserInterfaceButtons.*;
 import view.UserInterfaceMenus.*;
 import view.UserInterface.*;
 
+/**
+ * @author Nathanael
+ *
+ */
 public class MazeButtons extends JPanel{
 	
 	private final WallButton wallButton;

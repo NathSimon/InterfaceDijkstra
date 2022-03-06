@@ -13,6 +13,10 @@ import view.UserInterfaceButtons.*;
 import view.UserInterfaceMenus.*;
 import view.UserInterface.*;
 
+/**
+ * @author Nathanael
+ *
+ */
 public class SaveFieldsPanel extends JPanel {
 	
 	private JLabel labelFileName;

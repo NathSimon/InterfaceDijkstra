@@ -8,6 +8,10 @@ import view.UserInterfaceButtons.*;
 import view.UserInterfaceMenus.*;
 import view.UserInterface.*;
 
+/**
+ * @author Nathanael
+ *
+ */
 public class ButtonPanelMaze extends JPanel
 {
 	private final MazeButtons mazeButtons;

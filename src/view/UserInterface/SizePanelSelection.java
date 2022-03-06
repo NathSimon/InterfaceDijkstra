@@ -3,6 +3,10 @@ import java.awt.Dimension;
 
 import javax.swing.* ;
 
+/**
+ * @author Nathanael
+ *
+ */
 public class SizePanelSelection extends JPanel {
 
 	private static final long serialVersionUID = 1L;

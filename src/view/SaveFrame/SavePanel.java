@@ -8,6 +8,10 @@ import view.UserInterface.*;
 
 import java.awt.*;
 
+/**
+ * @author Nathanael
+ *
+ */
 public class SavePanel extends JPanel
 {
     private final SaveApp saveApp;

@@ -13,14 +13,16 @@ import javax.swing.* ;
 import model.Maze.MazeReadingException;
 import model.appModel.AppModel;
 import controller.Controller;
-import view.SaveFrame.*;
-import view.UserInterfaceButtons.*;
-import view.UserInterfaceMenus.*;
 import view.UserInterface.*;
 
 
+/**
+ * @author Nathanael
+ *
+ */
 public class SolveMenuItem extends JMenuItem {
 
+	private static final long serialVersionUID = 1L;
 	private final MazeApp mazeApp ;
 	private final GridMazePanel gridMazePanel;
 	private final Controller controller;
@@ -65,7 +67,6 @@ public class SolveMenuItem extends JMenuItem {
 	public void saveToTextFile(String fileName, int saveOrSolve) throws FileNotFoundException { //saveOrSolve permet denregistrer un E si on veut resoudre, un P si on veut save
 		
 		int i = 0;
-	    int j = 0;
 	    String str;
 		
 	    try( FileOutputStream fos = new FileOutputStream(fileName);

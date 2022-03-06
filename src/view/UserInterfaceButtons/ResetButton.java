@@ -10,6 +10,10 @@ import view.UserInterfaceButtons.*;
 import view.UserInterfaceMenus.*;
 import view.UserInterface.*;
 
+/**
+ * @author Nathanael
+ *
+ */
 public class ResetButton extends JButton {
 
 	private static final long serialVersionUID = 1L;

@@ -14,6 +14,10 @@ import view.UserInterfaceMenus.*;
 import view.UserInterface.*;
 
 
+/**
+ * @author Nathanael
+ *
+ */
 public class GridMazeButton extends JButton {
 
 	private final MazeApp mazeApp ;

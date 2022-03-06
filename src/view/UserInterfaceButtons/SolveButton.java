@@ -27,6 +27,10 @@ import view.UserInterfaceMenus.*;
 
 
 
+/**
+ * @author Nathanael
+ *
+ */
 public class SolveButton extends JButton {
 
 	private final MazeApp mazeApp ;

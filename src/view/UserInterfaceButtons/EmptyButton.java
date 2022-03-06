@@ -12,6 +12,10 @@ import view.UserInterfaceMenus.*;
 import view.UserInterface.*;
 
 
+/**
+ * @author Nathanael
+ *
+ */
 public class EmptyButton extends JButton {
 
 	private final MazeApp mazeApp ;

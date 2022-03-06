@@ -4,6 +4,10 @@ import java.util.ArrayList;
 
 import javax.swing.event.*;
 
+/**
+ * @author Nathanael SIMON
+ *
+ */
 public class AppModel {
 
 	private int valueOfMouse;
@@ -26,7 +30,7 @@ public class AppModel {
 		sizeColInt = 10;
 		valueOfMouse = 1;
 	}
-	
+
 	public int getValueOfMouse() {
 		return valueOfMouse;
 	}

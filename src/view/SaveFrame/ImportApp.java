@@ -15,6 +15,11 @@ import model.appModel.AppModel;
 
 
 
+/**
+ * @author Nathanael SIMON
+ *
+ */
+
 public class ImportApp extends JFrame implements ChangeListener
 {
 

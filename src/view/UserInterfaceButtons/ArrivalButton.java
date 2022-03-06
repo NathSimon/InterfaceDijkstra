@@ -11,6 +11,10 @@ import view.UserInterfaceButtons.*;
 import view.UserInterfaceMenus.*;
 import view.UserInterface.*;
 
+/**
+ * @author Nathanael
+ *
+ */
 public class ArrivalButton extends JButton {
 
 	private final MazeApp mazeApp ;

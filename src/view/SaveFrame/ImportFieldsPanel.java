@@ -22,6 +22,11 @@ import model.Maze.MazeReadingException;
 import model.Maze.WBox;
 import model.appModel.AppModel;
 
+/**
+ * @author Nathanael
+ *
+ */
+
 public class ImportFieldsPanel extends JPanel {
 	
 	private JLabel labelFileName;
@@ -96,6 +101,11 @@ public class ImportFieldsPanel extends JPanel {
 		return gridTmp2;
 	}
 	
+	/**
+	 * @param fileName
+	 * @throws IOException
+	 * @throws MazeReadingException
+	 */
 	private void checkSizeOfMaze(String fileName) throws IOException, MazeReadingException {
 		
 		int j = 0;

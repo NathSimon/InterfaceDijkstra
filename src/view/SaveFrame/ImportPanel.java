@@ -9,6 +9,10 @@ import view.UserInterface.*;
 
 import java.awt.*;
 
+/**
+ * @author Nathanael
+ *
+ */
 public class ImportPanel extends JPanel
 {
     private final ImportApp importApp;

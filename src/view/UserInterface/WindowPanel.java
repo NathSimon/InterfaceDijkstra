@@ -2,6 +2,10 @@ package view.UserInterface;
 import javax.swing.* ;
 import java.awt.*;
 
+/**
+ * @author Nathanael
+ *
+ */
 public class WindowPanel extends JPanel
 {
 
@@ -40,7 +44,7 @@ public class WindowPanel extends JPanel
 	public ButtonPanelMaze getButtonPanelMaze() {
 		return buttonPanelMaze;
 	}	
-	
+
 	public void notifyForUpdate() {
 		gridMazePanel.notifyForUpdate();
 		buttonPanelMaze.notifyForUpdate();

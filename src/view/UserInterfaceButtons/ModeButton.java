@@ -15,6 +15,10 @@ import view.UserInterfaceMenus.*;
 import view.UserInterface.*;
 
 
+/**
+ * @author Nathanael
+ *
+ */
 public class ModeButton extends JButton {
 
 	private final MazeApp mazeApp ;

@@ -11,6 +11,10 @@ import view.UserInterfaceButtons.*;
 import view.UserInterfaceMenus.*;
 import view.UserInterface.*;
 
+/**
+ * @author Nathanael
+ *
+ */
 public class ResetMenuItem extends JMenuItem implements ActionListener{
 
 	private static final long serialVersionUID = 1L;

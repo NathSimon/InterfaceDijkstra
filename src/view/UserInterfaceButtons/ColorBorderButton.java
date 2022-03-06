@@ -15,12 +15,16 @@ import view.UserInterfaceMenus.*;
 import view.UserInterface.*;
 
 
+/**
+ * @author Nathanael
+ *
+ */
 public class ColorBorderButton extends JButton {
 
 	private final MazeApp mazeApp ;
 	private String colorBorder;
 	private final AppModel appModel;
-	
+
 	public ColorBorderButton(MazeApp mazeApp)
 	{
 		super("COLOR");

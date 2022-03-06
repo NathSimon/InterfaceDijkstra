@@ -22,6 +22,11 @@ import model.Maze.Maze;
 import model.Maze.MazeReadingException;
 import view.UserInterface.GridMazePanel;
 
+/**
+ * @author Nathanael
+ *
+ */
+
 public class Controller {
 	
 	private int rowLen;
@@ -31,6 +36,13 @@ public class Controller {
 	}
 	
 	
+	/**
+	 * @param rowLen
+	 * @param colLen
+	 * @param gridMazePanel
+	 * @throws IOException
+	 * @throws MazeReadingException
+	 */
 	public void startDijkstra (String rowLen, String colLen, GridMazePanel gridMazePanel) throws IOException, MazeReadingException {
 		
 		PreviousInterface previous;
@@ -58,6 +70,11 @@ public class Controller {
 		maze.readFile("data/labyrinthe2.txt");
 	}
 	
+	/**
+	 * @param vertex
+	 * @param previous
+	 * @return
+	 */
 	public ArrayList<VertexInterface> getPathTo(VertexInterface vertex, PreviousInterface previous) {
 		ArrayList<VertexInterface> path = new ArrayList<VertexInterface>();
 		if(previous.getVertex(vertex) == null) { //Pas de solution = arrivee non exploree donc non implementee dans la hashtable

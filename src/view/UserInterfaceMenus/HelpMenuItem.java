@@ -6,6 +6,10 @@ import view.UserInterfaceButtons.*;
 import view.UserInterfaceMenus.*;
 import view.UserInterface.*;
 
+/**
+ * @author Nathanael
+ *
+ */
 public class HelpMenuItem extends JMenuItem
 {
 	private static final long serialVersionUID = 1L;
